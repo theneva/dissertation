@@ -16,5 +16,135 @@
   {}
 \endgroup
 
+
+\refsection{0}
+  \sortlist{nyt}{nyt}
+    \entry{le:2015}{article}{}
+      \name{author}{7}{}{%
+        {{uniquename=0,hash=6741ba7e3db1512a31271d87f8331d97}{Le}{L\bibinitperiod}{V.\bibnamedelimi D.}{V\bibinitperiod\bibinitdelim D\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=bfff737ea002da4b5f69550fe8bd270d}{Neff}{N\bibinitperiod}{M.\bibnamedelimi M.}{M\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=7c2410b163abf254c73f431f42217d47}{Steward}{S\bibinitperiod}{R.\bibnamedelimi V.}{R\bibinitperiod\bibinitdelim V\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=a384c0979a0ccf723fcb930d95dbe007}{Kelley}{K\bibinitperiod}{R.}{R\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=589764056028559f7cef17b858bfe801}{Fritzinger}{F\bibinitperiod}{E.}{E\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=78ce4bec976d00106a0e4ed195bb6c4a}{Dascalu}{D\bibinitperiod}{S.M.}{S\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=29fd38e8685cc4d4206682306f698f77}{Harris}{H\bibinitperiod}{F.C.}{F\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{c342eeec1fdf5985bde72b13831e9b0e}
+      \strng{fullhash}{d0af70ef3b043ce7cb60e2588ee9e6ce}
+      \field{sortinit}{L}
+      \field{sortinithash}{872351f18d0f736066eda0bf18bfa4f7}
+      \field{labelyear}{2015}
+      \field{datelabelsource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Industrial Informatics (INDIN), 2015 IEEE 13th International Conference on}
+      \field{title}{Microservice-based architecture for the NRDC}
+      \field{year}{2015}
+      \field{pages}{1659\bibrangedash 1664}
+      \range{pages}{6}
+    \endentry
+    \entry{oates:2006}{book}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=13da88f2db3f3f66c4747fb2209ba045}{Oates}{O\bibinitperiod}{Briony\bibnamedelima J.}{B\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {London, Great Britain}%
+      }
+      \list{publisher}{1}{%
+        {SAGE Publications Ltd}%
+      }
+      \strng{namehash}{13da88f2db3f3f66c4747fb2209ba045}
+      \strng{fullhash}{13da88f2db3f3f66c4747fb2209ba045}
+      \field{sortinit}{O}
+      \field{sortinithash}{7803d2715d5e795e70382b084ab8d00e}
+      \field{labelyear}{2006}
+      \field{datelabelsource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1}
+      \field{title}{Researching Information Systems and Computing}
+      \field{year}{2006}
+    \endentry
+    \entry{savchenko:2015}{article}{}
+      \name{author}{3}{}{%
+        {{uniquename=0,hash=dc2ad25bacaf466a011c434931ea4968}{Savchenko}{S\bibinitperiod}{D.\bibnamedelimi I.}{D\bibinitperiod\bibinitdelim I\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=c603ad2ab63b50d28e8da7ac7f4e360b}{Radchenko}{R\bibinitperiod}{G.\bibnamedelimi I.}{G\bibinitperiod\bibinitdelim I\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=005a0fd24f4ea539e059a237c206dd86}{Taipale}{T\bibinitperiod}{O.}{O\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{5160a308ef770c17f614aa0322a0aae7}
+      \strng{fullhash}{46e216813bd93b637217a8d67b9f847a}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labelyear}{2015}
+      \field{datelabelsource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Information and Communication Technology, Electronics and Microelectronics (MIPRO), 2015 38th International Convention on}
+      \field{title}{Microservices validation: Mjolnirr platform case study}
+      \field{year}{2015}
+      \field{pages}{235\bibrangedash 240}
+      \range{pages}{6}
+    \endentry
+    \entry{stolberg}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=0d9fb393d7ba7075de1adba75b44392d}{Stolberg}{S\bibinitperiod}{S.}{S\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{0d9fb393d7ba7075de1adba75b44392d}
+      \strng{fullhash}{0d9fb393d7ba7075de1adba75b44392d}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labelyear}{2009}
+      \field{datelabelsource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Agile Conference, 2009. AGILE '09.}
+      \field{title}{Enabling Agile Testing through Continuous Integration}
+      \field{year}{2009}
+      \field{pages}{369\bibrangedash 374}
+      \range{pages}{6}
+    \endentry
+    \entry{vaishnavi:2015}{book}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=25ab4e8ac78c3b54f1b01cebe37959fd}{Vaishnavi}{V\bibinitperiod}{Vijay\bibnamedelima K.}{V\bibinitperiod\bibinitdelim K\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=5ea29d4dfa59c045dac6627d6badcd80}{Kuechler\bibnamedelima Jr.}{K\bibinitperiod\bibinitdelim J\bibinitperiod}{William}{W\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {Florida, the United States}%
+      }
+      \list{publisher}{1}{%
+        {CRC Press}%
+      }
+      \strng{namehash}{f06968370af859d79ed80965f082fd29}
+      \strng{fullhash}{f06968370af859d79ed80965f082fd29}
+      \field{sortinit}{V}
+      \field{sortinithash}{d18f5ce25ce0b5ca7f924e3f6c04870e}
+      \field{labelyear}{2015}
+      \field{datelabelsource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2}
+      \field{title}{Design Science Research Methods and Patterns: Innovating Information and Communication Technology}
+      \field{year}{2015}
+    \endentry
+    \entry{virmani:2015}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=52dc0f782264dce173b35ca8745894a8}{Virmani}{V\bibinitperiod}{M.}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{52dc0f782264dce173b35ca8745894a8}
+      \strng{fullhash}{52dc0f782264dce173b35ca8745894a8}
+      \field{sortinit}{V}
+      \field{sortinithash}{d18f5ce25ce0b5ca7f924e3f6c04870e}
+      \field{labelyear}{2015}
+      \field{datelabelsource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Innovative Computing Technology (INTECH), 2015 Fifth International Conference on}
+      \field{title}{Understanding DevOps \& bridging the gap from continuous integration to continuous delivery}
+      \field{year}{2015}
+      \field{pages}{78\bibrangedash 82}
+      \range{pages}{5}
+    \endentry
+  \endsortlist
+\endrefsection
 \endinput
 

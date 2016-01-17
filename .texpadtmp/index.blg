@@ -1,9 +1,17 @@
 [0] Config.pm:324> INFO - This is Biber 2.1
 [0] Config.pm:327> INFO - Logfile is '/Users/theneva/Dropbox/WACT/articles/dissertation/.texpadtmp/index.blg'
-[42] biber-darwin:276> INFO - === Sun Jan 17, 2016, 22:48:27
-[42] Biber.pm:333> INFO - Reading '/Users/theneva/Dropbox/WACT/articles/dissertation/.texpadtmp/index.bcf'
-[156] Biber.pm:645> INFO - Found 0 citekeys in bib section 0
-[157] Utils.pm:146> WARN - The file '/Users/theneva/Dropbox/WACT/articles/dissertation/.texpadtmp/index.bcf' does not contain any citations!
-[178] bbl.pm:505> INFO - Writing '/Users/theneva/Dropbox/WACT/articles/dissertation/.texpadtmp/index.bbl' with encoding 'ascii'
-[178] bbl.pm:596> INFO - Output to /Users/theneva/Dropbox/WACT/articles/dissertation/.texpadtmp/index.bbl
-[178] Biber.pm:106> INFO - WARNINGS: 1
+[40] biber-darwin:276> INFO - === Sun Jan 17, 2016, 23:46:35
+[41] Biber.pm:333> INFO - Reading '/Users/theneva/Dropbox/WACT/articles/dissertation/.texpadtmp/index.bcf'
+[136] Biber.pm:645> INFO - Found 6 citekeys in bib section 0
+[156] Biber.pm:2977> INFO - Processing section 0
+[171] Biber.pm:3115> INFO - Looking for bibtex format file '/Users/theneva/Dropbox/WACT/articles/dissertation/../references.bib' for section 0
+[175] bibtex.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
+[178] bibtex.pm:895> INFO - Found BibTeX data source '/Users/theneva/Dropbox/WACT/articles/dissertation/../references.bib'
+[189] Utils.pm:146> WARN - BibTeX subsystem: /var/folders/jx/04tf_hp93vz2wqp4649zgkn40000gn/T/5WxVx2_YtN/references.bib_19776.utf8, line 89, warning: undefined macro "PP"
+[266] UCollate.pm:66> INFO - Overriding locale 'en-GB' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[266] UCollate.pm:66> INFO - Overriding locale 'en-GB' defaults 'variable = shifted' with 'variable = non-ignorable'
+[266] Biber.pm:2854> INFO - Sorting list 'nyt' of type 'entry' with scheme 'nyt' and locale 'en-GB'
+[266] Biber.pm:2858> INFO - No sort tailoring available for locale 'en-GB'
+[276] bbl.pm:505> INFO - Writing '/Users/theneva/Dropbox/WACT/articles/dissertation/.texpadtmp/index.bbl' with encoding 'ascii'
+[277] bbl.pm:596> INFO - Output to /Users/theneva/Dropbox/WACT/articles/dissertation/.texpadtmp/index.bbl
+[277] Biber.pm:106> INFO - WARNINGS: 1
