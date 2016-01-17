@@ -1,0 +1,9 @@
+[0] Config.pm:324> INFO - This is Biber 2.1
+[0] Config.pm:327> INFO - Logfile is '/Users/theneva/Dropbox/WACT/articles/dissertation/.texpadtmp/index.blg'
+[42] biber-darwin:276> INFO - === Sun Jan 17, 2016, 22:48:27
+[42] Biber.pm:333> INFO - Reading '/Users/theneva/Dropbox/WACT/articles/dissertation/.texpadtmp/index.bcf'
+[156] Biber.pm:645> INFO - Found 0 citekeys in bib section 0
+[157] Utils.pm:146> WARN - The file '/Users/theneva/Dropbox/WACT/articles/dissertation/.texpadtmp/index.bcf' does not contain any citations!
+[178] bbl.pm:505> INFO - Writing '/Users/theneva/Dropbox/WACT/articles/dissertation/.texpadtmp/index.bbl' with encoding 'ascii'
+[178] bbl.pm:596> INFO - Output to /Users/theneva/Dropbox/WACT/articles/dissertation/.texpadtmp/index.bbl
+[178] Biber.pm:106> INFO - WARNINGS: 1

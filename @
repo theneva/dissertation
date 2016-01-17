@@ -6,13 +6,13 @@
 
 ## 1 Introduction
 
-TODO: RESEARCH QUESTION(S)!
-
 This document is a proposal for the research project I will conduct for my Master's thesis during the spring of 2016. It begins by listing core aims and objectives for the project in terms of what I seek to deliver. It then suggests a research approach to achieve this goal, and finally presents a brief project plan.
 
-My motivation for this project is… The problem is derived from my practise period module in the Master programme, where I identified automated deployment of microservices as a problem that has not yet been solved. …
+My overarching research question is how we can best compare several strategies for automating deployment in an environment with many teams and services, and pick or compose a strategy that suits the context.
 
-Much work has already been done on the subject of both automated deployment and microservices (often referred to as Service-Oriented Architecture in the literature)
+My motivation for this project comes from the action design research-like work I completed in the Master programme's practise period module. During this project, I identified automated deployment of microservices as a time-consuming and error-prone task that is often repeated for each new service.
+
+A brief literature search will show that much work has already been done on both _automated deployment_ and _microservices_ individually, such as \autocite{virmani:2015}, \autocite{stolberg}, \autocite{savchenko:2015}, and \autocite{le:2015}. However, it appears from the literature review I conducted then that little work is completed on automated deployment in a microservice context. This must be shown explicitly in my thesis.
 
 ## 2 Aim and objectives
 
@@ -33,7 +33,10 @@ In order to reach these goals, my __specific objectives__ are:
 
 … through a preliminary case study at FINN.no, comprising interviews and document review;
 
-I suggest triangulating two research strategies: a __case study__ to establish knowledge of what the industry considers important, and a __design science research__ (more specifically, design &amp; creation) implementation project of some microservices and various strategies in order to analyse these.
+I suggest triangulating two research strategies:
+
+- A __case study__ to establish which factors are important to the industry to supplement findings from a literature review; and
+- A __design science research__ \autocite{vaishnavi:2015} project to (specifically, design &amp; creation \autocite{oates:2006}) project where I develop some microservices and test various strategies in order to analyse them.
 
 ### 3.1 Case study: What is important to FINN.no?
 
