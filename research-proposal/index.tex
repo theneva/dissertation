@@ -1,0 +1,47 @@
+\documentclass[british]{article}
+
+\renewcommand*\familydefault{\sfdefault}
+
+\usepackage{pdfpages}
+\usepackage{geometry}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+\usepackage{setspace}
+\onehalfspacing
+\usepackage{babel}
+\usepackage{csquotes}
+\SetBlockThreshold{2}
+\usepackage[sorting=nyt,style=apa]{biblatex}
+\DeclareLanguageMapping{british}{british-apa}
+\addbibresource{../references.bib}
+\setlength\bibitemsep{1.5\itemsep}
+\usepackage{graphicx}
+\DeclareGraphicsExtensions{.jpg,.png}
+\graphicspath{{./images/}}
+\usepackage{float}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{datetime}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{Martin Lehmann}
+\chead{Research proposal}
+\rhead{\formatdate{17}{1}{2016}}
+\cfoot{Page \thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\title{Research proposal}
+\author{Martin Lehmann}
+\date{\today}
+
+\begin{document}
+\includepdf{frontpage-wact}
+\maketitle
+
+\input{abstract}
+\input{body}
+
+\printbibliography
+
+\end{document}

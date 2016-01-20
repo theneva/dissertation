@@ -1,0 +1,19 @@
+- Må ordne med noe språk for å formalisere
+- Vær mindre uklar, si mye mer tydelig hva det faktisk er jeg skal
+    - hva innbærer continuous integration? deployment?
+- positivistic? rar måte å si det på
+- hvorfor er det viktig med en single pipeline deployment pipeline? Finnes det alternativer?
+- er case-studien min egentlig en case-studie? Hvordan brukes dette begrepet i andre områder? Hva betyr ordet for andre? Vær eksplisitt.
+- jeg må bli flinkere på å visualisere.
+- hvilke ting vil støtte hvilke mål?
+- __Hvordan få konklusjonen veldig enkelt frem?__ Hva er heispitchen min?
+- Matrise: mål, aktiviteter, …?
+- Har fått jobb på FINN, har hatt internship, og skal bruke det som et case – er jeg egentlig objektiv? Hvordan kan jeg ivareta objektivt syn, og vil jeg kunne være kritisk nok? Ta en diskusjon på om jeg faktisk er objektiv.
+- Notér ned alle motforestillinger og dårlige ting ved å bruke en strategi (spesielt FINN sin): vis at jeg er klar for å kritisere
+- Vær forsiktig med å skrive at ting er dårlige – kritikk er forbedringspotensiale
+- MÅ trekke inn Docker vs. rkt
+- Sorter papers i tre grupper: høyst, litt, og kanskje ikke relevant
+- Kan bruke målene for oppgaven som utgangspunkt for konsepter, og gjøre lit review med konseptmatrise basert på det
+- __Dokumentstudie + intervjuer__
+- __Lag en mer målorientert prosjektplan.__
+- __Bruk 12pt sans serif__
