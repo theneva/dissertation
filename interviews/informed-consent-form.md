@@ -8,10 +8,8 @@ This document is presented to all participants for the study. The document consi
 
 ## Contact information
 
-If anything comes up, do not hesitate to contact me or my supervisor.
-
-- Me: Martin Lehmann / (+47) 918 47 750 / lehmar11@student.westerdals.no
-- My supervisor: Frode Eika Sandnes / sanfro@westerdals.no
+- Researcher: Martin Lehmann / (+47) 918 47 750 / lehmar11@student.westerdals.no
+- Supervisor: Frode Eika Sandnes / sanfro@westerdals.no
 
 ## 1 Background
 
@@ -24,17 +22,18 @@ If anything comes up, do not hesitate to contact me or my supervisor.
 
 ## 2 Interview process
 
-- The interviewee may at any point cancel the interview with no implication or consequence for either party.
+- The interviewee will remain anonymous in the presented work.
+- The interviewee may at any point withdraw from the interview with no implication or consequence for either party.
 - The interviewee may require that all recordings, notes, and transcripts are not distributed in any way.
 - The interviewee has the right to require that anything that comes up during the interview is kept confidential. Upon request, any presentation of the material will be sent to the interviewee for review before publication within a reasonable time frame.
-- Upon request, the interviewee has has the right to be sent a copy of any recordings, notes, and transcripts regarding the interview.
+- Upon request, the interviewee will be sent a copy of any recordings, notes, and transcripts regarding the interview.
 
 ## 3 Consent form
 
 By signing this form:
 
-- I want to participate in this study
-- I am aware that I can withdraw at any time during the interview with no consequence
+- I want to participate in this study.
+- I am aware that I can withdraw at any time during the interview with no consequence.
 - I verify that I understand and agree to the terms in this agreement.
 
 Location:
