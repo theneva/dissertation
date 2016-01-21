@@ -3,7 +3,7 @@
 ## Background for the interview
 
 - Interviewee: Audun Fauchald Strand, Lead Developer in Infrastructure @ Finn.no
-- Date: January 22nd 206 1pm--2pm
+- Date: January 22nd 2016 1pm--2pm
 - Location: FINN.no's offices at Grensen 5--7.
 
 This interview is intended to uncover why FINN.no has committed to containerisation with Docker across the entire organisation and how this was prioritised.
