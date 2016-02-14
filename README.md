@@ -4,4 +4,4 @@ This is the main repository for the written part of my Master's thesis due sprin
 
 ## Navigation
 
-- Locating TODOs: `grep -ri TODO ."
+- Locating TODOs: `grep -ri TODO .`
