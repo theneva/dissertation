@@ -132,3 +132,5 @@ There have been several studies specifically measuring the quality of a deployme
 One important factor introduced by @chen:architecting-for-cd:2015 is which Architecturally Significant Requirements (ASRs) the deployment strategy imposes on the project. While Chen considers architecting for Continuous Delivery in a broad sense, different strategies will impose fewer or more ASRs of differing types on the code base of the actual service. More ASRs can make the transition to a Continuous Delivery set-up more difficult, more time consuming, and thus more expensive.
 
 ## Proposals for future research
+
+(…)
