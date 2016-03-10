@@ -1,3 +1,11 @@
+# PDFs, generate with $ npm run build
+build/
+
+# Exclude reference styles, install with $ npm install
+.pandoc/
+
+node_modules/
+
 .DS_Store
 *.swo
 *.swp
