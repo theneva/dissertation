@@ -94,7 +94,7 @@ They conclude that for systems with few deployed services and configuration chan
 
 > There is an opportunity to develop more elaborate quantitative comparison, potentially based on software metrics, such as those in software engineering. --- @talwar:comparison-of-approaches-to-service-deployment:2005 [p. 10]
 
-In the write-up "Don't Install Software By Hand" @spinellis:by-hand:2012 [p. 86], Spinellis seconds the sentiments that IT systems are now expected to be a composition of multiple services, and that automation is a key enabler for ensuring that delivered IT systems are "not inscrutable monoliths that just happen to work but documented modular engines that work by design" [@spinellis:by-hand:2012, p. 87].
+In the write-up "Don't Install Software By Hand", @spinellis:by-hand:2012 [p. 86] seconds the sentiments that IT systems are now expected to be a composition of multiple services, and that automation is a key enabler for ensuring that delivered IT systems are "not inscrutable monoliths that just happen to work but documented modular engines that work by design" [@spinellis:by-hand:2012, p. 87].
 
 Spinellis also touches upon two additional key themes. First, DevOps (composed of Developer and Operations) is a setting where developers no longer "toss software deliverables over a wall" for deployment, but instead coordinate through development processes like Continuous Deployment and automated testing, a process commonly referred to as DevOps (from Developer and Operations) [@spinellis:by-hand:2012, p. 86]. Second, he considers the idea of documentation of the system expressed as code, which is an added bonus introduced if the individual services are simple enough.
 
