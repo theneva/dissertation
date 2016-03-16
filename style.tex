@@ -5,3 +5,13 @@
 \setlength{\parskip}{1em}
 \usepackage{setspace}
 \onehalfspacing
+
+% Overwrite \begin{figure}[htbp] with \begin{figure}[H] to ensure correct positioning
+\usepackage{float}
+\let\origfigure=\figure
+\let\endorigfigure=\endfigure
+\renewenvironment{figure}[1][]{%
+  \origfigure[H]
+}{%
+  \endorigfigure
+}
