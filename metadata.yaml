@@ -6,4 +6,7 @@ abstract: |
   (…)
 link-citations: true
 toc: true
+toc-depth: 3
+lof: true
+lot: true
 ---
