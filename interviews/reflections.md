@@ -1,8 +1,6 @@
 # Interviews
 
-I have conducted __X__ interviews at FINN.no to help ensure that the comparison framework will be relevant to the business as well as academia.
-
-There might be no point to appending a summary of the interviews. TODO: Check other dissertations (on It's Learning) to see what has been done before.
+I have conducted two interviews at FINN.no to help ensure that the comparison framework will be relevant to the business as well as academia.
 
 ## Team Reise
 
