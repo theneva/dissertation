@@ -1,0 +1,5 @@
+- Look into &amp; Contact Chen
+- Does FB still do what they say? Will their approach work in the future? Better safe than sorry, though!
+- Kent Beck may have authored the facebook paper because he's a smart guy interested in new and cool things
+- Check IEEE Transactions for publications on the topic
+- Check out CFEngine https://cfengine.com/ (see Model-based configuration)
