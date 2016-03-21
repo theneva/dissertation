@@ -1,6 +1,6 @@
-# Background and existing literature
+# Background
 
-The interviews provided a foundation for exploring relevant literature. In order to further establish which concepts are important to discuss and identify a gap in the current research, this section reviews the current literature on areas identified through the interviews. Some new areas identified during the literature review itself are also discussed. Each area is concluded with suggestions for further research. In broad strokes, two key areas are considered:
+In order to establish which concepts are important to discuss and identify a gap in the current research, this section reviews the current literature on areas related to cloud computing and microservice. Each area is concluded with suggestions for further research. In broad strokes, two key areas are considered:
 
 - Cloud architecture, the availability of and need for automatic performance scaling, and its effect on software architecture---in particular the __microservice architectural pattern__; and
 - __(Continuous) delivery__ and automated deployment, focusing on the technical and organisational aspects of this process.
@@ -143,5 +143,3 @@ This literature review has uncovered central themes that are important when meas
 - Quality metrics for measuring deployment approaches, in particular Architecturally Significant Requirements and their impact on the existing base when migrating to a Continuous Delivery workflow.
 
 The thesis will maintain focus on finding and implementing a strategy for deployment automation that fits the organisation's needs. Therefore, it will _not_ give great consideration to system uptime such as architecting specifically to support failover between data centres or cloud platform providers. It will, on the other hand, map the factors discussed in this review to a comprehensible manner that allows comparing various strategies without reinventing the wheel.
-
-The next section discusses how the findings from this literature review map to the interview data, and how the criteria can be presented in a concise framework.
