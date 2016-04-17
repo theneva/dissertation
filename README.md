@@ -15,6 +15,10 @@ $ npm run preinstall
 ```
 
 ```shell
+$ brew install pandoc
+```
+
+```shell
 $ pip install pandoc-fignos
 ```
 
