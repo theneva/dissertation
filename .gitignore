@@ -11,3 +11,6 @@ node_modules/
 *.swp
 
 .texpadtmp/
+
+# Exclude log file when something goes wrong
+npm-debug.log
