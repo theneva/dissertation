@@ -7,17 +7,13 @@ In order to establish which concepts are important to discuss and identify a gap
 
 In conclusion, a subset of the identified areas of research is presented. This provides a starting point for discussing quality measurement metrics for automated deployment strategies.
 
-## Cloud computing &amp; microservices
+## Cloud computing and microservices
 
 @talwar:comparison-of-approaches-to-service-deployment:2005 [p. 1] broadly define a _service_ as:
 
 > […] a standalone software component that encapsulates and presents useful functionality, is installed in a computing environment, and can be composed into an overall system or application.
 
-In other words, a _service_ is a specialised, autonomous piece of software that can be interacted with through a defined interface. One may open for communication over the network using a well-defined interface such as Representational State Transfer (REST) or Remote Procedure Calls (RPC). A software _system_ is composed of one or more _services_. The _system_ will often comprise one service that provides a visual representation of data---for example a website service---that integrates with the other components---services---in the system. Thus, the _system_ is an abstract idea that only exists in documentation, while the _services_ are the concrete software implementations of the various elements of the system specification.
-
-The idea of splitting a large application's code base into multiple services is often referred to as the Service-Oriented Architecture (SOA) [e.g., @castro:evaluating:2015; @arnold:pattern-based-soa:2007]. The microservice pattern can be seen as a way to implement SOA by defining each service as a stand-alone application that can be run, developed, and deployed independently of the other services [@castro:evaluating:2015, p. 585].
-
-For instance, an e-commerce site, such as the extremely popular Amazon^[https://amazon.com], may implement part of their system using the microservice architectural pattern in the following way (see Figure @fig:example-e-commerce-services):
+In other words, a _service_ is a specialised, autonomous, stand-alone piece of software. The idea of splitting a large application's code base into multiple services is often referred to as the Service-Oriented Architecture (SOA) [e.g., @castro:evaluating:2015; @arnold:pattern-based-soa:2007]. For instance, an e-commerce site, such as the extremely popular Amazon^[https://amazon.com], may implement part of their system using the service pattern in the following way (see Figure @fig:example-e-commerce-services):
 
 ![Example e-commerce service stack](http://img.ctrlv.in/img/16/03/16/56e9409e7ad65.png){#fig:example-e-commerce-services}
 
@@ -27,15 +23,19 @@ For instance, an e-commerce site, such as the extremely popular Amazon^[https://
 - One public API (accessible through the firewall); and
 - One web application that communicates with the public API and visualises the data as a website.
 
+A service can be interacted with through a defined interface. One may open for communication over the network using a well-defined interface such as Representational State Transfer (REST) or Remote Procedure Calls (RPC). A software _system_ is composed of one or more _services_. The _system_ will often comprise one service that provides a visual representation of data---for example a website service---that integrates with the other components---services---in the system. Thus, the _system_ is an abstract idea that only exists in documentation, while the _services_ are the concrete software implementations of the various elements of the system specification.
+
+The microservice pattern can be seen as a way to implement SOA by defining each service as a stand-alone application that can be run, developed, and deployed independently of the other services [@castro:evaluating:2015, p. 585].
+
 This would yield a system that allows work in individual teams, and tailoring the technology stacks to each service's requirements. Indeed, the microservice pattern places no restrictions on technology choices such as language and framework for each service: the only hard requirement is that each service must expose an interface through which it is possible to communicate with the service. For example, one may build a REpresentational State Transfer (REST) interface on top of the HyperText Transfer Protocol (HTTP), or a Remote Procedure Call (RPC) interface built directly on the Transmission Control Protocol (TCP). It is, then, possible to build hundreds of services, each in a different programming language, However, this can place a heavy burden on the infrastructure if the services are not properly contained and may not be _feasible_ [@newman:building-microservices:2015, loc. 200].
 
-Somewhat related to the microservice pattern, the system's user interface application (for example a web application) may consist of multiple web applications abstracted to look like a single application by a load balancer or proxy. These can be navigated without making the user aware that s/he is switching between applications, given a uniform look and feel.
+Somewhat related to the microservice pattern, the system's user interface application (for example a web application) may consist of multiple web applications abstracted to look like a single application by a load balancer or proxy. These can be navigated without making the user aware that they are switching between applications, given a uniform look and feel.
 
 The microservice-style architecture is an increasingly popular alternative to the traditional _monolithic_ architectural style. In this context, a monolithic application (or a _monolith_) refers to a large application where the entire system consists of a single code base executed within a single runtime (such as Java's Java Virtual Machine (JVM) and .NET's Common Language Runtime (CLR)).
 
 @castro:evaluating:2015 [p. 590] conclude that there are several benefits to being able to publish a system as a set of smaller services that can be managed independently. Specifically, they point to independent development, deployment, scaling, operation, and monitoring as a key enabler for companies to manage large applications with a more practical methodology, and scale individual development teams more easily.
 
-They also point to the cost of this gained agility and granular scalability: microservices are by definition parts of a distributed system, which introduces a whole new class of concerns. The "fallacies of distributed computing", originally asserted by Peter Deutsch and others at Sun Microsystems (creator of the Java programming language), is a popular set of assumptions developers make when they are new to distributed computing^[Arnon Rotem-Gal-Oz's whitepaper "Fallacies of Distributed Computing Explained", available at https://pages.cs.wisc.edu/~zuyu/files/fallacies.pdf.]:
+They also point to the cost of this gained agility and granular scalability: microservices are by definition parts of a distributed system, which introduces a whole new class of concerns. The "fallacies of distributed computing" is a popular set of assumptions developers make when they are new to distributed computing^[Arnon Rotem-Gal-Oz's whitepaper "Fallacies of Distributed Computing Explained", available at https://pages.cs.wisc.edu/~zuyu/files/fallacies.pdf.]:
 
 > 1. The network is reliable.
 > 2. Latency is zero,
@@ -46,7 +46,13 @@ They also point to the cost of this gained agility and granular scalability: mic
 > 7. Transport cost is zero.
 > 8. The network is homogeneous.
 
-These assertions will definitely need to be taken into consideration in the comparison of various approaches. Despite their age, the fallacies are highly relevant. Trying to counter these problems tie into the well-known CAP theorem stating that it is impossible to ensure _Consistency_, _Availability_, and _Partition tolerance_ at the same time [@brewer:cap:2012]. Potential research areas include:
+These assertions will definitely need to be taken into consideration in the comparison of various approaches. Despite their age, the fallacies are highly relevant to three popular quality attributes: _Consistency_[^consistency]; _Availability_[^availability], and _Partition tolerance_[^partition-tolerance] (CAP). The well-known _CAP Theorem_ states that is it impossible for a system to meet all attributes at the same time [@brewer:cap:2012].
+
+[^consistency]: Consistency: The guarantee that a request to read data always returns the most recently written data.
+[^availability]: Availability: The guarantee that the system consistently returns an expected response within timeout limits.
+[^partition-tolerance]: Partition tolerance: The guarantee that the system responds as expected even if a network split occurs (i.e., network nodes are unable to communicate).
+
+Potential research areas include:
 
 - Flexible _service discovery_, i.e. dynamically finding the IP address of web services able to answer a request [e.g., @paliwal:semantics-based-discovery:2012; @bethea:automated-discovery:2008];
 - Fault tolerance using cloud services with tools for automatic failover to data centres in other locations (or even other cloud platform providers) in case of an outage [e.g., @hole:building-trust:2016; @addo:automatic-failover:2014].
