@@ -2,20 +2,24 @@
 
 ## The reference system: BeerFave
 
-In order to test microservice deployment, a reference system comprising multiple services is required. The app _BeerFave_ was built to accommodate this. BeerFave is a comparatively simple system consisting of the following services:
+Measuring quality of microservice deployment requires a reference system comprising multiple services. The app _BeerFave_ was built to accommodate this. Keeping the system as close to realistic as possible is important for the findings' validity [TODO REFERENCE TO OATES maybe?]. Many popular applications can be generalised (although greatly simplified in the process) to:
 
-- four small services;
-- one API to tie them together; and
-- and one web application to consume and manipulate the data.
+- storage and authentication of __users__;
+- a collection of __items__ (e.g., posts on a social medium);
+- a set of __links__ between _items_ and _users_, e.g. "saving" an _item_ for later access; and
+- a __recommendation__ engine suggesting new _items_ to a user based on their current state.
 
-One key concern for any microservice system is _standardisation_ on languages and platforms. It is certainly an organisational problem: teams consist of people who are typically fluent in a comparatively small set of programming languages. However, the configuration required to automate deployment of the services may also be a considerable factor, and so some 
+BeerFave is a comparatively simple system consisting of these four services; a public-facing API to tie the services together and expose their functionality; and a web application to consume and manipulate the data contained in the services.
 
-Technical (non-functional) requirements for the application were modelled in part to allow efficient testing of as many parts of the framework as possible. 
+One key concern for any microservice system is _standardisation_ on languages and platforms. It is certainly an organisational problem: teams consist of people who are typically fluent in a comparatively small set of programming languages. However, the configuration required to automate deployment of the services is another considerable factor.
+TODO I don't know where I'm going with this sentence
+
+Technical (non-functional) requirements for the application were modelled in part to allow efficient testing of as many elements of the framework as possible. 
 
 1. At least two services must be written in the same language.
 2. At least one service must be written in a different language, but run on the same platform as at least one other service.
 3. At least one service must be written for a different platform from all other services.
-4. The web application must be composed entirely of static assets (i.e., HTML, CSS, and JavaScript) and served directly from the file system with a pure HTTP server (such as [nginx](http://nginx.org/) with no regard for _what_ it serves.
+4. The web application must be composed entirely of static assets (i.e., HTML, CSS, and JavaScript) and served directly from the file system with a pure HTTP server (such as nginx^[http://nginx.org/ with no regard for _what_ it serves.
 5. At least two services must use different Database Management Systems (DBMS).
 6. The system will be run on both a self-hosted Linux environment and with a Platform as a Service (PaaS) provider.
 
@@ -44,7 +48,7 @@ With JSON, a response to an HTTP GET request to a resource `/beers/1` may be:
 
 A third candidate growing in popularity is GraphQL and Relay, recently published by Facebook^[https://facebook.github.io/react/blog/2015/02/20/introducing-relay-and-graphql.html]. GraphQL is designed to simplify querying complex nested data structures, and challenges the now-established URL-centric paradigm that REST is a part of. Instead of using separate URLs to distinguish users, GraphQL uses a single (or a few) endpoints and allows the client to formulate a query in a JSON-like format---very similar to how Simple Object Access Protocol works, but without envelopes and ties to a specific data transfer format. A typical GraphQL query may look like the following, and the response may simply be a JSON object with data for the specified fields^[https://facebook.github.io/react/blog/2015/05/01/graphql-introduction.html].
 
-```
+```graphql
 {
   user(id: 3500401) {
     id,
@@ -60,14 +64,6 @@ A third candidate growing in popularity is GraphQL and Relay, recently published
 ```
 
 The system is largely around two runtimes: the Java Virtual Machine (JVM), which is designed to run bytecode compiled from the Java programming language; and the popular JavaScript server runtime Node.js. Both the JVM and Node.js have cross-platform support, allowing all services to be deployed to a virtual Linux host. The specific services were implemented follows, with (1) three Clojure applications, (2) one Java application, (3) one Node.js application, and (4) one static JavaScript web browser application.
-
-Keeping the system as close to realistic as possible is important for the findings' validity [TODO REFERENCE TO OATES maybe?]. Many popular applications can be generalised (although greatly simplified in the process) to:
-
-- storage and authentication of __users__;
-- a collection of __items__ (e.g., posts on a social medium);
-- a set of __links__ between _items_ and _users_, e.g. "saving" an _item_ for later access; and
-- a __recommendation__ engine suggesting new _items_ to a user based on their current state.
-
 
 
 - Beer list service (independent; written in Java 8; running on the JVM)
