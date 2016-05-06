@@ -1,6 +1,6 @@
 # Interviews
 
-I have conducted two interviews at FINN.no to help ensure that the comparison framework will be relevant to the business as well as academia.
+I have conducted two interviews at FINN.no to help ensure that the comparison framework will be relevant to the business as well as academia. These interviews provided insights into how individual teams already practise Deployment Automation and the organistaion's experiences with various attempts; the factors FINN.no deems important when selecting a strategy; and both how and why they currently attempt to standardise on a uniform model for automated deployment. This section presents the findings from the interviews, and concludes with a set of requirements for a Deployment Automation strategy in FINN.no's microservice context.
 
 ## Team Reise
 
@@ -13,7 +13,7 @@ FINN's Team Reise (travel) has an interesting take on deployment: unlike all oth
 5. Pipeline deploys the artefact(s) directly to production environment
 6. Pipeline also deploys to test environments, but only for other services' sake---they are never used by the team.
 
-TODO: generalise this process and illustrate it (as it is to some extent used by all teams in FINN)
+TODO: generalise this process and illustrate it (as it is to some extent used by all teams in FINN).
 
 ### The team &amp; code quality
 
@@ -74,9 +74,12 @@ The architecture
 
 ## Team Cloud IO (infrastructure)
 
-Team Cloud IO is the team controlling the initiative to move to containers at FINN.
+Team Cloud IO is responsible for maintaining and developing the infrastructure at FINN, and plays a large part in the initiative to migrate the entire organisation to containers. Team Cloud IO loosely defined the requirements for an organisation-wide uniform Deployment Automation strategy, and carries out the work of helping teams migrate their services to containers.
 
 ### Background
+
+At the time of writing, FINN.no consists of several hundred microservices. Their responsibilities range from providing access to user data to handling payment for placing an ad. At the time of the interview, eight physical servers each run every microservice. This allows balancing the user load equally, although some methods are used to allow stateful microservices.
+
 
 - Running all services (mods) on 8 physical servers leads to overload
     - Some services scale vertically (using threads) rather than horisontally (more boxes)
