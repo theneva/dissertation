@@ -7,34 +7,27 @@ This is the main repository for the written part of my Master's thesis due sprin
 When setting up the project, run the following commands:
 
 ```shell
+# Build-specific dependencies
 $ npm install
-```
 
-```shell
-$ npm run preinstall
-```
-
-```shell
+# Pandoc (for converting between formats, e.g., Markdown and PDF)
 $ brew install pandoc
-```
 
-```shell
+# Figure number references with Pandoc
 $ pip install pandoc-fignos
-```
 
-```shell
+# Use CSL spec for citation style
 $ brew install pandoc-citeproc
-```
 
-```shell
+# Allow including markdown files from other files
 $ cabal install pandoc-include
-```
 
-```shell
+# Build (From the root directory):
 $ npm run build
 ```
 
-When you've made any changes, re-run:
+Whenever you make changes, re-run (from the root directory):
+
 ```shell
 $ npm run build
 ```
@@ -43,4 +36,4 @@ Output is in [./build](./build).
 
 ## Navigation
 
-- Locating TODOs: `grep -ri TODO .`
+- Locate TODOs: `grep -ri TODO .`
