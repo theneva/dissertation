@@ -35,34 +35,9 @@ Security can perhaps be considered an Architecturally Significant Requirement, b
 
 This section has discussed several important aspects to consider when building and deploying applications in a microservice context. In conclusion of this section, (TODO table 1) presents the first part of the main artefact: a set of important criteria to consider when selecting a deployment strategy for a specific scenario, along with brief descriptions. The rest of the thesis describes the implementation of a reference case, and uses the framework to evaluate some popular deployment strategies. The entire thesis concludes with a final set of requirements uncovered from both this discussion and the implementation work.
 
-| Criterion | Unit | Values |
-| ---------------------------- | ---------------------------------- | --------------- |
-| No ASRs beyond 12-factor app | Following the 12-factor guidelines should be enough (from the software architecture perspective) to deploy to any runtime | (None; Somewhat; Completely)
-| Configuration as documentation | Configuration code itself doubles as documentation of the non-functional requirements that led to the configuration, eliminating the need to document these elsewhere. | (None; Some; Completely)
-| Isolation | Low risk of collision between services (e.g., same database) | (None; Possible; Full)
-| Flexible resource dedication | Dynamic dedication of system resources (e.g., CPU, memory) to services as needed | (Pre-allocated; Somewhat dynamic; Dynamic)
-| Same-host duplicates | Possibility to run multiple instances of the same application on a single host | Impossible; Possible; Easy
-| Load balanceable |
-
-Table: Criteria with descriptions
-
-asd
-
-| &nbsp; | Manual, traditional deployment | Containers (Docker) | Virtual machine image | Script-based |
-| ---------------------------------------- | ----------- | ---------- | --------- | -------- |
-| No ASRs beyond 12-factor app                                                            | x | x | x |   |
-| Configuration as documentation of non-functional requirements                           |   | x |   |   |
-| No collision with other services on the same virtual host (e.g., shared database)       |   | x | x |   |
-| Flexible resource dedication                                                            |(x)| x |   | x |
-| Same-host duplicates
-| Load balance-able???
-| Initial learning curve (consistent with findings of TODO REFERENCE HERE)
-| Shared data between services(?)
-| Ease of change deployment
-| PaaS deployment
-| Application start time (including boot)
-
-Table: Criteria with results
+```include
+src/tables/criteria-with-descriptions.md
+```
 
 ## Limitations of this study
 

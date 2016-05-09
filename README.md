@@ -27,6 +27,10 @@ $ brew install pandoc-citeproc
 ```
 
 ```shell
+$ cabal install pandoc-include
+```
+
+```shell
 $ npm run build
 ```
 
