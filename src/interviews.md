@@ -1,6 +1,6 @@
 # Interviews
 
-I have conducted two interviews at FINN.no to help ensure that the comparison framework will be relevant to the business as well as academia. These interviews provided insights into how individual teams already practise Deployment Automation and the organistaion's experiences with various attempts; the factors FINN.no deems important when selecting a strategy; and both how and why they currently attempt to standardise on a uniform model for automated deployment. This section presents the findings from the interviews, and concludes with a set of requirements for a Deployment Automation strategy in FINN.no's microservice context.
+Two interviews were conducted at FINN.no to help ensure that the comparison framework will be relevant to the business as well as academia. These interviews provided insights into how individual teams already practise Deployment Automation and the organistaion's experiences with various attempts; the factors FINN.no deems important when selecting a strategy; and both how and why they currently attempt to standardise on a uniform model for automated deployment. This section presents the findings from the interviews, and concludes with a set of requirements for a Deployment Automation strategy in FINN.no's microservice context.
 
 ## Team Reise
 

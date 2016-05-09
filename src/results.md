@@ -1,24 +1,53 @@
 # Results
 
-This section presents the results of deploying the services that are developed locally on each developer's machine, and uploaded to a production server.
+This section presents the results of deploying the services that are developed locally on each developer's machine, and uploaded to a production server. First, a very brief overview of each Deployment Strategy is discussed. Second, each row in the Framework is mapped to a Deployment Strategy (manual, and manual with containers):
 
-## Manual deployment
+TODO: Script-based deployment and automated container-based deployment are missing.
 
-### Overview
+## Overview of the strategies
+
+This section provides a brief overview of each Deployment Strategy used to deploy BeerFave.
+
+### Manual deployment
 
 Manual deployment of new changes can be accomplished in a myriad of ways, but all include the following steps:
 
-1. Log onto the production server (for example with Secure SHell (SSH) or Secure File Transfer Protocol (SFTP))
-2. Download either
-    1. newest changes to the code base and build an artefact if required, or
-    2. a pre-built artefact (such as a Java JAR)
-3. Move the artefact to its proper location (for exmaple inside a Java Application Server)
+1. Log onto the production server (for example with Secure SHell (SSH) or Secure File Transfer Protocol (SFTP)).
+2. Download a pre-built artefact containing the newest changes (such as a Java JAR file).
+3. Move the artefact to its proper location (for example inside a Java Application Server), replacing the old version.
 4. (Dependent on technology) Restart services to enable new changes.
+
+With this approach, all applications live within the same Execution Environment. In the test project, this Execution Environment was a Linux server running Ubuntu 15.10 (Wily Werewolf). Database management systems and virtual machines like the JVM are shared between services. Each Application Runtime competes equally for the system resources.
+
+## Container-based manual deployment
+
+Container-based manual deployment can, like manual deployment, be accomplished in many ways. Since the BeerFave deployment is based on Docker, each image was built and pushed to the Docker Hub^[https://hub.docker.com] from the developer machine with a new version tag.
+
+### Overview
+
 
 ### Results
 
+```include
+src/tables/criteria-with-descriptions.md
+```
+
 - Deployment is a time-consuming process on a single host, let alone a multitude in a load-balanced environment
-- Gives native performance
+
+- Pulling from GitHub &amp; starting the server manually
+    - Different versions of (e.g.) Java difficult (for example, some apps rely on JAVA_HOME), requires extra configuration to avoid this
+    - Manual process, might break something
+    - Slow af
+    - One severe fault in one application takes down the machine
+    - One fault in the physical machine takes down the entire ecosystem
+    - No (simple) scaling
+    - Easy, requires only knowledge of Linux and the environment to install
+    - Fairly easy to replace a module if you know what you're doing
+    - Impossible to restart without downtime (without load balancers); requires more physical machines
+    - One process in one application can eat all resources on the machine (unless extra steps are taken to contain the resource uses, or all applications are run in a VM such as the Java VM)
+    - Git must be installed on the machine
+    - All versions of all required software/dependencies must be installed in the same namespace
+    - Extra users should be configured (more manual work)
 
 ## Script-based automated deployment
 

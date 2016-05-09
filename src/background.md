@@ -23,7 +23,7 @@ In other words, a _service_ is a specialised, autonomous, stand-alone piece of s
 - One public API (accessible through the firewall); and
 - One web application that communicates with the public API and visualises the data as a website.
 
-A service can be interacted with through a defined interface. One may open for communication over the network using a well-defined interface such as Representational State Transfer (REST) or Remote Procedure Calls (RPC). A software _system_ is composed of one or more _services_. The _system_ will often comprise one service that provides a visual representation of data---for example a website service---that integrates with the other components---services---in the system. Thus, the _system_ is an abstract idea that only exists in documentation, while the _services_ are the concrete software implementations of the various elements of the system specification.
+A service can be interacted with through a defined interface. One may open for communication over the network using a well-defined interface such as Representational State Transfer (REST) or Remote Procedure Calls (RPC). A software _system_ is composed of one or more _services_. The _system_ will often comprise one service that provides a visual representation of data---for example a website service---that integrates with the other components---services---in the system. Thus, the _system_ is an abstract idea that only exists in documentation, while the _services_ are the concrete software implementations of the various elements of the system specification. The only code expression of the _system_ specification can be a public-facing API tying the required services together.
 
 The microservice pattern can be seen as a way to implement SOA by defining each service as a stand-alone application that can be run, developed, and deployed independently of the other services [@castro:evaluating:2015, p. 585].
 
@@ -35,7 +35,7 @@ The microservice-style architecture is an increasingly popular alternative to th
 
 @castro:evaluating:2015 [p. 590] conclude that there are several benefits to being able to publish a system as a set of smaller services that can be managed independently. Specifically, they point to independent development, deployment, scaling, operation, and monitoring as a key enabler for companies to manage large applications with a more practical methodology, and scale individual development teams more easily.
 
-They also point to the cost of this gained agility and granular scalability: microservices are by definition parts of a distributed system, which introduces a whole new class of concerns. The "fallacies of distributed computing" is a popular set of assumptions developers make when they are new to distributed computing^[Arnon Rotem-Gal-Oz's whitepaper "Fallacies of Distributed Computing Explained", available at https://pages.cs.wisc.edu/~zuyu/files/fallacies.pdf.]:
+They also point to the cost of this gained agility and granular scalability: microservices are by definition parts of a distributed system, which introduces a whole new class of concerns. The "fallacies of distributed computing" is a popular set of assumptions developers make when they are new to distributed computing^[Arnon Rotem-Gal-Oz's whitepaper "Fallacies of Distributed Computing Explained", available at <https://pages.cs.wisc.edu/~zuyu/files/fallacies.pdf>.]:
 
 > 1. The network is reliable.
 > 2. Latency is zero,

@@ -18,7 +18,7 @@ The framework can be visualised:
 
 Testability on at least three levels has come forth as a key _prerequisite_ for automating deployment at all. These levels include:
 
-TODO: Do I need examples or illustrations of these test types?
+TODO: Are examples or illustrations of these test types needed?
 
 ### Unit level testing
 
@@ -105,10 +105,11 @@ The issue of deployment strategies affecting the overarching architecture of a s
 
 ## Security
 
-Security can perhaps be considered an Architecturally Significant Requirement, but is a large enough field that to be included as a separate criterion. Security areas to consider include:
+Security can perhaps be considered an Architecturally Significant Requirement, but is a large enough field that to be included as a separate criterion.
 
-- Firewalling of services (when the service API is intended for internal use only)
-- Securing connections with HTTPS (generating and updating certificates can be difficult given uptime requirements) (honorary mention to Let's Encrypt)
+An important discussion that is not handled by this thesis is whether services should be directly available to the public, or behind a firewall with functionality exposed through a public API per _system_ that serves as a specification of the system itself. Request authentication is an important factor that may impact the overall performance of the system considerably, as interdependent microservices will sometimes make repeated calls to the same endpoints.
+
+The obvious downside of building a public API to expose functionality per system is that building the API itself may take considerable time: it is yet another application to configure, develop, and maintain. Upsides of using a public API include the abillities to handle user authentication per system; short-circuit requests to failing services and provide reasonable responses; and combine requests to multiple services on the server environment, where developers have control over the computing resources, as opposed to in a client such as a web browser.
 
 ## Conclusion: The framework
 
@@ -120,4 +121,6 @@ src/tables/criteria-with-descriptions.md
 
 ## Limitations of this study
 
-- What has not been looked at?
+Some aspects of "real-world" development and deployment are ignored for the sake of comparison. For example, execution performance is not evaluated to any great extent, and aspects like load balancing are ony briefly discussed, not actually tested. In a business context where the system faces high load from users, this is an integral aspect of the deployment structure. However, this thesis tries to _broadly_ compare multiple strategies. Thoroughly scrutinising each aspect---each row in the Framework---should be an excellent opportunity for future research.
+
+TODO: There are more!

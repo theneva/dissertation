@@ -11,7 +11,7 @@ Measuring quality of microservice deployment requires a reference system compris
 BeerFave is a comparatively simple system consisting of these three services; a public-facing API to tie the services together and expose their functionality; and a web application to consume and manipulate the data contained in the services.
 
 One key concern for any microservice system is _standardisation_ on languages and platforms. It is certainly an organisational problem: teams consist of people who are typically fluent in a comparatively small set of programming languages. However, the configuration required to automate deployment of the services is another considerable factor.
-TODO I don't know where I'm going with this sentence
+TODO Where is this sentence going?
 
 Technical (non-functional) requirements for the application were modelled in part to allow efficient testing of as many elements of the framework as possible.
 
@@ -26,7 +26,7 @@ These non-functional requirements will allow testing each deployment strategy's 
 
 ### Communication
 
-TODO: Does this belong in the "background" chapter? tl;dr it doesn't matter what you use, I went with REST.
+TODO: Does this belong in the "background" chapter? tl;dr: It doesn't matter what you use, this project used REST because of modernism and performance with JavaScript.
 
 All services are committed to the popular REpresentational State Transfer (REST) architectural style. The services aim to meet the requirements for level 2 (3 being the highest) compliance with the Richardson Maturity Model^[The Richardson Maturity model is a pyramid of technical requirements for REST split into three levels, each denoting a higher level of compliance with the REST paradigm. TODO: briefly explain the levels? The well-known Martin Fowler has written an article available on http://martinfowler.com/articles/richardsonMaturityModel.html for more details.]. The specific style for communication (for example Remote Procedure Calls (SOAP over HTTP and RPC over TCP) being common alternatives) is not important for the actual deployment process, but instead a question of how the teams wish to expose their data.
 
@@ -34,7 +34,7 @@ All services are committed to the popular REpresentational State Transfer (REST)
 
 The Richardson Maturity Model (from http://martinfowler.com/articles/richardsonMaturityModel.html).
 
-REST does not impose any requirements on the data transfer format. The two main candidates are usually JavaScript Object Notation (JSON) and eXtensible Markup Language (XML). I chose JSON for two reasons: first, its brevity compared to XML, reducing load times; second, its ease of translation to and from JavaScript objects, which becomes important when transferring great amounts of data between a server and a web client: developers have little control over the web browser, which both encodes and decodes data for transfer. Both factors are likely insignificant in an application with small amounts of data, but the native JSON support in JavaScript still makes JSON more attractive than XML. Notably, the author of Building Microservices, prefers XML; there are certainly arguments to be made for both sides.
+REST does not impose any requirements on the data transfer format. The two main candidates are usually JavaScript Object Notation (JSON) and eXtensible Markup Language (XML). JSON was selected for two reasons: first, its brevity compared to XML, reducing load times; second, its ease of translation to and from JavaScript objects, which becomes important when transferring great amounts of data between a server and a web client: developers have little control over the web browser, which both encodes and decodes data for transfer. Both factors are likely insignificant in an application with small amounts of data, but the native JSON support in JavaScript still makes JSON more attractive than XML. Notably, the author of Building Microservices, prefers XML; there are certainly arguments to be made for both sides.
 
 With JSON, a response to an HTTP GET request to a resource `/beers/1` may be:
 

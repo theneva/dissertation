@@ -11,13 +11,11 @@ As mentioned in the previous section, The Twelve-Factor App methodology^[http://
 - enable continuous delivery by separating development and production; and
 - allow scaling the service without significant changes.
 
-The guidelines are all attempts at establishing _best practices_, and are independent of programming language and execution environments. I will use these as a basis for comparing the interview data to that of the literature review.
+The guidelines are all attempts at establishing _best practices_, and are independent of programming language and execution environments. These will be used as a basis for comparing the interview data to that of the literature review.
 
 The first factor, __Codebase__^[http://12factor.net/codebase], states that any one service should be container in exactly one codebase, tracked with revision control. This one codebase should be deployed 
 
-Of particular interest are 
-
-
+Of particular interest are … TODO
 
 ## 12factor and the reference apps
 
