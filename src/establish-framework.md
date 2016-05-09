@@ -1,4 +1,4 @@
-# Establishing a framework
+# A framework for evaluating Deployment Strategies
 
 This chapter presents a framework for analysing different approaches to automating deployment. The framework is based on key factors identified through the literature review and the interviews of skilled practitioners. The perspective taken in this thesis is somewhere in between the stakeholders and the developers.
 
@@ -73,13 +73,13 @@ The importance of stable test environments was expressed by the Team Lead for Te
 
 Besides having to be easy, the organisation-wide transition to the new strategy must absolutely lead to zero downtime.
 
-
 ## Discussion
 
 This section considers each key area of concern for deployment automation discovered in the literature review of the Background chapter, and maps them to the findings from the interviews.
 
-### Twelve-Factor App
+TODO: This discussion is still completely unfinished in written form, but is represented in the actual framework.
 
+### Twelve-Factor App
 
 ### Cloud computing and the CAP theorem
 
@@ -87,7 +87,7 @@ This section considers each key area of concern for deployment automation discov
 
 ### Expressiveness and code as documentation
 
-### DevOps???
+### DevOps
 
 ### Architecturally Significant Requirements
 
@@ -104,7 +104,7 @@ Security can perhaps be considered an Architecturally Significant Requirement, b
 
 An important discussion that is not handled by this thesis is whether services should be directly available to the public, or behind a firewall with functionality exposed through a public API per _system_ that serves as a specification of the system itself. Request authentication is an important factor that may impact the overall performance of the system considerably, as interdependent microservices will sometimes make repeated calls to the same endpoints.
 
-The obvious downside of building a public API to expose functionality per system is that building the API itself may take considerable time: it is yet another application to configure, develop, and maintain. Upsides of using a public API include the abillities to handle user authentication per system; short-circuit requests to failing services and provide reasonable responses; and combine requests to multiple services on the server environment, where developers have control over the computing resources, as opposed to in a client such as a web browser.
+The obvious downside of building a public API to expose functionality per system is that building the API itself may take considerable time: it is yet another application to configure, develop, and maintain. Upsides of using a public API include the abilities to handle user authentication per system; short-circuit requests to failing services and provide reasonable responses; and combine requests to multiple services on the server environment, where developers have control over the computing resources, as opposed to in a client such as a web browser.
 
 ## Conclusion: The framework
 
@@ -116,6 +116,6 @@ src/tables/criteria-with-descriptions.md
 
 ## Limitations of this study
 
-Some aspects of "real-world" development and deployment are ignored for the sake of comparison. For example, execution performance is not evaluated to any great extent, and aspects like load balancing are ony briefly discussed, not actually tested. In a business context where the system faces high load from users, this is an integral aspect of the deployment structure. However, this thesis tries to _broadly_ compare multiple strategies. Thoroughly scrutinising each aspect---each row in the Framework---should be an excellent opportunity for future research.
+Some aspects of "real-world" development and deployment are ignored for the sake of comparison. For example, execution performance is not evaluated to any great extent, and aspects like load balancing are only briefly discussed, not actually tested. In a business context where the system faces high load from users, this is an integral aspect of the deployment structure. However, this thesis tries to _broadly_ compare multiple strategies. Thoroughly scrutinising each aspect---each row in the Framework---should be an excellent opportunity for future research.
 
 TODO: There are more!

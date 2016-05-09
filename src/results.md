@@ -19,35 +19,33 @@ Manual deployment of new changes can be accomplished in a myriad of ways, but al
 
 With this approach, all applications live within the same Execution Environment. In the test project, this Execution Environment was a Linux server running Ubuntu 15.10 (Wily Werewolf). Database management systems and virtual machines like the JVM are shared between services. Each Application Runtime competes equally for the system resources.
 
-## Container-based manual deployment
+### Container-based manual deployment
 
 Container-based manual deployment can, like manual deployment, be accomplished in many ways. Since the BeerFave deployment is based on Docker, each image was built and pushed to the Docker Hub^[https://hub.docker.com] from the developer machine with a new version tag.
 
-### Overview
+## Results
 
-
-### Results
+TODO: I have a lot of results from manual- and docker-based deployment (no script-based yet), but have not had time to actually put them in the document.
 
 ```include
 src/tables/criteria-with-descriptions.md
 ```
 
-- Deployment is a time-consuming process on a single host, let alone a multitude in a load-balanced environment
+### Manual deployment
 
-- Pulling from GitHub &amp; starting the server manually
-    - Different versions of (e.g.) Java difficult (for example, some apps rely on JAVA_HOME), requires extra configuration to avoid this
-    - Manual process, might break something
-    - Slow af
-    - One severe fault in one application takes down the machine
-    - One fault in the physical machine takes down the entire ecosystem
-    - No (simple) scaling
-    - Easy, requires only knowledge of Linux and the environment to install
-    - Fairly easy to replace a module if you know what you're doing
-    - Impossible to restart without downtime (without load balancers); requires more physical machines
-    - One process in one application can eat all resources on the machine (unless extra steps are taken to contain the resource uses, or all applications are run in a VM such as the Java VM)
-    - Git must be installed on the machine
-    - All versions of all required software/dependencies must be installed in the same namespace
-    - Extra users should be configured (more manual work)
+Manual deployment is a time-consuming process on a single host, let alone a multitude of hosts in a load-balanced environment. It also requires the person deploying to be familiar with the operating system on the production machine.
+
+Dependencies to pull in the changes (such as SCP) must be installed on the machine, and shared for all applications.
+
+- One severe fault in one application takes down the machine
+- One fault in the physical machine takes down the entire ecosystem
+- No (simple) scaling
+- Easy, requires only knowledge of Linux and the environment to install
+- Fairly easy to replace a module if you know what you're doing
+- Impossible to restart without downtime (without load balancers); requires more physical machines
+- One process in one application can eat all resources on the machine (unless extra steps are taken to contain the resource uses, or all applications are run in a VM such as the Java VM)
+- All versions of all required software/dependencies must be installed in the same namespace
+- Extra users should be configured (more manual work)
 
 ## Script-based automated deployment
 

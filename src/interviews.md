@@ -46,7 +46,7 @@ The architecture:
 - Currently primarily uses Spring MVC for views, but migrating to a front-end rendering framework like React.
 - Browser testing with [GEB](http://www.gebish.org/).
 
-## Experiences
+### Experiences
 
 - Continuous delivery leads to fewer mistakes.
 - Definitely producing more (although it's difficult to quantify): compared with e.g. "Hytte" (cabin/summerhouse) owned by the same team, but on a different platform.
