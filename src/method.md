@@ -15,23 +15,14 @@ The main goal for this thesis is to help simplify the process of selecting a dep
 src/tables/goals-and-objectives.md
 ```
 
-1. Provide further insight into _how_ one implements automated microservice deployment;
-2. Create a framework for easily analysing and comparing different strategies for automated deployment in the future; and
-3. Compare some popular Deployment Strategies.
-
-These key goals will be met when the following __objectives__ are completed:
-
-1. Review the existing literature on Automated Deployment, the Microservice architectural style, and how these fit together;
-2. Learn which factors are important to the industry;
-3. Develop an initial framework for analysing Deployment Strategies based on the literature review and the case study;
-4. Test and refine the framework in a realistic context, and provide a comparison of some popular Deployment Strategies.
-
 Completing these objectives requires two separate steps:
 
 - The first must seek to understand current industry practises, and establish relevance for the industry. This step must conclude with a framework for analysing Deployment Strategies.
 - The second must battle-test and refine the framework by implementing and comparing deployment of a realistic set of services. This step will yield two results: a better framework, and an actual analysis of some popular deployment strategies.
 
 Learning from the industry and establishing industry relevance can be done in a multitude of ways. @oates:2006 presents several research strategies for the information systems and computer science.
+
+TODO: This section is mostly already written in the research methods report, as well as the research proposal.
 
 ## Limitations of the triangulation
 

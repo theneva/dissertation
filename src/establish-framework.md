@@ -9,11 +9,6 @@ The following terms are used interchangeably:
 - strategy
 - approach
 
-The framework can be visualised:
-
-- http://www.edwardtufte.com/tufte/books_vdqi (academic, don't necessarily spend a lot of time)
-- http://www.amazon.com/Show-Me-Numbers-Designing-Enlighten/dp/0970601999 (not academic, but good input)
-
 ## Testability
 
 Testability on at least three levels has come forth as a key _prerequisite_ for automating deployment at all. These levels include:
