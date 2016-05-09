@@ -5,11 +5,10 @@
 Measuring quality of microservice deployment requires a reference system comprising multiple services. The app _BeerFave_ was built to accommodate this. Keeping the system as close to realistic as possible is important for the findings' validity [TODO REFERENCE TO OATES maybe?]. Many popular applications can be generalised (although greatly simplified in the process) to:
 
 - storage and authentication of __users__;
-- a collection of __items__ (e.g., posts on a social medium);
-- a set of __links__ between _items_ and _users_, e.g. "saving" an _item_ for later access; and
-- a __recommendation__ engine suggesting new _items_ to a user based on their current state.
+- a collection of __items__ (e.g., posts on a social medium); and
+- a set of __links__ between _items_ and _users_, e.g. "saving" an _item_ for later access.
 
-BeerFave is a comparatively simple system consisting of these four services; a public-facing API to tie the services together and expose their functionality; and a web application to consume and manipulate the data contained in the services.
+BeerFave is a comparatively simple system consisting of these three services; a public-facing API to tie the services together and expose their functionality; and a web application to consume and manipulate the data contained in the services.
 
 One key concern for any microservice system is _standardisation_ on languages and platforms. It is certainly an organisational problem: teams consist of people who are typically fluent in a comparatively small set of programming languages. However, the configuration required to automate deployment of the services is another considerable factor.
 TODO I don't know where I'm going with this sentence
@@ -68,30 +67,26 @@ A third candidate growing in popularity is GraphQL and Relay, recently published
 The system is largely around two runtimes: the Java Virtual Machine (JVM), which is designed to run bytecode compiled from the Java programming language; and the popular JavaScript server runtime Node.js. Both the JVM and Node.js have cross-platform support, allowing all services to be deployed to a virtual Linux host. The specific services were implemented follows, with (1) three Clojure applications, (2) one Java application, (3) one Node.js application, and (4) one static JavaScript web browser application. Clojure is compiled to JVM bytecode and executed on the JVM.
 
 | Service | Role | Dependencies | Language | Runtime
-| ------- | -------------------------------- | --------------------- | -------- | -------
+| ------------ | -------------------------------- | --------------------- | ---------- | ---------
 | Beer list | All stored beers | - | Java 8 | JVM
 | Users | Stored users; Authentication | - | Clojure | JVM
 | Favourites | Users' _faved_ beers | Beer list; Users | Clojure | JVM
-| Recommendation | Suggests beers the user has not _faved_ | Beer list; Favourites; Users | Clojure | JVM
 | Public API | Ties the microservices together | __All of the above__ | JavaScript | Node.js
 | Web application | Web user interface: the "app" | Public API | JavaScript (with React) | The end user's web browser
 
-- Beer list service (independent; written in Java 8; running on the JVM)
-- Users and authentication service (independent; written in Clojure; compiled to JVM bytecode and thus running on the JVM)
-- Favourites service (dependent on the beer list service and the users service; written in Clojure and thus running on the JVM)
-- Faux beer recommendation service (dependent on the beer list service and the favourites service, and the users service; written in Clojure and thus running on the JVM)
-- Public API tying the microservices together (dependent on all of the above; written in JavaScript; running on Node.js)
-- Web application (dependent on the public API; written in JavaScript (with React); running in the end user's browser)
+The implementation is presented in Figure @fig:beerfave-endpoints.
 
-(TODO make a figure of services with languages and platforms)
+![BeerFave endpoints](http://img.ctrlv.in/img/16/05/09/572fd4f854fb2.png){#fig:beerfave-endpoints}
 
-![Beer list from the beer microservice](http://img.ctrlv.in/img/16/04/16/5712757db9f02.png)
+In this small example application, each microservice only exposes a single database relation: the model in @fig:beerfave-endpoints can be mapped directly to an Entity Attibute Relationship diagram, like in Figure @fig:beerfave-ear-diagram. However, this is no _rule_: each microservice can contain an arbitrarily complex data model. For example, a microservice can be implemented for recommending new beers to the user. The recommendation microservice may track the user's habits, and use machine learning algorithms to compute which beers will best fit the user's tastes. Giving the user an option to decline a recommendation adds another relation to the recommendation engine.
 
-Beer list (as JSON) from the beer microservice.
+![BeerFave EAR diagram](http://img.ctrlv.in/img/16/05/09/572fcdd81caca.png){#fig:beerfave-ear-diagram}
 
-![Web interface](http://img.ctrlv.in/img/16/04/16/5712755b3f165.png)
+![Beer list (as JSON) from the beer microservice](http://img.ctrlv.in/img/16/04/16/5712757db9f02.png){#fig:beer-list-json}
 
-The web interface.
+![The Web interface](http://img.ctrlv.in/img/16/04/16/5712755b3f165.png){#fig:the-web-interface}
+
+![A comparison of database types from https://github.com/cochroachdb/cockroach](https://raw.githubusercontent.com/cockroachdb/cockroach/master/resource/doc/sql-nosql-newsql.png?raw=true){#fig:database-discussion}
 
 ## Limitations of this implementation approach
 

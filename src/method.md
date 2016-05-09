@@ -12,7 +12,7 @@ Having established a relevant research topic grounded in the current literature,
 The main goal for this thesis is to help simplify the process of selecting a deployment strategy for use in a microservice context. This can be broken into three key __goals__ and four key __objectives__:
 
 | Goal | Objective |
-| ---- | --------- |
+| ------------------------------------------ | ------------------------------------------ |
 | Provide further insight into _how_ one implements automated microservice deployment | Review the existing literature on Automated Deployment, the Microservice architectural style, and how these fit together
 | | Learn which factors are important to the industry
 | Create a framework for easily analysing and comparing different strategies for automated deployment in the future | Develop an initial framework for analysing Deployment Strategies based on the literature review and the case study

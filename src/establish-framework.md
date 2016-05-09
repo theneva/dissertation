@@ -26,7 +26,7 @@ The issue of deployment strategies affecting the overarching architecture of a s
 
 ## Security
 
-Security can perhaps be considered an Architecturally Significant Requirement, but is a large enough field that I will use it as its own criterion. Security areas to consider include:
+Security can perhaps be considered an Architecturally Significant Requirement, but is a large enough field that to be included as a separate criterion. Security areas to consider include:
 
 - Firewalling of services (when the service API is intended for internal use only)
 - Securing connections with HTTPS (generating and updating certificates can be difficult given uptime requirements) (honorary mention to Let's Encrypt)
@@ -39,7 +39,7 @@ This section has discussed several important aspects to consider when building a
 | ---------------------------------------- | ----------- | ---------- |
 | No ASRs beyond 12-factor app | Following the 12-factor guidelines should be enough (from the software architecture perspective) to deploy to any runtime
 | Configuration as documentation of non-functional requirements | 
-| 
+| Isolation | Low risk of collision between services (e.g., same database) | Full, avoidable, or no isolation.
 
 asd
 
@@ -49,6 +49,14 @@ asd
 | Configuration as documentation of non-functional requirements                           |   | x |   |   |
 | No collision with other services on the same virtual host (e.g., shared database)       |   | x | x |   |
 | Flexible resource dedication                                                            |(x)| x |   | x |
+| Easy to duplicate on multiple hosts
+| Load balance-able???
+| Initial learning curve (consistent with findings of TODO REFERENCE HERE)
+| Shared data between services(?)
+| Multiple instances on the same host
+| Ease of change deployment
+| PaaS deployment
+| Application start time (including boot)
 
 ## Limitations of this study
 
