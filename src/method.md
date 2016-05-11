@@ -1,4 +1,4 @@
-# Method design
+# Method
 
 Having established a relevant research topic grounded in the current literature, this section presents some possible research designs and argues for triangulating two strategies: case study, and design & creation. The two overarching research questions for this thesis are as follows:
 
