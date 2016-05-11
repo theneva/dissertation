@@ -52,7 +52,7 @@ They also point to the cost of this gained agility and granular scalability: mic
 > 7. Transport cost is zero.
 > 8. The network is homogeneous.
 
-These assertions will definitely need to be taken into consideration in the comparison of various approaches. Despite their age, the fallacies are highly relevant to three popular quality attributes: _Consistency_[^consistency]; _Availability_[^availability], and _Partition tolerance_[^partition-tolerance] (CAP). The well-known _CAP Theorem_ states that is it impossible for a system to meet all attributes at the same time [@brewer:cap:2012].
+These assertions will definitely need to be taken into consideration in the comparison of various approaches. Despite their age, the fallacies are highly relevant to three popular quality attributes: _Consistency_[^consistency]; _Availability_[^availability], and _Partition tolerance_[^partition-tolerance] (CAP). The well-known _CAP Theorem_ states that it is impossible for a system to meet all attributes at the same time [@brewer:cap:2012].
 
 [^consistency]: Consistency: The guarantee that a request to read data always returns the most recently written data.
 [^availability]: Availability: The guarantee that the system consistently returns an expected response within timeout limits.
