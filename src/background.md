@@ -2,18 +2,14 @@
 
 In order to establish which concepts are important to discuss and identify a gap in the current research, this section reviews the current literature on areas related to cloud computing and microservice. Each area is concluded with suggestions for further research. In broad strokes, two key areas are considered:
 
-- Cloud architecture, the availability of and need for automatic performance scaling, and its effect on software architecture---in particular the __microservice architectural pattern__; and
+- Cloud architecture, the availability of and need for automatic performance scaling, and its effect on software architecture---in particular the __microservice pattern__; and
 - __(Continuous) delivery__ and automated deployment, focusing on the technical and organisational aspects of this process.
 
 In conclusion, a subset of the identified areas of research is presented. This provides a starting point for discussing quality measurement metrics for automated deployment strategies.
 
 ## Cloud computing and microservices
 
-@talwar:comparison-of-approaches-to-service-deployment:2005 [p. 1] broadly define a _service_ as:
-
-> […] a standalone software component that encapsulates and presents useful functionality, is installed in a computing environment, and can be composed into an overall system or application.
-
-In other words, a _service_ is a specialised, autonomous, stand-alone piece of software. The idea of splitting a large application's code base into multiple services is often referred to as the Service-Oriented Architecture (SOA) [e.g., @castro:evaluating:2015; @arnold:pattern-based-soa:2007]. For instance, an e-commerce site, such as the extremely popular Amazon^[https://amazon.com], may implement part of their system using the service pattern in the following way (see Figure @fig:example-e-commerce-services):
+@talwar:comparison-of-approaches-to-service-deployment:2005 [p. 1] broadly define a _service_ as a piece of software that encapsulates and presents some useful functionality, and can be part of an overall _system_. In other words, a _service_ is a specialised, autonomous, stand-alone server. The idea of splitting a large application's code base into multiple services is often referred to as the Service-Oriented Architecture (SOA) [e.g., @castro:evaluating:2015; @arnold:pattern-based-soa:2007]. For instance, an e-commerce site, such as the extremely popular Amazon^[https://amazon.com], may implement part of their system using the service pattern in the following way (see Figure @fig:example-e-commerce-services):
 
 ![Example e-commerce service stack](http://img.ctrlv.in/img/16/03/16/56e9409e7ad65.png){#fig:example-e-commerce-services}
 
@@ -37,7 +33,7 @@ This would yield a system that allows work in individual teams, and tailoring th
 
 Somewhat related to the microservice pattern, the system's user interface application (for example a web application) may consist of multiple web applications abstracted to look like a single application by a load balancer or proxy. These can be navigated without making the user aware that they are switching between applications, given a uniform look and feel.
 
-The microservice-style architecture is an increasingly popular alternative to the traditional _monolithic_ architectural style. In this context, a monolithic application (or a _monolith_) refers to a large application where the entire system consists of a single code base executed within a single runtime (such as Java's Java Virtual Machine (JVM) and .NET's Common Language Runtime (CLR)).
+The microservice pattern is an increasingly popular alternative to the traditional _monolithic_ architecture. In this context, a monolithic application (or a _monolith_) refers to a large application where the entire system consists of a single code base executed within a single runtime (such as Java's Java Virtual Machine (JVM) and .NET's Common Language Runtime (CLR)).
 
 @castro:evaluating:2015 [p. 590] conclude that there are several benefits to being able to publish a system as a set of smaller services that can be managed independently. Specifically, they point to independent development, deployment, scaling, operation, and monitoring as a key enabler for companies to manage large applications with a more practical methodology, and scale individual development teams more easily.
 
@@ -58,16 +54,9 @@ These assertions will definitely need to be taken into consideration in the comp
 [^availability]: Availability: The guarantee that the system consistently returns an expected response within timeout limits.
 [^partition-tolerance]: Partition tolerance: The guarantee that the system responds as expected even if a network split occurs (i.e., network nodes are unable to communicate).
 
-Potential research areas include:
+There are multiple potential areas of research related to the problems of availability and consistency. One that becomes particularly prominent in the context of microservices is flexible _service discovery_, i.e. dynamically finding the IP address of web services able to answer a request [e.g., @paliwal:semantics-based-discovery:2012; @bethea:automated-discovery:2008]. Another interesting area is fault tolerance using cloud services with tools for automatic failover to data centres in other geographical locations (or even other cloud platform providers) [e.g., @hole:building-trust:2016; @addo:automatic-failover:2014].
 
-- Flexible _service discovery_, i.e. dynamically finding the IP address of web services able to answer a request [e.g., @paliwal:semantics-based-discovery:2012; @bethea:automated-discovery:2008];
-- Fault tolerance using cloud services with tools for automatic failover to data centres in other locations (or even other cloud platform providers) in case of an outage [e.g., @hole:building-trust:2016; @addo:automatic-failover:2014].
-
-As future work in the microservices with regard to deployment, @castro:evaluating:2015 [p. 590] suggest evaluating different strategies and tools for automated deployment:
-
-> The process to automate the deployment of microservices and gateways using different strategies, tools and/or managed cloud services (such as Docker, Amazon EC2 Container Service, and AWS Lambda) will be evaluated.
-
-This points to a need for a dive into the various tools that exist---but first, various strategies and tools must be considered.
+As future work on the microservice pattern with regard to deployment, @castro:evaluating:2015 [p. 590] suggested evaluating different strategies, tools, and cloud services for automated deployment. This points to a need for a survey and comparison of the various tools that exist---but first, various strategies must be considered.
 
 ## Deployment strategies
 
@@ -102,37 +91,36 @@ They conclude that for systems with few deployed services and configuration chan
 
 > There is an opportunity to develop more elaborate quantitative comparison, potentially based on software metrics, such as those in software engineering. --- @talwar:comparison-of-approaches-to-service-deployment:2005 [p. 10]
 
-In the write-up "Don't Install Software By Hand", @spinellis:by-hand:2012 [p. 86] seconds the sentiments that IT systems are now expected to be a composition of multiple services, and that automation is a key enabler for ensuring that delivered IT systems are "not inscrutable monoliths that just happen to work but documented modular engines that work by design" [@spinellis:by-hand:2012, p. 87].
+@spinellis:by-hand:2012 [p. 86] agrees that IT systems are now expected to be a composition of multiple services, and that automation is a key enabler for ensuring that delivered IT systems are "not inscrutable monoliths that just happen to work but documented modular engines that work by design" [@spinellis:by-hand:2012, p. 87].  He also mentions two additional key themes.
 
-Spinellis also touches upon two additional key themes. First, DevOps (composed of Developer and Operations) is a setting where developers no longer "toss software deliverables over a wall" for deployment, but instead coordinate through development processes like Continuous Deployment and automated testing, a process commonly referred to as DevOps (from Developer and Operations) [@spinellis:by-hand:2012, p. 86]. Second, he considers the idea of documentation of the system expressed as code, which is an added bonus introduced if the individual services are simple enough.
+First, DevOps (composed of Developer and Operations) is a setting where developers no longer "toss software deliverables over a wall" for deployment, but instead coordinate through development processes like Continuous Deployment and automated testing, a process commonly referred to as DevOps (from Developer and Operations) [@spinellis:by-hand:2012, p. 86].
 
-In summary, there are multiple areas to look at in future research related to cloud computing and microservices, including:
+Second, he considers the idea of documentation of the system expressed as code, which is an added bonus that comes for free if the individual services are simple enough.
 
-- An evaluation of various strategies and tools for automating deployment;
-- Development of tools for quantitative comparison of deployment configuration, learning from software engineers rather than reinventing the wheel.
+In summary, there are multiple areas to look at in future research related to cloud computing and microservices. Perhaps most prevalent is the need for an evaluation of various strategies and tools for Deployment Automation. An interesting way to approach this can be development of tools for _quantitative_ comparison of Deployment Automation strategies. Looking at deployment configuration as source code allows using techniques from software engineering for this evaluation.
 
 ## Code as documentation
 
-In his book _The Laws of Software Process: A New Model for the Production and Management of Software_, Phillip Armour states that a software system is not in itself a product, but a _container for knowledge_; code is, indeed, executable knowledge [@armour:laws:2007, loc. 427 and _passim_]. While his focus is on _domain_ knowledge as it lives within software systems, it is possible to apply this idea to any code, as @spinellis:by-hand:2012 points out: code is an executable specification, so expressive and concise code is self-documenting in a way that never rots.
+@armour:laws:2007 [lov. 427 and _passim_] stated that a software system is not in itself a product, but a _container for knowledge_; code is, indeed, executable knowledge. While his focus is on _domain_ knowledge as it lives within software systems, it is possible to apply this idea to any code, as @spinellis:by-hand:2012 points out: code is an executable specification, so expressive and concise code is self-documenting in a way that never rots.
 
-Another of @talwar:comparison-of-approaches-to-service-deployment:2005 [p. 9]'s key findings is that maintainability and documentability are proportional to the number of LOC, and that the number of steps and LOC are both reduced with the introduction of more sophisticated deployment tools:
+Another of @talwar:comparison-of-approaches-to-service-deployment:2005 [p. 9]'s key findings is that maintainability and documentability are proportional to the number of LOC, and that the number of steps and LOC are both reduced with the introduction of more sophisticated deployment tools.
 
-> Finally, the system's documentation would have been very coherent and consistent, reduced to a single configuration file, documenting an absolute minimum number of parameters and making subsequent changes easy. --- @talwar:comparison-of-approaches-to-service-deployment:2005 [p. 3]
+It follows that documentation of a system's functions and configuration can (and should, where feasible) be expressed as software rather than in a separate set of files such as a wiki. The external documentation format is, however, useful for documenting overall purposes, decision logs, and other organisational concerns regarding both the individual services and the larger system. This can be an interesting foundation for research into highly expressive configuration. One theme in particular is specifying configuration as _code_ to be _run_ by a tool, rather than _markup_ such as XML to be _parsed_ by the tool.
 
-It follows, then, that documentation of a system's functions and configuration can (and should, where feasible) be expressed as software rather than in a separate set of files such as a wiki. The external documentation format is, however, useful for documenting overall purposes, decision logs, and other organisational concerns regarding both the individual services and the larger system. This can be an interesting foundation for research into highly expressive configuration. One theme in particular is specifying configuration as _code_ to be _run_ by a tool, rather than _markup_ such as XML to be _parsed_ by the tool.
-
-## Continuous Delivery and DevOps (developer operations)
+## Continuous Delivery and DevOps
 
 Continuous Delivery (CD) can be said to comprise two different ideas [@virmani:2015, p.79]:
 
 - Continuous Integration (CI), the practise of integrating changes into the mainline early (for example, master branch if the team uses Git for version control); and
 - Continuous Deployment, the practise of deploying changes to the end users as soon as they make it into the mainline.
 
-Putting these together renders a development workflow where developers frequently merge their changes into the production-ready version of the code base, and those changes are immediately deployed to the end users. This way of developing may introduce a need for feature management such as blue/green deployment and/or canary release.
+Putting these together renders a development workflow where developers frequently merge their changes into the production-ready version of the code base, and those changes are immediately deployed to the end users. This way of developing may introduce a need for feature management such as blue/green deployment[^blue-green-deployment] and/or canary release[^canary-release].
 
-Continuous Delivery is only a part of a deployment strategy, but deserves its own discussion because of its potential organisational impact. With a monolithic architecture it may be possible to have a dedicated operations (Ops) team and still deploy new features and fixes to the end users somewhat continuously as the team will only have to deal with a single artefact. Even if they need to deploy it multiple times per day, tools can be developed to quickly verify and deploy the artefact in a short time. In a microservice context, however, with multiple services and teams each selecting their own technology stacks and deployment habits, it will likely be impossible for a dedicated operations team to manually verify and deploy each service as it receives changes. Furthermore, having to provide the Ops team with a production-ready package for them to verify and deploy whenever a change is made to the code base introduces unnecessary overhead for the development teams.
+Continuous Delivery is only a part of a deployment strategy, but deserves its own discussion because of its potential organisational impact. With a monolithic architecture it may be possible to have a dedicated operations (Ops) team and still deploy new features and fixes to the end users somewhat continuously as the team will only have to deal with a single artefact. Even if they need to deploy it multiple times per day, tools can be developed to quickly verify and deploy the artefact in a short time. In a microservice context, however, with multiple services and teams each selecting their own technology stacks and deployment habits, it will likely be unfeasible for a dedicated operations team to manually verify and deploy each service as it receives changes. Furthermore, having to provide the Ops team with a production-ready package for them to verify and deploy whenever a change is made to the code base introduces unnecessary overhead for the development teams.
 
 Teams working in a microservice context are strongly incentivised to automate the process of deployment, and automation is _required_ to maintain a frequent and continuous [@bruneo:cloudwave:2014; @wettinger:devops-for-cloud:2015], stripping an Ops team of this repetitive role. A recurring suggestion for future research is practises for cross-functional teams and actual continuous integration [e.g., @lwakatare:devops-embedded:2016].
+
+TODO: ^ what does that even mean? and why isn't devops mentioned at all in this section?
 
 ## Quality metrics for deployment pipelines
 
@@ -154,4 +142,4 @@ This literature review has uncovered central themes that are important when meas
 - Implementation of Continuous Delivery from an organisational perspective, and how DevOps affects culture; and
 - Quality metrics for measuring deployment approaches, in particular Architecturally Significant Requirements and their impact on the existing base when migrating to a Continuous Delivery workflow.
 
-The thesis will maintain focus on finding and implementing a strategy for deployment automation that fits the organisation's needs. Therefore, it will _not_ give great consideration to system uptime such as architecting specifically to support failover between data centres or cloud platform providers. It will, on the other hand, map the factors discussed in this review to a comprehensible manner that allows comparing various strategies without reinventing the wheel.
+Focus will be maintained on finding and implementing a strategy for deployment automation that fits the organisation's needs. Therefore, it will _not_ give great consideration to system uptime such as architecting specifically to support failover between data centres or cloud platform providers. It will, on the other hand, map the factors discussed in this review to a set of criteria that will be useful in comparing various strategies.
