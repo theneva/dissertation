@@ -16,7 +16,7 @@ Technical (non-functional) requirements for the application were modelled in par
 1. At least two services must be written in the same language.
 2. At least one service must be written in a different language, but run on the same platform as at least one other service.
 3. At least one service must be written for a different platform from all other services.
-4. The web application must be composed entirely of static assets (i.e., HTML, CSS, and JavaScript) and served directly from the file system with a pure HTTP server (such as nginx^[http://nginx.org/ with no regard for _what_ it serves.
+4. The web application must be composed entirely of static assets (i.e., HTML, CSS, and JavaScript) and served directly from the file system with a pure HTTP server (such as nginx^[http://nginx.org] with no regard for _what_ it serves.
 5. At least two services must use different Database Management Systems (DBMS).
 6. The system will be run on both a self-hosted Linux environment and with a Platform as a Service (PaaS) provider.
 
