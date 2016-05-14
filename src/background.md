@@ -101,7 +101,7 @@ In summary, there are multiple areas to look at in future research related to cl
 
 ## Code as documentation
 
-@armour:laws:2007 [lov. 427 and _passim_] stated that a software system is not in itself a product, but a _container for knowledge_; code is, indeed, executable knowledge. While his focus is on _domain_ knowledge as it lives within software systems, it is possible to apply this idea to any code, as @spinellis:by-hand:2012 points out: code is an executable specification, so expressive and concise code is self-documenting in a way that never rots.
+@armour:laws:2007 [loc. 427 and _passim_] stated that a software system is not in itself a product, but a _container for knowledge_; code is, indeed, executable knowledge. While his focus is on _domain_ knowledge as it lives within software systems, it is possible to apply this idea to any code, as @spinellis:by-hand:2012 points out: code is an executable specification, so expressive and concise code is self-documenting in a way that never rots.
 
 Another of @talwar:comparison-of-approaches-to-service-deployment:2005 [p. 9]'s key findings is that maintainability and documentability are proportional to the number of LOC, and that the number of steps and LOC are both reduced with the introduction of more sophisticated deployment tools.
 
