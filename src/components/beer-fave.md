@@ -62,12 +62,12 @@ A third candidate growing in popularity is GraphQL and Relay, recently published
 
 The system is largely around two runtimes: the Java Virtual Machine (JVM), which is designed to run bytecode compiled from the Java programming language; and the popular JavaScript server runtime Node.js. Both the JVM and Node.js have cross-platform support, allowing all services to be deployed to a virtual Linux host. The specific services were implemented follows, with (1) three Clojure applications, (2) one Java application, (3) one Node.js application, and (4) one static JavaScript web browser application. Clojure is compiled to JVM bytecode and executed on the JVM.
 
-| Service | Role | Dependencies | Language | Runtime
+| Application | Role | Dependencies | Language | Runtime
 | ------------ | -------------------------------- | --------------------- | ---------- | ---------
-| Beer list | All stored beers | - | Java 8 | JVM
-| Users | Stored users; Authentication | - | Clojure | JVM
-| Favourites | Users' _faved_ beers | Beer list; Users | Clojure | JVM
-| Public API | Ties the microservices together | __All of the above__ | JavaScript | Node.js
+| Beer list service | All stored beers | - | Java 8 | JVM
+| User service | Stored users; Authentication | - | Clojure | JVM
+| Favorites service | Users' _faved_ beers | Beer list; Users | Clojure | JVM
+| API Gateway | Ties the microservices together | __All of the above__ | JavaScript | Node.js
 | Web application | Web user interface: the "app" | Public API | JavaScript (with React) | The end user's web browser
 
 The implementation is presented in Figure @fig:beerfave-endpoints.
