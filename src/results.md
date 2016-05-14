@@ -5,15 +5,15 @@ This chapter presents the data generated using the method triangulation presente
 ## Establishing the framework
 
 ```include
-src/templates/interview-results.md
+src/components/interview-results.md
 ```
 
 ```include
-src/templates/establish-framework.md
+src/components/establish-framework.md
 ```
 
 ```include
-src/templates/the-framework.md
+src/components/the-framework.md
 ```
 
 ## Refining the framework: Design and Creation

@@ -11,7 +11,7 @@ Service-based comptuting (and variants commonly referred to as "microservices" a
 This thesis will answer the following two research questions:
 
 ```include
-src/templates/research-questions.md
+src/components/research-questions.md
 ```
 
 TODO: What else do I "give away" in the introduction? Do I say anything about the method?

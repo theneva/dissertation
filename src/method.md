@@ -3,7 +3,7 @@
 Having established a relevant research topic grounded in the current literature, this section presents some possible research designs and argues for triangulating two strategies: case study, and design & creation. The two overarching research questions for this thesis are as follows:
 
 ```include
-src/templates/research-questions.md
+src/components/research-questions.md
 ```
 
 - TODO: Use a framework for process and evaluation like Hevner, Peffers, or Vaishnavi?
@@ -31,7 +31,7 @@ TODO: References for Action (Design) Research and Engaged Scholarship, and maybe
 Once an initial set of criteria for evaluating strategies for Automated Continuous Delivery has been established, the framework must be tested in order to be valid.
 
 ```include
-src/templates/beer-fave.md
+src/components/beer-fave.md
 ```
 
 ## Limitations of the triangulation
