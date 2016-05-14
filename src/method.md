@@ -6,8 +6,6 @@ Having established a relevant research topic grounded in the current literature,
 src/components/research-questions.md
 ```
 
-- TODO: Use a framework for process and evaluation like Hevner, Peffers, or Vaishnavi?
-
 The main goal for this thesis is to help simplify the process of selecting a deployment strategy for use in a microservice context. This can be achieved by completing the following two steps.
 
 First, an understanding must be established of current industry practises to ensure relevance for the industry. These practises must be discussed with regard to the current academic literature on the topic, so that well-tested methods of empirically analysing a strategy can be utilised. This step must conclude with a framework for analysing any strategy for Automated Continuous Delivery.
@@ -16,13 +14,17 @@ Second, the framework established in the previous step must be battle-tested and
 
 Completing both steps requires combining two data generation methods. Regardless of the number of methods combined, @oates:2006 [p. 37] calls this "method triangulation", and this term will be used throughout this chapter.
 
-## Methodology: Design-Science Research
+## Methodology
+
+A research project such as this one can be conducted in a multitude of ways. There are several contributions on research processes for work in the fields of Information Systems and Applied Computer Science [e.g., @oates:2006; @hevner:dsr:2004]. This subchapter presents and discusses the established methodology Design-Science Research [@hevner:dsr:2004] as a fit for the conduct and evaluation of this research project.
+
+### Conduct: Design-Science Research
 
 @hevner:dsr:2004 proposed _Design-Science_ as a paradigm for research in the Information Systems domain. Design-Science research seeks to "extend the boundaries of human and organizational capabilities by creating new and innovative artifacts" [@hevner:dsr:2004, p. 75]. This contrasts _Behavioural-Science Research_, which seeks to understand human or organisational behaviour [@hevner:dsr:2004, p. 75].
 
 Design-Science attempts to "create things that serve human purposes", and is technology-oriented [@march:research-on-it:1995, p. 253]. The methodology's basic activities are _building_ and _evaluation_ [@march:research-on-it:1995, p. 254], which are performed iteratively, typically a number of times, before the final design artefact is generated [@hevner:dsr:2004, p. 78]. This is a good fit for this project.
 
-TODO: Peffers on Design-Science Research (DSR) to use that term
+TODO: Do I need to present a model for DSR (e.g., Peffers http://dl.acm.org/citation.cfm?id=1481768), or is this enough about DSR?
 
 @hevner:dsr:2004 defined _IT artefacts_ to include constructs, models, and methods used in development and use of Information Systems, but exclude matters of people and organisational elements. The artefact generated from the project presented in this thesis is the framework for evaluating and comparing strategies for Automated Continuous Delivery (ACD).
 
@@ -33,6 +35,10 @@ The artefact is iteratively evaluated by implementing multiple strategies for AC
 ```include
 src/tables/design-science-research-guidelines-mapped.md
 ```
+
+### Evaluation
+
+TODO: Add criteria for evaluating (use @hevner:dsr:2004)
 
 ## Learning from the industry: Interviews
 
