@@ -7,3 +7,13 @@ Service-based comptuting (and variants commonly referred to as "microservices" a
 [^ieee-cloud-conferences]: IEEE Cloud Computing conferences: http://cloudcomputing.ieee.org/conferences
 
 (…)
+
+This thesis will answer the following two research questions:
+
+```include
+src/templates/research-questions.md
+```
+
+TODO: What else do I "give away" in the introduction? Do I say anything about the method?
+
+The remainder of the thesis is split into five chapters. First, the __Background__ chapter presents a literature review that explores and discusses some areas relevant to Automated Continuous Deployment (ACD) in a microservice context. Next, the __Method__ chapter presents the means used to answer the research questions, and discusses some advantages and disadvantages of the selected method. Data gathered through interviews at the Norwegian online classified media company FINN.no is then presented in the __Interviews__ chapter. The chapter __BeerFave__ presents a developed microservice-based system and experiences from deploying it using the strategies. Finally, the __Conclusion__ chapter summarises the work, distills the results, and suggests areas of future research.

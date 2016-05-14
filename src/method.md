@@ -2,9 +2,6 @@
 
 Having established a relevant research topic grounded in the current literature, this section presents some possible research designs and argues for triangulating two strategies: case study, and design & creation. The two overarching research questions for this thesis are as follows:
 
-1. How can we best compare multiple strategies for Deployment Automation in a microservice context with many teams and services?
-2. Using the comparison technique, how do some popular Deployment Strategies compare today?
-
 - TODO: Use a framework for process and evaluation like Hevner, Peffers, or Vaishnavi?
 - TODO: Motivation for conducting this research?
 - TODO: Background info on me?
