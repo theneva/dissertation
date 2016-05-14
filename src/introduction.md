@@ -16,4 +16,14 @@ src/components/research-questions.md
 
 TODO: What else do I "give away" in the introduction? Do I say anything about the method?
 
-The remainder of the thesis is split into five chapters. First, the __Background__ chapter presents a literature review that explores and discusses some areas relevant to Automated Continuous Deployment (ACD) in a microservice context. Next, the __Method__ chapter presents the means used to answer the research questions, and discusses some advantages and disadvantages of the selected method. Data gathered through interviews at the Norwegian online classified media company FINN.no is then presented in the __Interviews__ chapter. The chapter __BeerFave__ presents a developed microservice-based system and experiences from deploying it using the strategies. Finally, the __Conclusion__ chapter summarises the work, distills the results, and suggests areas of future research.
+The remainder of the thesis is split into five chapters.
+
+First, the __Background__ chapter presents a literature review that explores and discusses some areas relevant to Automated Continuous Deployment (ACD) in a microservice context.
+
+Next, the __Method__ chapter presents the means used to answer the research questions. It argues for using Design Science Research [@hevner:dsr:2004] as a methodology for the project, and presents the design of the data generation methods and the software system built to evaluate the findings. It concludes by discussing some advantages and disadvantages of the selected research design.
+
+The findings from the data generation methods are presented in the __Results__ chapter.
+
+The results are evaluated and discussed in the _Discussion_ chapter, which concludes with the final iteration of the artefact.
+
+Finally, the __Conclusion__ chapter summarises the work, distils the results, and suggests areas of future research.
