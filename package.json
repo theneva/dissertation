@@ -3,8 +3,7 @@
     "clean": "rimraf .pandoc build",
     "preinstall": "curl https://raw.githubusercontent.com/citation-style-language/styles/master/chicago-author-date.csl --create-dirs -o .pandoc/chicago-author-date.csl",
     "prebuild": "mkdirp build",
-    "build": "pandoc --standalone --smart --number-sections --include-in-header=style.tex --filter=pandoc-fignos --biblio=references.bib --filter=pandoc-citeproc --filter pandoc-include --csl=.pandoc/chicago-author-date.csl --from markdown+autolink_bare_uris --output build/draft.pdf metadata.yaml src/introduction.md src/background.md src/method.md src/interviews.md src/establish-framework.md src/test-project.md src/results.md src/conclusion.md src/glossary.md src/references.md",
-    "build-docx": "pandoc --standalone --smart --number-sections --include-in-header=style.tex --filter=pandoc-fignos --biblio=references.bib --filter=pandoc-citeproc --filter pandoc-include --csl=.pandoc/chicago-author-date.csl --from markdown+autolink_bare_uris --output build/draft.docx metadata.yaml src/introduction.md src/background.md src/method.md src/interviews.md src/establish-framework.md src/test-project.md src/results.md src/conclusion.md src/glossary.md src/references.md"
+    "build": "pandoc --standalone --smart --number-sections --include-in-header=style.tex --filter=pandoc-fignos --biblio=references.bib --filter=pandoc-citeproc --filter pandoc-include --csl=.pandoc/chicago-author-date.csl --from markdown+autolink_bare_uris --output build/draft.pdf metadata.yaml src/introduction.md src/background.md src/method.md src/results.md src/conclusion.md src/glossary.md src/references.md"
   },
   "devDependencies": {
     "mkdirp": "^0.5.1",

@@ -1,4 +1,4 @@
-## Interviews
+## Learning from the industry: Interviews
 
 FINN.no is Norway's leading actor in the online classified ads market, with several hundred thousand visitors unique visitors per week^[http://www.tnslistene.no/?list_id=1&week=16&year=2016&report=day&metric=historic]. FINN.no was an early adopter of the microservice pattern, and currently have more than 300 microservices. At the time of writing, they are currently in the process of migrating their entire platform to a uniform Deployment Strategy. This makes them an interesting case to study, and so two interviews were conducted to learn about what they, representing the industry as a whole, deem important in a Deployment Strategy.
 

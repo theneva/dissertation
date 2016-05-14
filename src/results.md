@@ -1,14 +1,32 @@
 # Results
 
+This chapter presents the data generated using the method triangulation presented in the previous chapter.
+
+## Establishing the framework
+
+```include
+src/templates/interview-results.md
+```
+
+```include
+src/templates/establish-framework.md
+```
+
+```include
+src/templates/the-framework.md
+```
+
+## Refining the framework: Design and Creation
+
 This section presents the results of deploying the services that are developed locally on each developer's machine, and uploaded to a production server. First, a very brief overview of each Deployment Strategy is discussed. Second, each row in the Framework is mapped to a Deployment Strategy (manual, and manual with containers):
 
 TODO: Script-based deployment and automated container-based deployment are missing.
 
-## Overview of the strategies
+### Overview of the strategies
 
 This section provides a brief overview of each Deployment Strategy used to deploy BeerFave.
 
-### Manual deployment
+#### Manual deployment
 
 Manual deployment of new changes can be accomplished in a myriad of ways, but all include the following steps:
 
@@ -19,11 +37,11 @@ Manual deployment of new changes can be accomplished in a myriad of ways, but al
 
 With this approach, all applications live within the same Execution Environment. In the test project, this Execution Environment was a Linux server running Ubuntu 15.10 (Wily Werewolf). Database management systems and virtual machines like the JVM are shared between services. Each Application Runtime competes equally for the system resources.
 
-### Container-based manual deployment
+#### Container-based manual deployment
 
 Container-based manual deployment can, like manual deployment, be accomplished in many ways. Since the BeerFave deployment is based on Docker, each image was built and pushed to the Docker Hub^[https://hub.docker.com] from the developer machine with a new version tag.
 
-## Results
+### Results
 
 TODO: I have a lot of results from manual- and docker-based deployment (no script-based yet), but have not had time to actually put them in the document.
 
@@ -47,10 +65,10 @@ Dependencies to pull in the changes (such as SCP) must be installed on the machi
 - All versions of all required software/dependencies must be installed in the same namespace
 - Extra users should be configured (more manual work)
 
-## Script-based automated deployment
+### Script-based automated deployment
 
-## Manual container deployment with Docker
+### Manual container deployment with Docker
 
-## Automated container deployment with Docker and Deis
+### Automated container deployment with Docker and Deis
 
 _This has not been completed yet._

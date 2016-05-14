@@ -1,6 +1,4 @@
-# Test project
-
-## The reference system: BeerFave
+### The reference system: BeerFave
 
 Measuring quality of microservice deployment requires a reference system comprising multiple services. The app _BeerFave_ was built to accommodate this. Keeping the system as close to realistic as possible is important for the findings' validity [TODO REFERENCE TO OATES maybe?]. Many popular applications can be generalised (although greatly simplified in the process) to:
 
@@ -24,9 +22,7 @@ Technical (non-functional) requirements for the application were modelled in par
 
 These non-functional requirements will allow testing each deployment strategy's flexibility and independence in terms of two important factors: First, the execution environment, such as a Platform as a Service with unknown underlying technology, or a self-hosted Linux or Windows server. Second, programming language and frameworks. Even though standardisation is still an organisational concern, it will be interesting to know the impact of each strategy from a technical viewpoint.
 
-### Communication
-
-TODO: Does this belong in the "background" chapter? tl;dr: It doesn't matter what you use, this project used REST because of modernism and performance with JavaScript.
+#### Communication
 
 All services are committed to the popular REpresentational State Transfer (REST) architectural style. The services aim to meet the requirements for level 2 (3 being the highest) compliance with the Richardson Maturity Model^[The Richardson Maturity model is a pyramid of technical requirements for REST split into three levels, each denoting a higher level of compliance with the REST paradigm. TODO: briefly explain the levels? The well-known Martin Fowler has written an article available on http://martinfowler.com/articles/richardsonMaturityModel.html for more details.]. The specific style for communication (for example Remote Procedure Calls (SOAP over HTTP and RPC over TCP) being common alternatives) is not important for the actual deployment process, but instead a question of how the teams wish to expose their data.
 
@@ -88,7 +84,7 @@ In this small example application, each microservice only exposes a single datab
 
 ![A comparison of database types from https://github.com/cochroachdb/cockroach](https://raw.githubusercontent.com/cockroachdb/cockroach/master/resource/doc/sql-nosql-newsql.png?raw=true){#fig:database-discussion}
 
-## Limitations of this implementation approach
+### Limitations of this implementation
 
 BeerFave aims to cover as much ground as possible. Even so, it is still a small, isolated reference application never executed in a real world scenario. This brings a few limitations to how the results may be interpreted.
 

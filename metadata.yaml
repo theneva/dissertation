@@ -7,7 +7,7 @@ abstract: |
   (…)
 link-citations: true
 toc: true
-toc-depth: 3
+toc-depth: 2
 lof: true
 lot: true
 ---
