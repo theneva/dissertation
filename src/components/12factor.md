@@ -12,7 +12,7 @@ The first factor, __Codebase__^[http://12factor.net/codebase], states that any o
 
 Of particular interest are … TODO: describe the most interesting factors, and mention the others briefly.
 
-## 12factor and the reference apps
+#### 12factor and the reference apps
 
 The Twelve-Factor app guidelines are simply a collection of best practises based on the authoring developers' own experience and well-established architectural concerns. As we will see later in the thesis, several of the factors play a major role when targeting multiple execution environments.
 
