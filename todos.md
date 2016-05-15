@@ -4,3 +4,5 @@ TODO: The Framework can possibly be visualised better than using the silly table
 - http://www.amazon.com/Show-Me-Numbers-Designing-Enlighten/dp/0970601999 (not academic, but good input)
 
 TODO: Don't number the subsubsubsubsubsubsections.
+
+TODO: Add performance metrics (application startup time, request response time) in background chapter
