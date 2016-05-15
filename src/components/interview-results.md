@@ -79,4 +79,11 @@ The team recognises that automation requires automated testing, and enforces a s
 
 Finally, the new Deployment Strategy _must_ allow for monitoring with tools such as Prometheus (https://prometheus.io), Agent Bob (JVM data, unsure about the actual name of this thing), and hopefully standardisable dashboards using tools such as Grafana and Graphite. There is also a requirement that the new system can be integrated with FINN's in-house deployment pipeline tool, although this tool can be tweaked to meet the requirements of the Deployment Strategy.
 
-TODO: Present the key criteria from the interviews in table format here.
+TODO: Present all of the key criteria from the interviews:
+
+| Criterion | Description | Unit
+| ----------------------------- | ------------------------------------------- | --------------------|
+| Testability | The ability to easily test each service using both unit, module, and feature tests | ?
+| Automatic scaling | The ability to automatically monitor traffic and start or stop server instances to meet the exact demand, rather than wasting resources | Supported; Not supported
+
+Table: Criteria identified via interviews

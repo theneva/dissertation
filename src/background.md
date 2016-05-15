@@ -132,7 +132,7 @@ One important factor described by @chen:architecting-for-cd:2015 is which Archit
 
 One particular ASR is considered by @addo:automatic-failover:2014, who describe an architecture for automatically routing traffic to other cloud providers if one fails. This points back to the CAP theorem, and raises the question of how to replicate data and ensure consistency across multiple providers.
 
-## Conclusion
+## Summary of important criteria
 
 This literature review has uncovered central themes that are important when measuring various approaches to deployment:
 
@@ -143,3 +143,12 @@ This literature review has uncovered central themes that are important when meas
 - Quality metrics for measuring deployment approaches, in particular Architecturally Significant Requirements and their impact on the existing base when migrating to a Continuous Delivery workflow.
 
 Focus will be maintained on finding and implementing a strategy for deployment automation that fits the organisation's needs. Therefore, it will _not_ give great consideration to system uptime such as architecting specifically to support failover between data centres or cloud platform providers. It will, on the other hand, map the factors discussed in this review to a set of criteria that will be useful in comparing various strategies.
+
+The criteria uncovered in this literature review can be presented in the following table (TODO: reference to table? This is not finished.)
+
+| Criterion | Description | Unit
+| ----------------------------- | ------------------------------------------- | --------------------|
+| Number of steps (reference) | The number of steps required to perform a single deployment | integer
+| Required a priori knowledge | The amount of prerequisite knowledge and skills required to operate and maintain the strategy (beyond absolutely required knowledge such as the Linux shell) | High; Medium; Low.
+
+Table: Criteria identified in the literature review.

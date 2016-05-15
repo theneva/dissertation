@@ -8,8 +8,6 @@ This chapter presents the data generated using the method triangulation presente
 src/components/interview-results.md
 ```
 
-TODO: Include a presentation of data from the literature review.
-
 ## Refining the framework: Design and Creation
 
 This section presents the results of deploying the services that are developed locally on each developer's machine, and uploaded to a production server. First, a very brief overview of each Deployment Strategy is discussed. Second, each row in the Framework is mapped to a Deployment Strategy (manual, and manual with containers):
