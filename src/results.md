@@ -37,10 +37,6 @@ Container-based manual deployment can, like manual deployment, be accomplished i
 
 TODO: I have a lot of results from manual- and docker-based deployment (no script-based yet), but have not had time to actually put them in the document.
 
-```include
-src/tables/criteria-with-descriptions.md
-```
-
 ### Manual deployment
 
 Manual deployment is a time-consuming process on a single host, let alone a multitude of hosts in a load-balanced environment. It also requires the person deploying to be familiar with the operating system on the production machine.
@@ -64,3 +60,12 @@ Dependencies to pull in the changes (such as SCP) must be installed on the machi
 ### Automated container deployment with Docker and Deis
 
 _This has not been completed yet._
+
+## Results: Criteria by strategy
+
+TODO: Continue this (the only place where the framework is actually used)
+
+| Criterion | Unit | Manual | Scipt-based automation | Contained manual | Contained automated
+| ------------- | ----------- | -------------- | -------------- | -------------- | -------------
+| Automatic scaling | Yes / (blank) | | | | Yes
+| Feature testing | Difficult | Difficult | Easy | Easy

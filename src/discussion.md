@@ -10,6 +10,14 @@ src/components/establish-framework.md
 src/components/the-framework.md
 ```
 
+## The final framework
+
+TODO: This is not finished, and has many seemingly arbitrary criteria...
+
+```include
+src/tables/criteria-with-descriptions.md
+```
+
 ## Evaluation of the method
 
 TODO: Use @hevner:dsr:2004 as described in __Method#Methodology__ to evaluate the process and result. Each 

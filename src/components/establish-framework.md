@@ -1,5 +1,7 @@
 ## Discussion: The framework
 
+__TODO: Most of this text is already covered in the Results. This chapter must instead focus on how the interview results compare and map to the data from the literature review, and draw upon the results from the implementation project.__
+
 This chapter presents a framework for analysing different approaches to Deployment Automation. The framework is based on key factors identified through the literature review and the interviews of skilled practitioners. The perspective taken in this thesis is somewhere in between the stakeholders and the developers.
 
 The practitioners are admittedly all from the same company, and it is possible that asking outside the company (or even interviewing other roles within the company) would have yielded different answers. However, the data from the interviews were consistent.
