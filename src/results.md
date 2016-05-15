@@ -2,19 +2,13 @@
 
 This chapter presents the data generated using the method triangulation presented in the previous chapter.
 
-## Establishing the framework
+## Establishing the initial framework
 
 ```include
 src/components/interview-results.md
 ```
 
-```include
-src/components/establish-framework.md
-```
-
-```include
-src/components/the-framework.md
-```
+TODO: Include a presentation of data from the literature review.
 
 ## Refining the framework: Design and Creation
 

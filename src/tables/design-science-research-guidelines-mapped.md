@@ -1,5 +1,5 @@
 | Guideline | Description | In this thesis
-| ------------- | ----------------------------- | -----------------------
+| --------------------- | ------------------------------------- | -------------------------------
 | 1: Design as an Artifact | Design-science research must produce a viable artifact in the form of a construct, a model, a method, or an instantiation. | A framework---_method_---for evaluating strategies for ACD is produced.
 | 2: Problem Relevance | The objective of design-science research is to develop technology-based solutions to important and relevant business problems. | Business relevance is established in the literature review, as well as through interviews with FINN.no.
 | 3: Design Evaluation | The utility, quality, and efficacy of a design artifact must be rigorously demonstrated via well-executed evaluation methods | The developed comparison framework is iteratively tested by being used to evaluate multiple popular strategies for ACD.

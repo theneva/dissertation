@@ -1,6 +1,6 @@
 # Method
 
-Having established a relevant research topic grounded in the current literature, this section presents some possible research designs and argues for triangulating two strategies: case study, and design & creation. The two overarching research questions for this thesis are as follows:
+The previous chapters have introduced and contextualised the research area, and discussed some of the relevant literature. This section presents some possible research designs, and argues for triangulating two strategies: case study, and design & creation. The two overarching research questions for this thesis are as follows:
 
 ```include
 src/components/research-questions.md
@@ -42,15 +42,15 @@ TODO: Add criteria for evaluating (use @hevner:dsr:2004)
 
 ## Learning from the industry: Interviews
 
-Learning from the industry and establishing industry relevance can be done in a multitude of ways. @oates:2006 presented multiple research strategies for the information systems and computer science.
+Learning from the industry and establishing industry relevance can be done in a multitude of ways. @oates:2006 presented multiple research strategies for the information systems and computer science. Relevant research strategies include performing a survey using a questionnaire or short interviews, or a case study.
 
-TODO: This section is mostly already written in the research methods report, as well as the research proposal.
+Surveys are useful for obtaining a large set of standardised data, which allows patterns to emerge [@oates:2006, p. 93]. However, the initial step of this research project seeks to learn _how_ the industry practises deployment today, and _which_ properties are important in such a strategy. This requires an in-depth look into the processes, which can be accomplished using a case study.
 
-### Limitations of the interview approach
+```include
+src/components/interview-presentation.md
+```
 
-TODO: References for Action (Design) Research and Engaged Scholarship, and maybe pitfalls.
-
-## Refining the framework: Design and Creation
+## Evaluating and refining the framework: Design and Creation
 
 Once an initial set of criteria for evaluating strategies for Automated Continuous Delivery has been established, the framework must be tested in order to be valid.
 
@@ -60,6 +60,4 @@ src/components/beer-fave.md
 
 ## Limitations of the triangulation
 
-This research design completely ignores some important practical aspects of real-world software development: teamwork, coordination, and ever-changing priorities. Approaching the study with Action (Design) Research or Engaged Scholarship would have provided at least one set of insights into a real case. Conversely, there are many potential pitfalls with this strategy: stepping into to a real-world system comes at the expense of sacrificing control over both the infrastructure and the priorities for the system. In a worst case scenario, this could lead to simply not being able to analyse any strategies.
-
-The system is an oversimplification, only deployed to a single host. In this case, it is unfeasible to consider system downtime during deployment as a factor. For the sake of simplicity, the method omits uptime during deployment as a factor, despite constant uptime being a crucial point of interest for the industry.
+Individual limitations of the interview-based case study and the implementation project have been discussed in their respective subchapters. However, the particular set and ordering may also impact the results. Learning how a single company accomplishes something may have influenced the implementation project. TODO: This sentence isn't going anywhere. Do I need it?
