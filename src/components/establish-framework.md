@@ -1,13 +1,8 @@
 ## Discussion: The framework
 
-This chapter presents a framework for analysing different approaches to automating deployment. The framework is based on key factors identified through the literature review and the interviews of skilled practitioners. The perspective taken in this thesis is somewhere in between the stakeholders and the developers.
+This chapter presents a framework for analysing different approaches to Deployment Automation. The framework is based on key factors identified through the literature review and the interviews of skilled practitioners. The perspective taken in this thesis is somewhere in between the stakeholders and the developers.
 
 The practitioners are admittedly all from the same company, and it is possible that asking outside the company (or even interviewing other roles within the company) would have yielded different answers. However, the data from the interviews were consistent.
-
-The following terms are used interchangeably:
-
-- strategy
-- approach
 
 ### Testability
 
