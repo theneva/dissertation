@@ -150,7 +150,7 @@ This literature review has uncovered central themes that are important when meas
 
 Focus will be maintained on finding and implementing a strategy for deployment automation that fits the organisation's needs. Therefore, it will _not_ give great consideration to system uptime such as architecting specifically to support failover between data centres or cloud platform providers. It will, on the other hand, map the factors discussed in this review to a set of criteria that will be useful in comparing various strategies.
 
-The criteria uncovered in this literature review can be presented in the following table (TODO: reference to table? This is not finished.)
+The criteria uncovered in this literature review can be presented in the following table (TODO: reference to table?)
 
 | Criterion | Reference | Description | Unit
 | ------------------------- | --------------------- |  ------------------------------------------- | --------------------|
@@ -163,8 +163,5 @@ The criteria uncovered in this literature review can be presented in the followi
 | Configuration as documentation | @armour:laws:2007; @talwar:comparison-of-approaches-to-service-deployment:2005 | To which extent does the configuration code itself double as documentation of the non-functional requirements that led to the configuration, eliminating the need to document these elsewhere? | Full; Some; Little
 | No ASRs beyond 12-factor app | @chen:architecting-for-cd:2015 | Following the 12-factor guidelines should be enough (from the software architecture perspective) to deploy to any runtime | (None; Somewhat; Completely)
 | Same-host duplicates | TODO | Possibility to run multiple instances of the same application on a single host | Impossible; Possible; Easy
-
-
-
 
 Table: Criteria identified in the literature review.
