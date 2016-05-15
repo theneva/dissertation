@@ -28,7 +28,7 @@ TODO: Do I need to present a model for DSR (e.g., Peffers http://dl.acm.org/cita
 
 @hevner:dsr:2004 defined _IT artefacts_ to include constructs, models, and methods used in development and use of Information Systems, but exclude matters of people and organisational elements. The artefact generated from the project presented in this thesis is the framework for evaluating and comparing strategies for Automated Continuous Delivery (ACD).
 
-The artefact is iteratively evaluated by implementing multiple strategies for ACD, and testing the framework by using it to evaluate each strategy. The artefact provides guidance on how to search the solution space for a problem, and is thus a _method_ [hevner:dsr:2004, p. 79].
+The artefact is iteratively evaluated by implementing multiple strategies for ACD, and testing the framework by using it to evaluate each strategy. The artefact provides guidance on how to search the solution space for a problem, and is thus a _method_ [@hevner:dsr:2004, p. 79].
 
 @hevner:dsr:2004 [p. 83] presented seven Design-Science Research Guidelines, which are reproduced and mapped to the project presented in this thesis in (TODO table ???).
 
