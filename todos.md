@@ -6,3 +6,13 @@ TODO: The Framework can possibly be visualised better than using the silly table
 TODO: Don't number the subsubsubsubsubsubsections.
 
 TODO: Add performance metrics (application startup time, request response time) in background chapter
+
+TODO: Mention that Deis (while extremely helpful) can only be run inside CoreOS, which can be limiting in some cases
+
+TODO: mention LeverOS
+
+TODO: mention Dockercraft https://github.com/docker/dockercraft
+
+TODO: Take a closer look at design science, or at least explain the characteristics of DSR and why it is a good match.
+
+TODO: Replace all instances of the word "interesting"

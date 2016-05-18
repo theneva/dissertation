@@ -6,7 +6,7 @@ The work of establishing a set of characteristics that are important in a Automa
 
 ### Selecting a case: FINN.no
 
-FINN.no is Norway's leading actor in the online classified ads market, with several hundred thousand visitors unique visitors per week^[http://www.tnslistene.no/?list_id=1&week=16&year=2016&report=day&metric=historic]. FINN.no was an early adopter of the microservice pattern, and currently have more than 300 microservices. At the time of writing, they are currently in the process of migrating their entire platform to a uniform Deployment Strategy. This makes them an interesting case to study, and so two interviews were conducted to learn about what they, representing the industry as a whole, deem important in a Deployment Strategy. The following two of FINN's teams are of particular interest.
+FINN.no is Norway's leading actor in the online classified ads market, with several hundred thousand visitors unique visitors per week^[http://www.tnslistene.no/?list_id=1&week=16&year=2016&report=day&metric=historic]. FINN.no was an early adopter of the microservice pattern, and currently have more than 300 microservices. At the time of writing, they are currently in the process of migrating their entire platform to a uniform Deployment Strategy. This makes them an highly relevant case to study, and so two interviews were conducted to learn about what they, representing the industry as a whole, deem important in a Deployment Strategy. The following two of FINN's teams are of particular interest.
 
 Team Cloud IO is responsible for maintaining and developing the infrastructure at FINN, and plays a large part in the initiative to migrate the entire organisation to containers. Team Cloud IO loosely defined the requirements for an organisation-wide uniform Deployment Automation strategy, and carries out the work of helping teams migrate their services to containers.
 
@@ -26,6 +26,8 @@ TODO: Describe how the interviews were carried out:
 - Semi-structured interviews [@oates:2006, pp.187--188]
 
 ### Limitations of the interview approach
+
+TODO: Move this to the end of the discussion
 
 Only a single company is represented in the interviews, and the number of informers is low. This makes it possible that the data is unreliable, but this risk will be mitigated for by the second step, where the interview data is tested in a realistic context. The data cannot, however, safely be generalised to fit any organisational size or structure. Indeed, FINN.no was chosen because they are ahead on technology choices in Norway, making them an exception rather than the standard.
 

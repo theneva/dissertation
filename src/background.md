@@ -9,6 +9,8 @@ In conclusion, a subset of the identified areas of research is presented. This p
 
 ## Cloud computing and microservices
 
+TODO: Name this subchapter "microservices", and make a new subchapter below it named "Cloud computing" discussing how cloud is relevant to microservices (can microservices be done without cloud? Yes!) and my project/framework.
+
 @talwar:comparison-of-approaches-to-service-deployment:2005 [p. 1] broadly define a _service_ as a piece of software that encapsulates and presents some useful functionality, and can be part of an overall _system_. In other words, a _service_ is a specialised, autonomous, stand-alone server. The idea of splitting a large application's code base into multiple services is often referred to as the Service-Oriented Architecture (SOA) [e.g., @castro:evaluating:2015; @arnold:pattern-based-soa:2007]. For instance, an e-commerce site, such as the extremely popular Amazon^[https://amazon.com], may implement part of their system using the service pattern in the following way (see Figure @fig:example-e-commerce-services):
 
 ![Example e-commerce service stack](http://img.ctrlv.in/img/16/03/16/56e9409e7ad65.png){#fig:example-e-commerce-services}
@@ -26,6 +28,13 @@ The microservice pattern can be seen as a way to implement SOA by defining each 
 Each _client_ in a system is an expression of a Bounded Context. A client has traditionally meant a website, rendered to static assets (HTML, CSS, and JavaScript) on the server-side before being sent to the client. In a system with only microservices and clients, the clients themselves will connect directly to one or more microservices. It is then the client's task to combine data in a meaningful way and display it to the user.
 
 With the rise of front-end JavaScript frameworks such as Google's AngularJS^[https://angularjs.org/] and Facebook's React^[https://facebook.github.io/react/], it has become a common industry practise to build an _API Gateway_ in addition to the web client. An API Gateway is reminiscent of the _façade pattern_ from object-oriented programming: the single responsibility of the API Gateway is to combine data from the various microservices within the Bounded Context, and expose the data to the client through a tailored web API. In this pattern, each API Gateway represents a single Bounded Context.
+
+TODO: Check out
+
+- https://www.nginx.com/blog/building-microservices-using-an-api-gateway/ kan være en bra bloggpost å referere til—finner ingenting nyttig i IEEE…
+- Sjekk ut http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=6885428&url=http%3A%2F%2Fieeexplore.ieee.org%2Fiel7%2F6880679%2F6885035%2F06885428.pdf%3Farnumber%3D6885428
+- kanskje http://www.isa.us.es/sites/default/files/Towards_SLA_API_Gateways.pdf også?
+- This is a classic GoF pattern (obligatory honorary mention?)
 
 The API Gateway pattern allows executing potentially slow actions like making multiple requests and merging the data on a developer-controlled server, instead of inside the user's web browser. This can be a great advantage, as the client is subject to multiple factors outside the developers' control, such as network latency and hardware specifications. The pattern also enables some security measures, such as running microservices behind a firewall. Finally, the same API Gateway can be used by multiple clients on other platforms than the web, such as mobile and desktop applications.
 
@@ -73,7 +82,7 @@ Logically, the quickest way of deploying new features to the end users is to dir
 
 Whether it is possible to determine a "best" approach, as Talwar et al. allude to, remains to be seen. However, they establish a need for a tool for comparison of strategies and tools.
 
-In their 2005 article "Comparison of Approaches to Service Deployment", @talwar:comparison-of-approaches-to-service-deployment:2005 define and compare four different approaches to deployment of services: manual, script-based, language-based, and model-based as a function of scale, complexity, and susceptibility to change. They also define a few evaluation metrics which they call Quality of Manageability (QoM) measures for the deployment configuration:
+@talwar:comparison-of-approaches-to-service-deployment:2005 define and compare four different approaches to deployment of services: manual, script-based, language-based, and model-based as a function of scale, complexity, and susceptibility to change. They also define a few evaluation metrics which they call Quality of Manageability (QoM) measures for the deployment configuration:
 
 - number of lines of configuration code (LOC) for deployment;
 - number of steps involved in deployment;
@@ -140,12 +149,15 @@ One particular ASR is considered by @addo:automatic-failover:2014, who describe 
 
 ## Summary of important criteria
 
+TODO: Fix that stupid heading ^ ("important" says nothing, maybe "criteria" is bad too.)
+
 This literature review has uncovered central themes that are important when measuring various approaches to deployment:
 
-- Cloud computing and microservices with the problems of distributed computing and the CAP theorem;
+- Microservice runtime, with regard to the problems of distributed computing and the CAP theorem;
+- Cloud computing providers as a runtime for microservices;
 - How often the organisation _wishes_ to deploy changes to the end users, and how often the infrastructure _allows_ deployment;
 - Expressiveness of code that can in itself act as documentation of the specification;
-- Implementation of Continuous Delivery from an organisational perspective, and how DevOps affects culture; and
+- Implementation of Continuous Delivery from an organisational perspective, and how DevOps affects organisational culture; and
 - Quality metrics for measuring deployment approaches, in particular Architecturally Significant Requirements and their impact on the existing base when migrating to a Continuous Delivery workflow.
 
 Focus will be maintained on finding and implementing a strategy for deployment automation that fits the organisation's needs. Therefore, it will _not_ give great consideration to system uptime such as architecting specifically to support failover between data centres or cloud platform providers. It will, on the other hand, map the factors discussed in this review to a set of criteria that will be useful in comparing various strategies.
@@ -158,7 +170,7 @@ The criteria uncovered in this literature review can be presented in the followi
 | Number of steps involved in a single deployment | @talwar:comparison-of-approaches-to-service-deployment:2005 | The number of steps required to perform a single deployment | Integer (step count)
 | Modifiability: LOC to express configuration changes | @bass-clements-kazman:software-architecture-in-practice:2013; @talwar:comparison-of-approaches-to-service-deployment:2005 | How much code must be written to change the configuration? | Range (LOC)
 | Time to deploy a change | @talwar:comparison-of-approaches-to-service-deployment:2005 | How long does it take to make a change, e.g., fix a bug, test the new code, and deploy it to production? | Range (minutes)
-| Barrier to first use | @talwar:comparison-of-approaches-to-service-deployment:2005 | The amount of prerequisite knowledge and skills required to operate and maintain the strategy (beyond absolutely required knowledge such as the Linux shell) | High; Medium; Low.
+| Barrier to first use | @talwar:comparison-of-approaches-to-service-deployment:2005 | Learning curve: the amount of prerequisite knowledge and skills required to operate and maintain the strategy (beyond absolutely required knowledge such as the Linux shell) | High; Medium; Low.
 | Feasibility of DevOps | @spinellis:by-hand:2012 | Can developers feasibly deploy their own changes to production ? | True?
 | Configuration as documentation | @armour:laws:2007; @talwar:comparison-of-approaches-to-service-deployment:2005 | To which extent does the configuration code itself double as documentation of the non-functional requirements that led to the configuration, eliminating the need to document these elsewhere? | Full; Some; Little
 | No ASRs beyond 12-factor app | @chen:architecting-for-cd:2015 | Following the 12-factor guidelines should be enough (from the software architecture perspective) to deploy to any runtime | (None; Somewhat; Completely)

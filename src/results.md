@@ -2,7 +2,7 @@
 
 This chapter presents the data generated using the method triangulation presented in the previous chapter.
 
-## Establishing the initial framework
+## Interviews
 
 ```include
 src/components/interview-results.md

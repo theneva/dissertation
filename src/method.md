@@ -1,6 +1,6 @@
 # Method
 
-The previous chapters have introduced and contextualised the research area, and discussed some of the relevant literature. This section presents some possible research designs, and argues for triangulating two strategies: case study, and design & creation. The two overarching research questions for this thesis are as follows:
+The previous chapters have introduced and contextualised the research area, and discussed some of the relevant literature. This section presents the research design for this thesis, and argues for triangulating two research strategies: case study, and design and creation [@oates:2006]. The two overarching research questions for this thesis are as follows:
 
 ```include
 src/components/research-questions.md
@@ -26,6 +26,11 @@ Design-Science attempts to "create things that serve human purposes", and is tec
 
 TODO: Do I need to present a model for DSR (e.g., Peffers http://dl.acm.org/citation.cfm?id=1481768), or is this enough about DSR?
 
+- Kanskje, ja. Men enda mer viktig. Du bør argumentere litt sterkere for hvorfor design science er det riktige valget for din studie- det er ikke innlysende.
+- Bør jeg forklare hvorfor jeg trenger en modell i det hele tatt mer enn jeg allerede har? hva tenker du som konkurrenter til DSR—action research?
+- SysDev sier Action Design Research og Engaged Scholarship (som tbh er en type AR/ADR)
+- http://dl.acm.org/citation.cfm?id=2017229 for AR i IS-kontekst
+
 @hevner:dsr:2004 defined _IT artefacts_ to include constructs, models, and methods used in development and use of Information Systems, but exclude matters of people and organisational elements. The artefact generated from the project presented in this thesis is the framework for evaluating and comparing strategies for Automated Continuous Delivery (ACD).
 
 The artefact is iteratively evaluated by implementing multiple strategies for ACD, and testing the framework by using it to evaluate each strategy. The artefact provides guidance on how to search the solution space for a problem, and is thus a _method_ [@hevner:dsr:2004, p. 79].
@@ -41,6 +46,10 @@ src/tables/design-science-research-guidelines-mapped.md
 TODO: Add criteria for evaluating (use @hevner:dsr:2004)
 
 ## Learning from the industry: Interviews
+
+TODO: "The industry" could be "Practise field"?
+
+TODO: Why do we want/need to learn from the industry? Refer back to design science. Is there literature on this? Probably something in Oates/Yin on case studies
 
 Learning from the industry and establishing industry relevance can be done in a multitude of ways. @oates:2006 presented multiple research strategies for the information systems and computer science. Relevant research strategies include performing a survey using a questionnaire or short interviews, or a case study.
 
@@ -60,4 +69,6 @@ src/components/beer-fave.md
 
 ## Limitations of the triangulation
 
-Individual limitations of the interview-based case study and the implementation project have been discussed in their respective subchapters. However, the particular set and ordering may also impact the results. Learning how a single company accomplishes something may have influenced the implementation project. TODO: This sentence isn't going anywhere. Do I need it?
+TODO: Write more here, and move the entire subchapter to the end of the discussion (evaluate the entire method under one subchapter: _Limitations of this study_, or something)
+
+Individual limitations of the interview-based case study and the implementation project have been discussed in their respective subchapters. However, the particular set and ordering may also impact the results. Learning how a single company accomplishes something may have influenced the implementation project. TODO: This sentence isn't going anywhere. Do I need it? "Probably not!"
