@@ -27,7 +27,7 @@ The microservice pattern can be seen as a way to implement SOA by defining each 
 
 Each _client_ in a system is an expression of a Bounded Context. A client has traditionally meant a website, rendered to static assets (HTML, CSS, and JavaScript) on the server-side before being sent to the client. In a system with only microservices and clients, the clients themselves will connect directly to one or more microservices. It is then the client's task to combine data in a meaningful way and display it to the user.
 
-With the rise of front-end JavaScript frameworks such as Google's AngularJS^[https://angularjs.org/] and Facebook's React^[https://facebook.github.io/react/], it has become a common industry practise to build an _API Gateway_ in addition to the web client. An API Gateway is reminiscent of the _façade pattern_ from object-oriented programming: the single responsibility of the API Gateway is to combine data from the various microservices within the Bounded Context, and expose the data to the client through a tailored web API. In this pattern, each API Gateway represents a single Bounded Context.
+With the rise of front-end JavaScript frameworks such as Google's AngularJS^[https://angularjs.org/] and Facebook's React^[https://facebook.github.io/react/], it has become a common industry practise to build an _API Gateway_ in addition to the web client. An API Gateway is reminiscent of the _façade pattern_ [@gof] from object-oriented programming: the single responsibility of the API Gateway is to combine data from the various microservices within the Bounded Context, and expose the data to the client through a tailored web API. In this pattern, each API Gateway represents a single Bounded Context.
 
 TODO: Check out
 

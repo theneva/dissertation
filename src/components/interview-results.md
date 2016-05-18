@@ -10,15 +10,11 @@ As there are only two sources, the data is presented by themes that emerged from
 
 At the time of writing, FINN.no consists of several hundred microservices. Their responsibilities range from providing access to user data to handling payment for placing an ad. At the time of the interview, eight physical servers each run every microservice. This allows balancing the user load equally, although some methods are used to allow stateful microservices.
 
-TODO: Which performance problems? What does this entail? Any background on their load patterns? Is software performance or load handling the key issue?
+However, FINN has encountered some performance problems related to multiple concerns. They experience extremely high server load during the day, and a low number of requests during the night. This non-uniform load distribution means that the physical servers, which always provide the same capacity, are overloaded during peak hours. This pattern is problematic for the following two reasons.
 
-TODO: Write something about how the services currently run (not isolated at all) and why isolation matters
+First, all of the services currently run without any isolation, so they always compete for the same computing resources. Isolation would allow restricting the processing power available to any given service on demand. In fact, all performance problems the FINN platform is currently encountering can be traced back to a lack of service isolation. This is a key factor in the selection of a new deployment strategy. Lack of service isolation also requires dynamic allocation of computing resources, as some services scale vertically (using threads, and thus requiring more resources on a single machine), while other services scale horisontally (allowing load balancing through multiple deployments).
 
-All performance problems the FINN platform has encountered can be traced back to a lack of service isolation. This is a key factor in the selection of a new deployment strategy. Lack of service isolation also requires dynamic allocation of computing resources, as some services scale vertically (using threads, and thus requiring more resources on a single machine), while other services scale horisontally (allowing load balancing through multiple deployments).
-
-TODO: What does "cloud solution" mean?
-
-As the platform's test environments move to a cloud solution, a need for automatic scaling to reduce unnecessary expenses becomes apparent. This is another factor the team had to consider when selecting a Deployment Strategy.
+Second, the non-uniform load distribution means that the physical servers are sometimes providing much more computing power than they need, especially during the night, but other times are able to provide too little. This is a somewhat important concern in the production environment, but much more so in the testing environment. As a result, the FINN platform's test environments is being moved to an Infrastructure as a Service (IaaS) platform. THus, a need for automatic scaling to reduce unnecessary expenses becomes apparent. This is another factor the team had to consider when selecting a Deployment Strategy.
 
 ### Experiences with Automated Continuous Delivery
 
@@ -69,9 +65,9 @@ One interesting hard requirement is that there can be no system downtime during 
 
 ### Thoughts on the transition to containers
 
-TODO: Write something about the unstable dev environment (is it important that I worked there last autumn? probably, this didn't really come up in the interview)
+Team Reise is looking forward to using containers, as they have an unmet requirement to easily and quickly create or stop instances of their services to satisfy the server load. A natural extension of this possibility that the team is eager to look into is automatic service scaling, especially for the test environment---as the test environment will be hosted by a cloud provider, and FINN thus pays for the resources they use. This is unnecessary, especially since development and testing almost exclusively happens during the Norwegian daytime. When each service is contained as a Docker image, the team wishes to be able to pull the contained image and run their own copy of it during testing, thus removing the dependency on any potentially unstable environments mirroring production.
 
-Team Reise is looking forward to using containers, as they have an unmet requirement to easily and quickly create or stop instances of their services to satisfy the server load. A natural extension of this possibility that the team is eager to look into is automatic service scaling, especially for the test environment---as the test environment will be hosted by a cloud provider, and FINN thus pays for the resources they use. This is unnecessary, especially since development and testing almost exclusively happens during the Norwegian daytime. When each service is contained as a Docker image, the team wishes to be able to pull the image and run their own copy of it during testing, thus removing the dependency on a notoriously unstable environment.
+The dependency on a live environment could perhapd be a small concern. However, the testing environments, especially the one intended for frequent test deployment of the microservices themselves, are erratic and inconsistent, making them unreliable for the developers. This problem has been apparent for at least several months, and is a barrier to overcome when implementing Automated Continuous Delivery.
 
 ### Summary: Important factors
 
