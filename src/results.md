@@ -10,7 +10,7 @@ src/components/interview-results.md
 
 ## Refining the framework: Design and Creation
 
-This section presents the results of deploying the services that are developed locally on each developer's machine, and uploaded to a production server. First, a very brief overview of each Deployment Strategy is discussed. Second, each row in the Framework is mapped to a Deployment Strategy (manual, and manual with containers):
+This section presents the results of deploying the services that are developed locally on each developer's machine, and uploaded to a production server. First, a very brief overview of each Deployment Strategy is discussed. Second, each row in the Framework is mapped to some popular strategies for deployment: manual deployment, script-based automation, manual container-based deployment, and automated container-based deployment.
 
 TODO: Script-based deployment and automated container-based deployment are missing.
 
@@ -29,13 +29,21 @@ Manual deployment of new changes can be accomplished in a myriad of ways, but al
 
 With this approach, all applications live within the same Execution Environment. In the test project, this Execution Environment was a Linux server running Ubuntu 15.10 (Wily Werewolf). Database management systems and virtual machines like the JVM are shared between services. Each Application Runtime competes equally for the system resources.
 
-#### Container-based manual deployment
+#### Script-based manual deployment
+
+TODO
+
+#### Manual container-based deployment
 
 Container-based manual deployment can, like manual deployment, be accomplished in many ways. Since the BeerFave deployment is based on Docker, each image was built and pushed to the Docker Hub^[https://hub.docker.com] from the developer machine with a new version tag.
 
-### Results
+#### Automated container-based deployment
 
-This chapter 
+TODO
+
+### Results by criterion
+
+Take each row from the framework and compare. TODO: start out with only manual and container-based manual. Are they feasible for continuous deployment?
 
 TODO: I have a lot of results from manual- and docker-based deployment (no script-based yet), but have not had time to actually put them in the document.
 
