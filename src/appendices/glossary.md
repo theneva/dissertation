@@ -1,3 +1,5 @@
+\appendix 
+
 # Glossary
 
 - __API Gateway__: A service reminiscent of a façade in object-oriented programming whose only purpose is to simplify a web application's interaction with the microservices.
