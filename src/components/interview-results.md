@@ -44,7 +44,7 @@ Especially in a culture with no formal code review before code is deployed, Team
 
 FINN has three main Environments: __dev__, __ci__, and __prod__. The current set-up requires each build and deployment for __dev__ and __ci__ to pass in order for new changes to reach the __prod__ environments, even though Team Reise does not use test environments at all. Thus, other unstable services in the __dev__ or __ci__ environments may cause delayed release of enhancements to the Reise platform, even though the new code itself is without mistakes.
 
-Reise uses URL-based _feature toggles_ to deploy all new features to the production Environment, an approach they are happy with. 
+Reise uses URL-based _feature toggles_ to deploy all new features to the production Environment, an approach they are happy with.
 
 FINN's Reise (Travel) team has an interesting take on deployment: unlike all other teams, they have _no_ manual verification step in the deployment process, and they do not use the test environments (dev/CI).
 

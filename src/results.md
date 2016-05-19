@@ -45,6 +45,8 @@ TODO
 
 Take each row from the framework and compare. TODO: start out with only manual and container-based manual. Are they feasible for continuous deployment?
 
+#### TODO: Criterion 1
+
 TODO: I have a lot of results from manual- and docker-based deployment (no script-based yet), but have not had time to actually put them in the document.
 
 ### Manual deployment

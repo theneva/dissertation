@@ -147,33 +147,20 @@ One important factor described by @chen:architecting-for-cd:2015 is which Archit
 
 One particular ASR is considered by @addo:automatic-failover:2014, who describe an architecture for automatically routing traffic to other cloud providers if one fails. This points back to the CAP theorem, and raises the question of how to replicate data and ensure consistency across multiple providers.
 
-## Summary of important criteria
+## Summary
 
-TODO: Fix that stupid heading ^ ("important" says nothing, maybe "criteria" is bad too.)
+This chapter has introduced the concept of microservices and their applicability, as well as some techniques for measuring quality and comparing strategies for deploying them.
 
-This literature review has uncovered central themes that are important when measuring various approaches to deployment:
+First, provisioning and maintaining the microservice runtime is a key concern. It ties in with the well-known CAP theorem, stating that consistency, availability, and partition tolerance is an unfeasible goal.
 
-- Microservice runtime, with regard to the problems of distributed computing and the CAP theorem;
-- Cloud computing providers as a runtime for microservices;
-- How often the organisation _wishes_ to deploy changes to the end users, and how often the infrastructure _allows_ deployment;
-- Expressiveness of code that can in itself act as documentation of the specification;
-- Implementation of Continuous Delivery from an organisational perspective, and how DevOps affects organisational culture; and
-- Quality metrics for measuring deployment approaches, in particular Architecturally Significant Requirements and their impact on the existing base when migrating to a Continuous Delivery workflow.
+Second, cloud computing is an important factor when discussing microservices, as many of the key advantages of a microservice architecture come into play when computing resources are virtually unlimited. A system of microservices naturally requires more resources such as CPU and RAM than a monolithic system, as the microservice-based system comprises multiple runtimes and databases.If computing resources are not limited, however, this isolation allows both scaling and deployment of independent services. This has become a realistic scenario due to the rise of cloud providers.
 
-Focus will be maintained on finding and implementing a strategy for deployment automation that fits the organisation's needs. Therefore, it will _not_ give great consideration to system uptime such as architecting specifically to support failover between data centres or cloud platform providers. It will, on the other hand, map the factors discussed in this review to a set of criteria that will be useful in comparing various strategies.
+Third, the deployment _regime_ in the organisation plays a large role in selecting a deployment strategy. It is essential to draw a parallel between how often the organisation _wishes_ to dploy changes to the end users, and how often the infrastructure _allows_ deployment. Automating the process takes work and introduces a learning curve, so the deployment pipeline should be tailored to suit the organisation's needs.
 
-The criteria uncovered in this literature review can be presented in the following table (TODO: reference to table?)
+Fourth, the expressiveness and readability of the code that specifies the deployment strategy is a key factor in cutting the learning curve for the deployment strategy. As the configuration code grows, its quality can be measured using tools from the software engineering field---not just deployment.
 
-| Criterion | Reference | Description | Unit
-| ------------------------- | --------------------- |  ------------------------------------------- | --------------------|
-| Configuration code LOC for a new service | @talwar:comparison-of-approaches-to-service-deployment:2005 | How much code must be written to enable deployment for a service? | Range (LOC)
-| Number of steps involved in a single deployment | @talwar:comparison-of-approaches-to-service-deployment:2005 | The number of steps required to perform a single deployment | Integer (step count)
-| Modifiability: LOC to express configuration changes | @bass-clements-kazman:software-architecture-in-practice:2013; @talwar:comparison-of-approaches-to-service-deployment:2005 | How much code must be written to change the configuration? | Range (LOC)
-| Time to deploy a change | @talwar:comparison-of-approaches-to-service-deployment:2005 | How long does it take to make a change, e.g., fix a bug, test the new code, and deploy it to production? | Range (minutes)
-| Barrier to first use | @talwar:comparison-of-approaches-to-service-deployment:2005 | Learning curve: the amount of prerequisite knowledge and skills required to operate and maintain the strategy (beyond absolutely required knowledge such as the Linux shell) | High; Medium; Low.
-| Feasibility of DevOps | @spinellis:by-hand:2012 | Can developers feasibly deploy their own changes to production ? | True?
-| Configuration as documentation | @armour:laws:2007; @talwar:comparison-of-approaches-to-service-deployment:2005 | To which extent does the configuration code itself double as documentation of the non-functional requirements that led to the configuration, eliminating the need to document these elsewhere? | Full; Some; Little
-| No ASRs beyond 12-factor app | @chen:architecting-for-cd:2015 | Following the 12-factor guidelines should be enough (from the software architecture perspective) to deploy to any runtime | (None; Somewhat; Completely)
-| Same-host duplicates | TODO | Possibility to run multiple instances of the same application on a single host | Impossible; Possible; Easy
+Fifth, selecting a deployment strategy may have a significant organisational impact. For example, introducing DevOps to enable Continuous Delivery in an organisation that has previously had a centralised team responsible for deployments requires the organisation to distribute these responsibilities to the developers, and possibly introduce new roles. In a sizable organisation, this distribution can be challenging: it affects the workflow of everyone responsible for the development, ranging from developers to managers. DevOps also affects processes for identifying and resolving problems with the software.
 
-Table: Criteria identified in the literature review.
+Last, there are multiple ways of measuring quality of deployment approaches. In particular, Architecturally Significant Requirements of the Deployment Strategy may require so many changes to the existing code base that the strategy is unfeasible for the organisation.
+
+With this context established, the next chapter, Method, presents how data was gathered to evaluate and compare various strategies for deployment. The Results chapter presents the data, providing a foundation for the Discussion chapter to compare and contrast the findings, and present a framework for evaluating strategies for deployment.

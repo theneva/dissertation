@@ -8,7 +8,7 @@ The Twelve-Factor App methodology^[http://12factor.net] is a set of twelve guide
 
 The guidelines are all attempts at establishing _best practices_, and are independent of programming language and execution environments. These will be used as a basis for comparing the interview data to that of the literature review.
 
-The first factor, __Codebase__^[http://12factor.net/codebase], states that any one service should be container in exactly one codebase, tracked with revision control. This one codebase should be deployed 
+The first factor, __Codebase__^[http://12factor.net/codebase], states that any one service should be container in exactly one codebase, tracked with revision control. This one codebase should be deployed… TODO
 
 Of particular interest are … TODO: describe the most interesting factors, and mention the others briefly.
 
