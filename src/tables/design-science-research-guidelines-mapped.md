@@ -9,3 +9,5 @@
 | 7: Communication of Research | Design-science research must be presented effectively both to technology-oriented as well as management-oriented audiences. | The research outcome is presented in this thesis.
 
 Table: Design-Science Research Guidelines [@hevner:dsr:2004, p. 83] mapped to this study.
+
+TODO: fix this reference

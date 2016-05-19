@@ -20,10 +20,10 @@ This section provides a brief overview of each Deployment Strategy used to deplo
 
 #### Manual deployment
 
-Manual deployment of new changes can be accomplished in a myriad of ways, but all include the following steps:
+Manual deployment of new changes can be implemented in a myriad of ways, but all include the following steps:
 
 1. Log onto the production server (for example with Secure SHell (SSH) or Secure File Transfer Protocol (SFTP)).
-2. Download a pre-built artefact containing the newest changes (such as a Java JAR file).
+2. Download a pre-built artefact containing the entire application with the newest changes (such as a Java JAR file).
 3. Move the artefact to its proper location (for example inside a Java Application Server), replacing the old version.
 4. (Dependent on technology) Restart services to enable new changes.
 
@@ -53,14 +53,14 @@ TODO: I have a lot of results from manual- and docker-based deployment (no scrip
 
 Manual deployment is a time-consuming process on a single host, let alone a multitude of hosts in a load-balanced environment. It also requires the person deploying to be familiar with the operating system on the production machine.
 
-Dependencies to pull in the changes (such as SCP) must be installed on the machine, and shared for all applications.
+Dependencies to pull in the changes (such as Secure Copy (SCP)) must be installed on the machine, and shared for all applications.
 
 - One severe fault in one application takes down the machine
 - One fault in the physical machine takes down the entire ecosystem
 - No (simple) scaling
-- Easy, requires only knowledge of Linux and the environment to install
-- Fairly easy to replace a module if you know what you're doing
-- Impossible to restart without downtime (without load balancers); requires more physical machines
+- Simple, requires only knowledge of Linux and the environment to install
+- Fairly simple to replace a module if you know what you're doing
+- Unfeasible to restart without downtime (without cluster or load balancers); requires more physical machines
 - One process in one application can eat all resources on the machine (unless extra steps are taken to contain the resource uses, or all applications are run in a VM such as the Java VM)
 - All versions of all required software/dependencies must be installed in the same namespace
 - Extra users should be configured (more manual work)

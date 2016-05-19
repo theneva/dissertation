@@ -18,3 +18,9 @@ TODO: Take a closer look at design science, or at least explain the characterist
 TODO: Replace all instances of the word "interesting"
 
 TODO: Add src/components/stuff-from-establish-framework
+
+TODO: consistently use "e.g." instead of "for example" or "such as" when listing things?
+
+TODO: grep for "area" (replace with "theme"), and "section" (replace with "chapter")
+
+TODO: "FINN" => "FINN.no"
