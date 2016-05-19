@@ -82,20 +82,3 @@ The number one factor for selecting a Deployment Strategy is that it must increa
 The team recognises that automation requires automated testing, and enforces a strict requirement that the Deployment Strategy facilitates various types of automated testing, including unit tests and integration tests. It would be interesting to see how Docker is utilised in this regard, as Docker seems to allow setting up a "private" test environment, which was also mentioned in the interview with Reise.
 
 Finally, the new Deployment Strategy _must_ allow for monitoring with tools such as Prometheus (https://prometheus.io), Agent Bob (JVM data, unsure about the actual name of this thing), and hopefully standardisable dashboards using tools such as Grafana and Graphite. There is also a requirement that the new system can be integrated with FINN's in-house deployment pipeline tool, although this tool can be tweaked to meet the requirements of the Deployment Strategy.
-
-### Framework by the industry
-
-TODO: Introduce the initial framework and fix this horrid heading
-
-| Criterion                          | Description                                                                                                                             | Unit
-| -----------------------------      | -------------------------------------------                                                                                             | --------------------
-| Complete deployment automation     | No hard requirement of any manual steps in the deployment process. Covers developer productivity.                                       | Yes?
-| Testability                        | The ability to easily test each service using both unit, module, and feature tests                                                      | ?
-| Monitorability                     | Can traffic and requests be monitored throughout the system and visualised at dashboards?                                               | Yes?
-| Horisontal scaling                 | Can the system easily be installed on new machines?                                                                                     | Easily; With difficulty
-| Vertical scaling                   | Can the system flexibly be allocated more resources from the host?                                                                      | Yes?
-| Automatic scaling                  | The ability to automatically monitor traffic and start or stop server instances to meet the exact demand, rather than wasting resources | Yes?
-| Support for cloud and self-hosting | Can the system be deployed to both self-hosted machines and cloud providers?                                                            | All; Self-hosted and IaaS; Only self-hosted
-| No-downtime migration              | Is it possible to migrate to the strategy with zero downtime?                                                                           | Yes?
-
-Table: Criteria identified via interviews

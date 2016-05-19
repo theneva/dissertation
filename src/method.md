@@ -66,9 +66,3 @@ Once an initial set of criteria for evaluating strategies for Automated Continuo
 ```include
 src/components/beer-fave.md
 ```
-
-## Limitations of the triangulation
-
-TODO: Write more here, and move the entire subchapter to the end of the discussion (evaluate the entire method under one subchapter: _Limitations of this study_, or something)
-
-Individual limitations of the interview-based case study and the implementation project have been discussed in their respective subchapters. However, the particular set and ordering may also impact the results. Learning how a single company accomplishes something may have influenced the implementation project. TODO: This sentence isn't going anywhere. Do I need it? "Probably not!"

@@ -41,11 +41,11 @@ Container-based manual deployment can, like manual deployment, be accomplished i
 
 TODO
 
-### Results by criterion
+### Results by strategy
 
-Take each row from the framework and compare. TODO: start out with only manual and container-based manual. Are they feasible for continuous deployment?
+This subsection presents experiences from and reflections on each deployment strategy.
 
-#### TODO: Criterion 1
+_This has not been completed yet._
 
 TODO: I have a lot of results from manual- and docker-based deployment (no script-based yet), but have not had time to actually put them in the document.
 
@@ -67,17 +67,12 @@ Dependencies to pull in the changes (such as SCP) must be installed on the machi
 
 ### Script-based automated deployment
 
+TODO...
+
 ### Manual container deployment with Docker
+
+TODO...
 
 ### Automated container deployment with Docker and Deis
 
-_This has not been completed yet._
-
-## Results: Criteria by strategy
-
-TODO: Continue this (the only place where the framework is actually used)
-
-| Criterion | Unit | Manual | Scipt-based automation | Contained manual | Contained automated
-| ------------- | ----------- | -------------- | -------------- | -------------- | -------------
-| Automatic scaling | Yes / (blank) | | | | Yes
-| Feature testing | Difficult | Difficult | Easy | Easy
+TODO...

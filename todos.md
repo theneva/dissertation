@@ -16,3 +16,5 @@ TODO: mention Dockercraft https://github.com/docker/dockercraft
 TODO: Take a closer look at design science, or at least explain the characteristics of DSR and why it is a good match.
 
 TODO: Replace all instances of the word "interesting"
+
+TODO: Add src/components/stuff-from-establish-framework
