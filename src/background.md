@@ -30,7 +30,7 @@ The microservice pattern can be seen as a way to implement SOA by defining each 
 
 @evans-fowler:domain-driven-design:2003 [p. 1] used the term _domain_  about the _subject area_ to which a piece of software is applied. In this context, the entire set of services is a software expression of the domain: it both contains the data, and provides means of accessing and manipulating it. A domain has multiple contexts, especially on big projects, so it is important to define _Bounded Contexts_^[http://martinfowler.com/bliki/BoundedContext.html] in which a model applies [@evans-fowler:domain-driven-design:2003, pp. 298--299]. A project should initially be a monolith, and be decomposed into microservices as it grows in size and complexity [@newman:building-microservices:2015, loc. 804].
 
-Each _client_ in a system is an expression of a Bounded Context. A client has traditionally meant a website, rendered to static assets (HTML, CSS, and JavaScript) on the server before being sent to the client. In a system with only microservices and clients, the clients themselves will connect directly to one or more microservices. It is then the client's task to combine data in a meaningful way and display it to the user.
+Each _client_ in a system is an expression of a Bounded Context. A client has traditionally meant a website, rendered to static assets (HTML, CSS, and JavaScript) on the server before being sent to the end user's web browser. In a system with only microservices and clients, the client connects directly to one or more services. It is then the client's task to combine data in a meaningful way and display it to the user.
 
 TODO: Figure ^?
 
@@ -72,7 +72,7 @@ These assertions will definitely need to be taken into consideration in the comp
 
 There are multiple potential areas of research related to the problems of availability and consistency. One that becomes particularly prominent in the context of microservices is flexible _service discovery_, i.e. dynamically finding the IP address of web services able to answer a request [e.g., @paliwal:semantics-based-discovery:2012; @bethea:automated-discovery:2008]. Another interesting area is fault tolerance using cloud services with tools for automatic failover to data centres in other geographical locations (or even other cloud platform providers) [e.g., @hole:building-trust:2016; @addo:automatic-failover:2014].
 
-@castro:evaluating:2015 [p. 590] suggested evaluating different strategies, tools, and cloud services as future work on automated deployment. This points to a need for a survey and comparison of the various tools that exist---but first, various strategies must be considered.
+@castro:evaluating:2015 [p. 590] suggested evaluating different strategies, tools, and cloud services as future work on automated deployment. This indicates a need for a survey and comparison of the various tools that exist---but first, various strategies must be considered.
 
 ## Deployment strategies
 
@@ -81,7 +81,7 @@ There are multiple potential areas of research related to the problems of availa
 [^blue-green-deployment]: http://martinfowler.com/bliki/BlueGreenDeployment.html
 [^canary-release]: http://martinfowler.com/bliki/CanaryRelease.html
 
-Logically, the quickest way of deploying new features to the end users is to directly modify the code running in the production environment. However, this is a risky approach: other than the developer's own confidence, there is no guarantee that the changes work as intended, do not interfere with existing functionality, and scale well under heavy load. On the other hand, a deployment process as extensive as the one portrayed above brings with it a large amount of overhead that may not be necessary. Thus, the goal must be to find the golden mean that fits the organisation's nonfunctional requirements, size, and team structure.
+Logically, the quickest way of deploying new features to the end users is to directly modify the code running in the production environment. However, this is a risky approach. There is no guarantee, beyond the developer's own confidence, that that the code behaves as intended, do not interfere with existing functionality, and scale well under heavy load. On the other hand, a deployment process as extensive as the one portrayed above brings with it a large amount of overhead that may not be necessary. Thus, the goal must be to find the golden mean that fits the organisation's technical requirements, size, and team structure.
 
 TODO: ditch the quotes and fix the sentence after them.
 
