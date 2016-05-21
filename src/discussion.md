@@ -6,30 +6,57 @@ This chapter maps the results from the literature review to those from the case 
 
 ## Scope
 
-This thesis focuses almost entirely on the technical side of selecting and, to some extent, migrating to a new deployment strategy that fits the needs of an organisation or project. One notable omission is _system availability_: many organisations have uptime as a hard nonfunctional requirement. Strategies and architectures to ensure availability, such as failover to other geographical locations or even other cloud providers, will not be discussed in this chapter.
+This thesis focuses almost entirely on the technical side of selecting and, to some extent, migrating to a new deployment strategy that fits the needs of an organisation or project. One notable omission is _system availability_: many organisations have uptime as a hard technical requirement. Strategies and architectures to ensure availability, such as failover to other geographical locations or even other cloud providers, will not be discussed in this chapter.
 
 ## The current literature
 
 The literature review showed quite a few potential requirements for a comparison framework. This subchapter revisits the literature review presented in the Background chapter, and distils it to a set of criteria. These criteria are then condensed to a table.
 
-### Configuration code
+### Configuration code LOC
 
-### Number of steps involved in a single deployment
+The number of lines of configuration code is inversely proportional to the maintainability of the configuration [@talwar:approaches-for-service-deployment:2005, p. 74]. LOC is simple to count, given a reasonably small set of configuration files, which makes configuration LOC a relevant metric for evaluating and comparing deployment strategies.
+
+In the context of automated deployment, there are two sets of configuration code: the configuration that specifies building and testing a service, and the code accepting and running the artefact. In a system with a large number of microservices, the centralised code should be negatable. Thus, this criterion is concerned only with the LOC required to configure a _new_ service.
+
+LOC can simply be presented as a number, but a relative expression is perhaps more useful for comparison. LOC is also heavily influenced by the markup or language used to write the code. Still, it carries some meaning, and is expressed in the initial framework as _both_ the actual number of LOC and a grouping relative to the other strategies in the comparison, which is one of (None, Low, Moderate, High).
+
+### Steps to deploy
+
+The number of manual steps involved in a single deployment of a service is logically proportional to the time and cost spent on deploying the service [@talwar:approaches-for-service-deployment:2005, p. 74]. The steps can be quantified as the number of significant actions that must be performed between uploading the newest version of the code base to the revision control system, and the changes becoming available to the end users.
+
+In a fully manual deployment context, these steps include building the artefact, running test suites, logging onto the server and installing the newly built artefact, and potentially restarting environments to accept new changes. In a fully automated context, a step can be to click a button to verify test results and begin the deployment process.
+
+As the number of steps directly influences the overhead for deploying a service, the number of steps should optimally be limited to as small a number as possible. In a comparison of deployment strategies, the exact number of steps should be of interest.
 
 ### Modifiability
 
+Modifiability is a well-established quality attribute in software engineering [bass-clements-kazman:software-architecture-in-practice:2013], and applies to configuration code as well. @talwar:approaches-for-service-deployment:2005 [p. 74] defines the number of LOC required to express a configuration change---modify the configuration---as a quantifiable metric for modifiability.
+
+As discussed previously, using LOC as a metric is imprecise because markup and programming language vary greatly in conciseness. However, it is still a useful metric in combination with others, and is expressed as both the actual number of LOC and a relative grouping, which is one of (None, Low, Moderate, High).
+
 ### Time to deploy
+
+The actual time taken to deploy a service naturally ties in with the number of manual steps, which was discussed previously, but is also influenced by other factors. For example, building many services with a single centralised build server may lead to long queues, which prevents some of the benefits from implementing continuous deployment.
+
+The time to deploy any given service varies with many external factors such as the current deployment queue. Thus, an average value over some time in a real context is required to say anything meaningful about the real impact. In the framework, this time should be an average, and is expressed as one of (Seconds, Few minutes, Several minutes, Hours).
 
 ### Learning curve
 
-- Learning curve
-- Retention
+Deployment configuration may have two primary stakeholders: developers of a service, and maintainers of the infrastructure on which the service runs. In a context of hundreds of microservices and only one or a few infrastructures, the infrastructure configuration becomes negatable. Thus, the primary focus of the framework is on the configuration required for each _service_.
+
+Rich Hickey, creator of the Clojure programming language, distinguished _simple_ from _easy_, defining "simple" as being of low complexity, and "easy" as being "at hand"^[https://www.infoq.com/presentations/Simple-Made-Easy]. This is a useful distinction in the context of deployment, as choosing an _easy_ solution to account for changes to the infrastructure may introduce multiple layers of complexity. Code complexity decreases maintainability [@bass-clements-kazman:software-architecture-in-practice:2013], which in turns leads to a steeper learning curve for new developers working on the service.
+
+Greater complexity is logically inversely proportional to the developers' retention of the configuration. A steeper initial learning curve for the configuration can even be preferable if the configuration is of low _complexity_---simple---leading to increased retention. In particular, retention trumps learning curve in cases where the deployment is standardised, so the configuration applies to all services in the system.
+
+In the framework, both learning curve and retention should be considered, and comparisons may benefit from measuring learning curve and retention separately. Learning is defined as one of (Difficult; Moderate; Simple), and retention is defined as one of (Low; Moderate; High).
 
 ### DevOps feasibility
 
 Does the strategy allow DevOps (typically through automation)?
 
 ### Configuration as documentation
+
+
 
 ### Only 12 factors
 
