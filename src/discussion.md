@@ -86,6 +86,8 @@ src/tables/criteria-from-interviews.md
 
 TODO: Use results from the BeerFave deployment implementations to identify and discuss weaknesses in the framework.
 
+TODO: Mention that pulling Docker images and starting containers was a preferable alternative to actually installing some dependencies (e.g., database management systems).
+
 ## The final framework
 
 This section has discussed several important aspects to consider when building and deploying applications in a microservice context. In conclusion of this section, (TODO table 1) presents the first part of the main artefact: a set of important criteria to consider when selecting a deployment strategy for a specific scenario, along with brief descriptions. The rest of this chapter evaluaties the framework using the reference application, and uses the framework to evaluate some popular deployment strategies. The entire thesis concludes with a final set of requirements uncovered from both this discussion and the implementation work.
