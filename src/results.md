@@ -22,7 +22,7 @@ This section provides a brief overview of each Deployment Strategy used to deplo
 
 Manual deployment of new changes can be implemented in a myriad of ways, but all include the following steps:
 
-1. Log onto the production server (for example with Secure SHell (SSH) or Secure File Transfer Protocol (SFTP)).
+1. Access the production server (for example with Secure SHell (SSH) or Secure File Transfer Protocol (SFTP)).
 2. Download a pre-built artefact containing the entire application with the newest changes (such as a Java JAR file).
 3. Move the artefact to its proper location (for example inside a Java Application Server), replacing the old version.
 4. (Dependent on technology) Restart services to enable new changes.

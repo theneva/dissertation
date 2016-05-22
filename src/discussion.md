@@ -154,7 +154,13 @@ src/tables/criteria-from-interviews.md
 
 ## Initial framework revision
 
-TODO: Write something about the initial framework revision (and how it will be evaluated), and present it in table form (without references).
+So far, this chapter has established one set of requirements for a deployment strategy based on the existing literature, and one set of requirements based on interviews with the industry. This discussion revealed that several factors that are of interest to the industry is hardly covered in the literature. This subchapter combines these sets of criteria into a single framework meant to assist in evaluating deployment strategies. The initial revision of the framework is displayed in Table (TODO: reference to table).
+
+```include
+src/tables/initial-framework.md
+```
+
+The rest of this chapter uses the framework to evaluate three different deployment strategies. The results are then summarised and compared with the framework in an inclusive table mapping criteria to deployment strategies.
 
 ## BeerFave
 
