@@ -165,3 +165,9 @@ Despite the Framework aiming to be applicable for both small and large businesse
 - Deployment strategy imposes requirements on the organisation as a whole, as described in the background chapter.
 - Could have used Engaged Scholarship or Action Design Research to get a much more intimate look into how an organisation implements a deployment strategy, especially with DevOps.
 - A case study at an organisation that has already implemented container-based deployment would be relevant. However, there are few of these at a relatively large scale available for evaluation, especially in Norway.
+
+## Summary
+
+This chapter has discussed the findings from the literature and the interviews, condensed them into an initial framework, and iteratively evaluated the framework through an implementation project. Each iteration introduced a new deployment strategy, and each evaluation was finally used to compare each strategy in a manner useful for a system architect deciding upon a deployment strategy.
+
+The next and final chapter, Conclusion, summarises and briefly evaluates the study and findings, and suggests areas of further research.
