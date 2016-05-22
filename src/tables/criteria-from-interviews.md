@@ -7,5 +7,6 @@
 | Automatic scaling | Can the system be automatically scaled by monitoring load? | True?
 | Monetary costs | Does the deployment strategy cost money beyond computing resources? | (None, One-time payment, Recurring expenses)
 | Multi-target deployment support | Can the system be deployed to both self-hosted machines and cloud providers? | True?
+| Dev/prod parity | Can the development and production environments be equal? | (Divergent, Similar, Equal)
 
 Table: Criteria identified via interviews

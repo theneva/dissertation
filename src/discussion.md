@@ -136,6 +136,10 @@ FINN.no is self-hosting their production environment, but hosting the testing en
 
 Deploying the services to a _Platform as a Service_ is another relevant challenge to consider, but was not relevant here. In the framework, multi-target deployment support is expressed as either true or false.
 
+### Dev/prod parity
+
+The interviews showed that one real scenario is having a self-hosted production environment, but using a cloud provider for hosting development and testing environments. The tenth factor in The Twelve-Factor App methodology, __Dev/prod parity__, relates directly to this guideline. The testing environment must not differ functionally from the production environment, even though the underlying infrastructures may be completely different. Dev/prod parity is expressed in the framework as one of (Divergent, Similar, Equal).
+
 ### Condensing interview characteristics
 
 The interviews revealed a few characteristics that are crucial to the industry, but not spared attention by the current literature. This indicates another gap in the literature on the topic of deployment from an industry perspective, which is outside the scope of this thesis.
