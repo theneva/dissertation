@@ -16,8 +16,6 @@ TODO: consistently use "e.g." instead of "for example" or "such as" when listing
 
 TODO: grep for "area" (replace with "theme"), and "section" (replace with "chapter")
 
-TODO: "FINN" => "FINN.no"
-
 TODO: "Horisontal" => "Horizontal"
 
 TODO: "characteristic" or "criterion/a"? or "requirement(s)" or "capability/ies?

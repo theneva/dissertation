@@ -67,7 +67,7 @@ One interesting hard requirement is that there can be no system downtime during 
 
 ### Thoughts on the transition to containers
 
-Team Reise is looking forward to using containers, as they have an unmet requirement to easily and quickly create or stop instances of their services to satisfy the server load. A natural extension of this possibility that the team is eager to look into is automatic service scaling, especially for the test environment---as the test environment will be hosted by a cloud provider---and FINN thus pays for the resources they use. This is unnecessary, especially since development and testing almost exclusively happens during the Norwegian daytime. When each service is contained as a Docker image, the team wishes to be able to pull the contained image and run their own copy of it during testing, thus removing the dependency on any potentially unstable environments mirroring production.
+Team Reise is looking forward to using containers, as they have an unmet requirement to easily and quickly create or stop instances of their services to satisfy the server load. A natural extension of this possibility that the team is eager to look into is automatic service scaling, especially for the test environment---as the test environment will be hosted by a cloud provider---and FINN.no thus pays for the resources they use. This is unnecessary, especially since development and testing almost exclusively happens during the Norwegian daytime. When each service is contained as a Docker image, the team wishes to be able to pull the contained image and run their own copy of it during testing, thus removing the dependency on any potentially unstable environments mirroring production.
 
 The dependency on a live environment could perhaps be a small concern. However, the testing environments, especially the one intended for frequent test deployment of the microservices themselves, are erratic and inconsistent, making them unreliable for the developers. This problem has been apparent for the last several months, and is a barrier to overcome when implementing Automated Continuous Delivery.
 
@@ -81,7 +81,7 @@ Team Reise has embraced their model for Continuous Delivery, and requires that a
 
 Finally, the team points to a need for automatic scaling, although they do not consider it a _requirement_ for the new Deployment Strategy.
 
-The number one factor for selecting a Deployment Strategy is that it must increase developer productivity. FINN exclusively develops their own in-house solution, and this may not be a requirement seen in another context, such as consulting. However, developer productivity is proportional to FINN's value to the end users, and thus revenue.
+The number one factor for selecting a Deployment Strategy is that it must increase developer productivity. FINN.no exclusively develops their own in-house solution, and this may not be a requirement seen in another context, such as consulting. However, developer productivity is proportional to FINN.no's value to the end users, and thus revenue.
 
 The team recognises that automation requires automated testing, and enforces a strict requirement that the Deployment Strategy facilitates various types of automated testing, including unit tests and integration tests. It would be interesting to see how Docker is utilised in this regard, as Docker seems to allow setting up a "private" test environment, which was also mentioned in the interview with Reise.
 
