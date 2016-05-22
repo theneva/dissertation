@@ -1,1 +1,1 @@
-\includepdf{extra-attachments/front-page.pdf}
+\includepdf[pages=-]{extra-attachments/front-page.pdf}
