@@ -1,7 +1,5 @@
 ### Motivation for a case study
 
-TODO: Why is this citation broken?
-
 @yin:2014 suggests three classes of case study: _exploratory_, used to seek questions that require researching; _descriptive_, helpful in analysing a phenomenon in its natural context; and _explanatory_, seeking to both identify events and explain _why_ they occurred.
 
 The work of establishing a set of characteristics that are important in a Automated Continuous Delivery (ACD) strategy is largely a _descriptive_ study, although it bears some _exploratory_ characteristics: the study might reveal connections to other, interesting areas, but the phenomenon under study is already largely defined. It is not of any particular interest to the research questions _why_ the organisation is in its current position.
@@ -16,12 +14,20 @@ Team Reise (Travel) was initially formed to rewrite the existing platform for th
 
 ### Scoping the study to interviews
 
-TODO: Why was the study scoped to only include interviews?
+As described in the Introduction, part of the preparation for this project involved following and working for FINN.no for four months. Thus, an overview of how the day-to-day deployment and the issues that affect all developers was already established before the study began. However, this preparation was not a formal data collection process, and so a more controlled gathering of data relevant to the study is required.
+
+Interviews were chosen as a way to expand a general understanding of development work at FINN.no to include extensive knowledge of the ideas and thoughts behind infrastructure and deployment. If another organisation had hosted the case study, a much more extensive look into their current processes and day-to-day development would have been required. This could have been accomplished by combining multiple data generation methods such as document analysis to establish a foundational understanding of the organisation and its processes [@oates:2006]. This understanding could then have been expanded by focused interviews, similar to the interviews carried out in this study.
 
 ### Interview design
 
-TODO: Describe how the interviews were carried out:
+The interviews at FINN.no were largely a _descriptive_ effort [@yin:2014], but the nature of the data collection was partly _exploratory_. The case study was initially planned through a meeting with the leader of the Cloud IO team, which is responsible for the infrastructure at FINN.no. This initial meeting revealed that FINN.no was at the time planning to migrate to a new deployment strategy. A need was established to conduct two semi-structured interviews [oates:2006, pp. 187--188].
 
-- Initial meeting with Team Cloud IO to find interesting teams and topics
-- One on one, approximately one hour
-- Semi-structured interviews [@oates:2006, pp. 187--188]
+The first interview aimed to identify the needs of a development team, as well as learn about the team's experiences with automating the deployment process using the existing deployment pipeline. The interview guide can be found in appendix (TODO: reference to appendix).
+
+TODO: write something more about how the interview was carried out
+
+The second interview sought to identify the reasoning and evaluation process behind selecting a new deployment strategy, and which criteria were used to find the best suited deployment strategy for FINN.no. The interview guide can be found in appendix (TODO: reference to appendix).
+
+TODO: write something more about how the interview was carried out
+
+Both interviews were one on one at FINN.no's offices in Oslo, and each lasted approximately one hour.
