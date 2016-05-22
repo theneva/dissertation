@@ -15,12 +15,9 @@ TODO Where is this sentence going?
 
 Technical requirements for the application were modelled in part to allow efficient testing of as many elements of the framework as possible.
 
-1. At least two services must be written in the same language.
-2. At least one service must be written in a different language, but run on the same runtime as at least one other service.
-3. At least one service must be written for a different runtime from all other services.
-4. The web application must be composed entirely of static assets (i.e., HTML, CSS, and JavaScript) and served directly from the file system with an HTTP server (such as _nginx_^[http://nginx.org]) with no regard for _what_ it serves.
-5. At least two services must use different Database Management Systems (DBMS).
-6. The system will be run on both a self-hosted Linux environment and with a _Platform as a Service_ (PaaS) provider.
+```include
+src/components/beerfave-technical-requirements.md
+```
 
 These technical requirements will allow testing each deployment strategy's flexibility and independence in terms of two important factors: first, the execution environment, such as a Platform as a Service with unknown underlying technology, or a self-hosted Linux or Windows server; second, programming language and frameworks.
 
