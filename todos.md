@@ -27,4 +27,4 @@ TODO: "FINN" => "FINN.no"
 
 TODO: "Horisontal" => "Horizontal"
 
-TODO: tone down the use of "artefact"?
+TODO: "characteristic" or "criterion/a"? or "requirement(s)"?

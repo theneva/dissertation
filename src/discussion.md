@@ -14,7 +14,7 @@ The literature review showed quite a few potential requirements for a comparison
 
 ### Configuration code LOC
 
-The number of lines of configuration code is inversely proportional to the maintainability of the configuration [@talwar:approaches-for-service-deployment:2005, p. 74]. LOC is simple to count, given a reasonably small set of configuration files, which makes configuration LOC a relevant metric for evaluating and comparing deployment strategies.
+The number of lines of configuration code is inversely proportional to the maintainability of the configuration [@talwar:comparison-of-approaches-to-service-deployment:2005, p. 74]. LOC is simple to count, given a reasonably small set of configuration files, which makes configuration LOC a relevant metric for evaluating and comparing deployment strategies.
 
 In the context of automated deployment, there are two sets of configuration code: the configuration that specifies building and testing a service, and the code accepting and running the artefact. In a system with a large number of microservices, the centralised code should be negatable. Thus, this criterion is concerned only with the LOC required to configure a _new_ service.
 
@@ -22,7 +22,7 @@ LOC can simply be presented as a number, but a relative expression is perhaps mo
 
 ### Steps to deploy
 
-The number of manual steps involved in a single deployment of a service is logically proportional to the time and cost spent on deploying the service [@talwar:approaches-for-service-deployment:2005, p. 74]. The steps can be quantified as the number of significant actions that must be performed between uploading the newest version of the code base to the revision control system, and the changes becoming available to the end users.
+The number of manual steps involved in a single deployment of a service is logically proportional to the time and cost spent on deploying the service [@talwar:comparison-of-approaches-to-service-deployment:2005, p. 74]. The steps can be quantified as the number of significant actions that must be performed between uploading the newest version of the code base to the revision control system, and the changes becoming available to the end users.
 
 In a fully manual deployment context, these steps include building the artefact, running test suites, logging onto the server and installing the newly built artefact, and potentially restarting environments to accept new changes. In a fully automated context, a step can be to click a button to verify test results and begin the deployment process.
 
@@ -30,13 +30,13 @@ As the number of steps directly influences the overhead for deploying a service,
 
 ### Modifiability
 
-Modifiability is a well-established quality attribute in software engineering [bass-clements-kazman:software-architecture-in-practice:2013], and applies to configuration code as well. @talwar:approaches-for-service-deployment:2005 [p. 74] defines the number of LOC required to express a configuration change---modify the configuration---as a quantifiable metric for modifiability.
+Modifiability is a well-established quality attribute in software engineering [bass-clements-kazman:software-architecture-in-practice:2013], and applies to configuration code as well. @talwar:comparison-of-approaches-to-service-deployment:2005 [p. 74] defines the number of LOC required to express a configuration change---modify the configuration---as a quantifiable metric for modifiability.
 
 As discussed previously, using LOC as a metric is imprecise because markup and programming language vary greatly in conciseness. However, it is still a useful metric in combination with others, and is expressed as both the actual number of LOC and a relative grouping, which is one of (None, Low, Moderate, High).
 
 ### Time to deploy
 
-The actual time taken to deploy a service naturally ties in with the number of manual steps, which was discussed previously, but is also influenced by other factors. For example, building many services with a single centralised build server may lead to long queues, which prevents some of the benefits from implementing continuous deployment.
+The actual time taken to deploy a service is proportional to the number of manual steps, which was discussed previously, but is also influenced by other factors. For example, building many services with a single centralised build server may lead to long queues, which prevents some of the benefits from implementing continuous deployment.
 
 The time to deploy any given service varies with many external factors such as the current deployment queue. Thus, an average value over some time in a real context is required to say anything meaningful about the real impact. In the framework, this time should be an average, and is expressed as one of (Seconds, Few minutes, Several minutes, Hours).
 
@@ -44,31 +44,41 @@ The time to deploy any given service varies with many external factors such as t
 
 Deployment configuration may have two primary stakeholders: developers of a service, and maintainers of the infrastructure on which the service runs. In a context of hundreds of microservices and only one or a few infrastructures, the infrastructure configuration becomes negatable. Thus, the primary focus of the framework is on the configuration required for each _service_.
 
-Rich Hickey, creator of the Clojure programming language, distinguished _simple_ from _easy_, defining "simple" as being of low complexity, and "easy" as being "at hand"^[https://www.infoq.com/presentations/Simple-Made-Easy]. This is a useful distinction in the context of deployment, as choosing an _easy_ solution to account for changes to the infrastructure may introduce multiple layers of complexity. Code complexity decreases maintainability [@bass-clements-kazman:software-architecture-in-practice:2013], which in turns leads to a steeper learning curve for new developers working on the service.
+Rich Hickey, creator of the Clojure programming language, distinguished _simple_ from _easy_, defining "simple" as being of low complexity, and "easy" as being "at hand"^[https://www.infoq.com/presentations/Simple-Made-Easy]. This is a useful distinction in the context of deployment, as choosing an _easy_ solution to account for changes to the infrastructure may introduce multiple layers of complexity. Code complexity decreases maintainability [@bass-clements-kazman:software-architecture-in-practice:2013], which in turns leads to a more significant learning effort for new developers working on the service.
 
-Greater complexity is logically inversely proportional to the developers' retention of the configuration. A steeper initial learning curve for the configuration can even be preferable if the configuration is of low _complexity_---simple---leading to increased retention. In particular, retention trumps learning curve in cases where the deployment is standardised, so the configuration applies to all services in the system.
+Greater complexity is logically inversely proportional to the developers' retention of the configuration. A tougher learning process for the configuration can even be preferable if the configuration is of low _complexity_---simple---leading to increased retention. In particular, retention trumps learning curve in cases where the deployment is standardised, so the configuration applies to all services in the system.
 
-In the framework, both learning curve and retention should be considered, and comparisons may benefit from measuring learning curve and retention separately. Learning is defined as one of (Difficult; Moderate; Simple), and retention is defined as one of (Low; Moderate; High).
+In the framework, both learning curve and retention should be considered, and comparisons may benefit from measuring learning curve and retention separately. Learning is defined as one of (Difficult, Moderate, Simple), and retention is defined as one of (Low, Moderate, High).
 
-### DevOps feasibility
+### DevOps efficacy
 
-Does the strategy allow DevOps (typically through automation)?
+DevOps, the idea of giving responsibility for deployment of a service to its developers instead of dedicating a team to operations (Ops) work, is a popular method of managing deployment in a service-based environment without dedicating one person to deployment per service [@spinellis:by-hand:2012]. The framework must consider how simple it is to implement DevOps with the strategy in question.
 
-### Configuration as documentation
+A DevOps culture requires each team working on any given service to have at the very least one person familiar with deployment configuration. Ideally, each team member should be able to deploy the service; if only a single team member can deploy the service, that person's work would either be interrupted with each new completed feature, or new features would need to be deployed whenever that person had time, rendering _discontinuous_ delivery.
 
+In the framework, DevOps concerns whether it is feasible for every team member to safely deploy the service at will without affecting other services or the host itself. This safety is typically guaranteed through automation [@spinellis:by-hand:2012], but can, of course, be ensured through other measures. It is expressed as either true or false.
 
+### Self-documenting configuration
 
-### Only 12 factors
+Configuration code can be viewed as executable knowledge [@armour:laws:2007]. The expressiveness of the configuration code is proportional to both maintainability and readability [@talwar:comparison-of-approaches-to-service-deployment:2005; @bass-clements-kazman:software-architecture-in-practice:2013]. If the service-specific configuration code can effectively explain the knowledge of the service's technical requirements, this "documentation" will never become outdated.
 
-No Architecturally Significant Requirements (ASRs) imposed on the deployed system beyond the 12 factor app.
+In the framework, this characteristic is either true or false.
+
+### Only twelve factors
+
+@chen:architecting-for-cd:2015 defined Architecturally Significant Requirements (ASRs) as technical requirements imposed on the service itself by its deployment configuration. The Twelve Factor App is a set of guidelines---factors---that simplify deployment. In the framework, services are assumed to follow relevant _factors_. The characteristic concerns whether the deployment strategy imposes additional requirements beyond those defined in The Twelve-Factor App.
+
+The number of ASRs beyond the twelve factors is expressed as one of (Many, Few, None).
 
 ### Same-host duplicates
 
-Can the service be run in multiple instances on the same host?
+A common case for smaller organisations is to run their services on a single host. Even if the production environment is run from separate hosts, the workflow may include multiple pre-production environments. These can include one environment for rapidly deploying and testing new features, and another for a more stable, production-like verification before deployment to end users.
 
-### Distillation of criteria
+In this context, there is value in being able to run multiple instances of the same service, and possibly even different versions of the same service, on the same host. This characteristic is defined as one of (Simple, With custom configuration, Unfeasible).
 
-These criteria have been condensed to table (TODO: reference to table).
+### Condensing literature characteristics
+
+This subchapter has discussed some characteristics identified in the current literature that can be useful when evaluating and comparing strategies for deployment in a microservice context. These characteristics can be condensed to the representation in table (TODO: reference to table).
 
 ```include
 src/tables/criteria-from-literature.md
@@ -76,7 +86,24 @@ src/tables/criteria-from-literature.md
 
 ## The interviews
 
-TODO: Contrast and compare criteria from the literature review and the interview data similarly to the previous subchapter.
+The interviews provided an insight into what the industry, represented by FINN.no, deems important in a deployment strategy. There is naturally some overlap with those characteristics discovered in the current literature. However, there are also some characteristics that were omitted in the reviewed literature. This subchapter discusses the characteristics that were only uncovered through the interviews.
+
+### Complete automation feasibility
+
+### Testability
+
+### Monitorability
+
+### Resource scaling
+
+- Horisontal
+- Vertical
+
+### Automatic scaling
+
+### Multi-target deployment support
+
+### Condensing interview characteristics
 
 ```include
 src/tables/criteria-from-interviews.md
@@ -90,7 +117,7 @@ TODO: Mention that pulling Docker images and starting containers was a preferabl
 
 ## The final framework
 
-This section has discussed several important aspects to consider when building and deploying applications in a microservice context. In conclusion of this section, (TODO table 1) presents the first part of the main artefact: a set of important criteria to consider when selecting a deployment strategy for a specific scenario, along with brief descriptions. The rest of this chapter evaluaties the framework using the reference application, and uses the framework to evaluate some popular deployment strategies. The entire thesis concludes with a final set of requirements uncovered from both this discussion and the implementation work.
+This section has discussed several important aspects to consider when building and deploying applications in a microservice context. In conclusion of this section, (TODO table 1) presents the first part of the main artefact: a set of important criteria to consider when selecting a deployment strategy for a specific scenario, along with brief descriptions. The rest of this chapter evaluates the framework using the reference application, and uses the framework to evaluate some popular deployment strategies. The entire thesis concludes with a final set of requirements uncovered from both this discussion and the implementation work.
 
 TODO: Make the framework…
 
