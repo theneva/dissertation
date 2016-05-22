@@ -20,7 +20,7 @@ Interviews were chosen as a way to expand a general understanding of development
 
 ### Interview design
 
-The interviews at FINN.no were largely a _descriptive_ effort [@yin:2014], but the nature of the data collection was partly _exploratory_. The case study was initially planned through a meeting with the leader of the Cloud IO team, which is responsible for the infrastructure at FINN.no. This initial meeting revealed that FINN.no was at the time planning to migrate to a new deployment strategy. A need was established to conduct two semi-structured interviews [oates:2006, pp. 187--188].
+The interviews at FINN.no were largely a _descriptive_ effort [@yin:2014], but the nature of the data collection was partly _exploratory_. The case study was initially planned through a meeting with the leader of the Cloud IO team, which is responsible for the infrastructure at FINN.no. This initial meeting revealed that FINN.no was at the time planning to migrate to a new deployment strategy. A need was established to conduct two semi-structured interviews [@oates:2006, pp. 187--188].
 
 The first interview aimed to identify the needs of a development team, as well as learn about the team's experiences with automating the deployment process using the existing deployment pipeline. The interview guide can be found in appendix (TODO: reference to appendix).
 
