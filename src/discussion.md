@@ -154,7 +154,7 @@ src/tables/criteria-from-interviews.md
 
 ## Initial framework revision
 
-So far, this chapter has established one set of requirements for a deployment strategy based on the existing literature, and one set of requirements based on interviews with the industry. This discussion revealed that several factors that are of interest to the industry is hardly covered in the literature. This subchapter combines these sets of criteria into a single framework meant to assist in evaluating deployment strategies. The initial revision of the framework is displayed in Table (TODO: reference to table).
+So far, this chapter has established one set of requirements for a deployment strategy based on the existing literature, and one set of requirements based on interviews with the industry. This discussion revealed several factors that are of interest to the industry, but hardly covered in the literature. This subchapter combines these sets of criteria into a single framework meant to assist in evaluating deployment strategies. The initial revision of the framework is displayed in Table (TODO: reference to table).
 
 ```include
 src/tables/initial-framework.md
