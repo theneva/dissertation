@@ -1,15 +1,10 @@
-TODO: The Framework can possibly be visualised better than using the silly table:
-
-- http://www.edwardtufte.com/tufte/books_vdqi (academic, don't necessarily spend a lot of time)
-- http://www.amazon.com/Show-Me-Numbers-Designing-Enlighten/dp/0970601999 (not academic, but good input)
+TODO: Write something about what my project is about in the introduction, before Motivation. What can the reader expect? Grab onto them!
 
 TODO: Don't number the subsubsubsubsubsubsections.
 
 TODO: Add performance metrics (application startup time, request response time) in background chapter
 
 TODO: Mention that Deis (while extremely helpful) can only be run inside CoreOS, which can be limiting in some cases
-
-TODO: mention LeverOS
 
 TODO: mention Dockercraft https://github.com/docker/dockercraft
 
