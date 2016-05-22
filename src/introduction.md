@@ -8,6 +8,10 @@ Service-based computing (and variants commonly referred to as "microservices" an
 
 The microservice trend is also clearly apparent in the software industry, with huge web-based Software as a Service (SaaS) companies such as Netflix^[http://techblog.netflix.com/2015/02/a-microscope-on-microservices.html] and Amazon^[http://highscalability.com/amazon-architecture]. One relatively famous rant comparing Amazon's infrastructure strategy to Google's is available on Google+^[https://plus.google.com/+RipRowan/posts/eVeouesvaVX], and presents quite a few key points about why it makes sense for a large SaaS provider to build a _platform_ based on services, rather than a few, or even many, monolithic applications.
 
+This thesis presents a look into the process of continuously delivering changes---features and fixes---to the end users of a service-based system. The study learns from both the current academic literature and the industry to establish a set of important characteristics of a deployment strategy. The framework is evaluated and matured through iterative application to some common deployment strategies.
+
+The framework itself is a utility for system architects in the process of selecting a strategy for continuous delivery of multiple services. It is designed to assist in both evaluation and comparison of strategies, and allows the user to focus on the characteristics that are important in their own context.
+
 ## Motivation
 
 Part of the motivation for this project came from following the world of microservices over some time. In particular, the online classified media company FINN.no has been of interest. They develop and maintain one of Norway's largest websites^[http://rapp.tns-gallup.no/?aid=9072261], and are certainly among the Norwegian companies most involved in building a microservice-based platform to serve their requests. Following their work included working at FINN.no for four months as a student, and learning about some of the benefits and challenges of the microservice architecture.

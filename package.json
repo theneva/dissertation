@@ -3,7 +3,7 @@
     "clean": "rimraf .pandoc build",
     "preinstall": "curl https://raw.githubusercontent.com/citation-style-language/styles/master/chicago-author-date.csl --create-dirs -o .pandoc/chicago-author-date.csl",
     "prebuild": "mkdirp build",
-    "build": "pandoc --standalone --template=template.tex --smart --number-sections --include-in-header=style.tex --include-before-body=include-front-page.md --filter pandoc-include --filter=pandoc-fignos --biblio=references.bib --filter=pandoc-citeproc --csl=.pandoc/chicago-author-date.csl --from markdown+autolink_bare_uris --output build/draft.pdf metadata.yaml src/introduction.md src/background.md src/method.md src/results.md src/discussion.md src/conclusion.md start-appendices.md src/appendices/glossary.md src/appendices/ethical-approval-letter.md src/references.md"
+    "build": "pandoc --standalone --template=template.tex --smart --number-sections --include-in-header=style.tex --include-before-body=include-front-page.tex --include-before-body=src/abstract.tex --include-before-body=src/acknowledgements.tex --include-before-body=include-citation-certification.tex --filter pandoc-include --filter=pandoc-fignos --biblio=references.bib --filter=pandoc-citeproc --csl=.pandoc/chicago-author-date.csl --from markdown+autolink_bare_uris --output build/draft.pdf metadata.yaml src/introduction.md src/background.md src/method.md src/results.md src/discussion.md src/conclusion.md start-appendices.tex src/appendices/glossary.md src/appendices/ethical-approval-letter.md src/references.md"
   },
   "devDependencies": {
     "mkdirp": "^0.5.1",
