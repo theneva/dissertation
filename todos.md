@@ -27,4 +27,4 @@ TODO: "FINN" => "FINN.no"
 
 TODO: "Horisontal" => "Horizontal"
 
-TODO: "characteristic" or "criterion/a"? or "requirement(s)"?
+TODO: "characteristic" or "criterion/a"? or "requirement(s)" or "capability/ies?

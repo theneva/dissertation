@@ -86,28 +86,71 @@ src/tables/criteria-from-literature.md
 
 ## The interviews
 
-The interviews provided an insight into what the industry, represented by FINN.no, deems important in a deployment strategy. There is naturally some overlap with those characteristics discovered in the current literature. However, there are also some characteristics that were omitted in the reviewed literature. This subchapter discusses the characteristics that were only uncovered through the interviews.
-
-### Complete automation feasibility
+The interviews provided an insight into what the industry, represented by FINN.no, deems important in a deployment strategy. There is naturally some overlap with those characteristics discovered in the current literature. However, there are also some characteristics that were only somewhat discussed in the reviewed literature. This subchapter discusses the characteristics that were only uncovered through the interviews.
 
 ### Testability
 
+The perhaps most unified requirement for a deployment strategy for FINN.no was testability. The strategy must allow testing on all of unit, module, and feature level. Feature level tests require briefly running a production-like environment with internal dependencies (e.g., the user service) installed and open for communication. The biggest difference between deployment strategies in this regard relates to service isolation.
+
+In the framework, testability is defined as one of (Simple, Mocked dependencies).
+
+### Complete automation feasibility
+
+Team Reise has an explicit requirement that the deployment strategy must support complete automation. They are satisfied with their current, fully automated approach. In other words, a strategy must support various degrees of automation, as other services may require manual testing in a production-like environment before being deployed to the end users. In the framework, this characteristic is expressed as true or false.
+
 ### Monitorability
+
+Team Cloud IO expressed a dependency on being able to monitor various metrics in the system, ranging from service-specific data such as Java Virtual Machine resource usage to tracing requests throughout the entire system. These metrics should be sent to a centralised location for visualisation of the data, and notifications if a metric exceeds a threshold.
+
+Monitoring is important for both testing environments and the production environment, as new changes are deployed to the testing environment for review before advancement to production. This ties into the challenges of running multiple instances of the same service on the same host.
+
+Another interesting challenge is reservation of computing resources to ensure monitorability even while the servers are overloaded. This is, however, a very specific metric, and is thus not considered in the framework.
+
+In the initial framework, monitorability is considered as a complete package, although it may be valuable to separate various types of monitoring in a comparison of strategies. The value is expressed as one of (Simple, Feasible, Unfeasible).
 
 ### Resource scaling
 
-- Horisontal
-- Vertical
+Horizontal scaling is accomplished by starting or stopping instances of the same service to account for higher and lower load. Given money, the task of adding further hosts to the cluster has been rendered trivial by cloud providers.
+
+In contrast, vertical scaling is accomplished by simply dedicating more computing resources to a specific service on a single host. Vertical scaling compensates for a high resource usage to complete a stateful operation. Cloud providers have made vertical scaling trivial to an extent as well, although only to an extent.
+
+For FINN.no, it is important that a deployment strategy allows both horizontal and vertical scaling, as they have both stateless services that respond to a high number of requests, and stateful services that perform computationally expensive operations.
+
+Both kinds of scaling is always going to be possible: it is possible to build a server farm to meet technical requirements. However, the aspect of cloud computing plays a significant role in this context. In the framework, scaling is defined by one of (Simple, Horizontal only, Vertical only, Manual).
 
 ### Automatic scaling
 
+Automatic scaling takes resource scaling one step further, by automatically monitoring server load and starting or stopping instances to save computing power, and thus money. This is particularly relevant for test environments, as they are almost exclusively in use during daytime. In the framework, automatic scaling capabilities is expressed as true or false.
+
+### Monetary costs
+
+One key aspect of selecting a deployment strategy is monetary costs: the financial impact of configuring, transitioning to, and maintaining the infrastructure. This aspect was, interestingly, not discussed in the reviewed literature whatsoever.
+
+Many technology stacks are open source and free to use, at the cost of building internal competence. On the other hand, some platforms such as OpenShift^[https://www.openshift.com] have commercial options where little internal competence is required at the cost of support fees. This cost was estimated to be too high for FINN.no, effectively dismissing it as an option.
+
+Price ranges are difficult to estimate, but it is still highly valuable to have an indication of cost in a strategy comparison. In the framework, monetary costs are represented by one of (None, One-time payment, Recurring expenses).
+
 ### Multi-target deployment support
 
+FINN.no is self-hosting their production environment, but hosting the testing environments at a cloud provider. Each service must be deployable to both the cloud environment and the self-hosted solution. Thus, the deployment strategy must result in and run artefacts that support a cloud environment. However, the environment is hosted in an _Infrastructure as a Service_, which can closely mirror the production environment.
+
+Deploying the services to a _Platform as a Service_ is another relevant challenge to consider, but was not relevant here. In the framework, multi-target deployment support is expressed as either true or false.
+
 ### Condensing interview characteristics
+
+The interviews revealed a few characteristics that are crucial to the industry, but not spared attention by the current literature. This indicates another gap in the literature on the topic of deployment from an industry perspective, which is outside the scope of this thesis.
+
+The interviews also revealed a strong focus on developer productivity, which is difficult to measure. However, it is relevant to note that FINN.no focused less on quickly migrating to a new strategy, and more on building a solution that will be truly beneficial to their product value.
+
+The capabilities deemed important have been condensed to a table in (TODO reference to table).
 
 ```include
 src/tables/criteria-from-interviews.md
 ```
+
+## Initial framework revision
+
+TODO: Write something about the initial framework revision (and how it will be evaluated), and present it in table form (without references).
 
 ## BeerFave
 
