@@ -1,10 +1,7 @@
 ---
 documentclass: report
-title: Early draft
 author:
   - Martin Lehmann
-abstract: |
-  (…)
 link-citations: true
 toc: true
 toc-depth: 2
