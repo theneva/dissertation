@@ -1,7 +1,5 @@
 TODO: Write something about what my project is about in the introduction, before Motivation. What can the reader expect? Grab onto them!
 
-TODO: Don't number the subsubsubsubsubsubsections.
-
 TODO: Add performance metrics (application startup time, request response time) in background chapter
 
 TODO: Mention that Deis (while extremely helpful) can only be run inside CoreOS, which can be limiting in some cases
