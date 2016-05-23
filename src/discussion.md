@@ -164,9 +164,43 @@ The rest of this chapter uses the framework to evaluate three different deployme
 
 ## BeerFave
 
-TODO: Use results from the BeerFave deployment implementations to identify and discuss weaknesses in the framework.
+This subchapter iteratively evaluates the initial revision of the framework by applying it to evaluate some strategies for Continuous Delivery.
 
-TODO: Mention that pulling Docker images and starting containers was a preferable alternative to actually installing some dependencies (e.g., database management systems).
+### Manual deployment
+
+In order to deploy a service, the developer must have been granted access to the production environment operating system. It requires the developer deploying a service to be familiar with the operating system, which may require internal training.
+
+Manual deployment is characterised by zero configuration code, because the deployment process is not expressed in code, but instead completed in full by the developers themselves. This does not, however, remove the overhead of expressing the process: in a reasonably large company, the deployment process must be standardised, and thus documented. Any modifications to the production environment must be reflected in this documentation. In contrast, a fully manual approach to deployment inherently requires the highest number of distinct manual steps to perform a single deployment. Thus, the manual approach is more prone to human error than automation-based strategies.
+
+A completely manual approach to deployment requires the developers to understand the deployment process and the Linux operating system, but does not introduce further layers of complexity. These concepts can also be considered fundamental to working a DevOps environment. Given a uniform infrastructure supporting all services, the retention is very high, and the deployment process is the same for each service.
+
+Due to the high number of manual steps to deploy a single service, manual deployment is a time-consuming process for the developer on a single host, let alone a multitude of hosts in a cluster environment. Deploying a service written in a compiled language requires seven manual steps. Deploying the same version of the service to each subsequent host requires repeating the last four steps. In the realistic case of deploying this service to two different Environments, each running on a cluster of four hosts, the last four steps would be repeated eight times per successful deployment, resulting in a grand total of 35 manual steps per deployment.
+
+In this approach, all applications run within the same execution environment. They have access to all resources in the host operating system limited only by the execution environment (e.g., the privileges of the Linux user that owns the process) and any access limitations imposed by the service itself, such as the Java Virtual Machine. Each Application Runtime competes equally for system resources unless further manually configured measures are taken. In other words, a long-running process in one service may cause a significant slowdown of other services.
+
+In addition to competing for resources, each application in the execution environment is vulnerable to errors in the other services. A fatal error in any one service running in the same environment runs the risk of shutting other services down entirely.
+
+The deployment strategy does not affect unit level tests, but starting the service to run module and feature-level tests requires a server-like environment on the development machine. Furthermore, automated feature-level testing can only be performed by manually running each Backing Service in the local environment, and the Backing Services should be reset between each test run. This introduces a large overhead into the development process, and makes feature-level testing possible with mocked Backing Services.
+
+An application of the framework to evaluate manual continuous deployment of microservices is presented in (TODO: reference to table)
+
+```include
+src/tables/evaluation-manual-deployment.md
+```
+
+Applying the framework to manual deployment reveals some imperfections in the framework. In particular, computing clusters and Environments beyond the production environment are not considered. These factors are also significantly impacted by factors about the service itself, such as whether it is compiled. This can be alleviated by modifying _Steps to deploy_, and _Time to deploy_ to account for multiple hosts and environments, and add a characteristic concerning scaling to multiple hosts. These criteria are presented in Table (TODO reference to table):
+
+| Criterion | Description | Unit | Manual deploy 
+| -------------- | ------------------------------------ | ----------------- | ---------- |
+| Steps to deploy | How many manual steps are required to singly deploy a compiled service to a host? | Step count (integer) | 7
+| Time to deploy | How long does it take to singly deploy a change to a host? | (Seconds; Few minutes; Several minutes; Hours) | Few minutes
+| Cluster scale | How are manual steps and time to deploy proportional to the number of target hosts? | (Linearly; Negatably) | Linearly
+
+Table: Modified criteria in second framework revision
+
+### Script-based deployment
+
+
 
 ## The final framework
 
