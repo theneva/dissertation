@@ -66,9 +66,11 @@ BeerFave required two database systems: CockroachDB and PostgreSQL. This require
 
 #### Other
 
+TODO: Move this to the discussion?
+
 A completely manual approach to deployment requires the developers to understand the deployment process and the Linux operating system, but does not introduce further layers of complexity. These concepts can also be considered fundamental to working a DevOps environment. Given a uniform infrastructure supporting all services, the retention is very high, and the deployment process is the same for each service.
 
-Due to the high number of manual steps to deploy a single service, manual deployment is a time-consuming process for the developer on a single host, let alone a multitude of hosts in a cluster environment. Deploying a service written in a compiled language requires seven manual steps. In the realistic case of deploying this service to two different environments, each running on a cluster of four hosts, the seven steps would be repeated eight times per successful deployment, resulting in a grand total of 56 manual steps per deployment.
+Due to the high number of manual steps to deploy a single service, manual deployment is a time-consuming process for the developer on a single host, let alone a multitude of hosts in a cluster environment. Deploying a service written in a compiled language requires seven manual steps. Deploying the same version of the service to each subsequent host requires repeating the last four steps. In the realistic case of deploying this service to two different Environments, each running on a cluster of four hosts, the last four steps would be repeated eight times per successful deployment, resulting in a grand total of 35 manual steps per deployment.
 
 In this approach, all applications run within the same execution environment. They have access to all resources in the host operating system limited only by the execution environment (e.g., the privileges of the Linux user that owns the process) and any access limitations imposed by the service itself, such as the Java Virtual Machine. Each Application Runtime competes equally for system resources unless further manually configured measures are taken. In other words, a long-running process in one service may cause a significant slowdown of other services.
 
