@@ -32,16 +32,7 @@ The microservice pattern can be seen as a way to implement SOA by defining each 
 
 Each _client_ in a system is an expression of a Bounded Context. A client has traditionally meant a website, rendered to static assets (HTML, CSS, and JavaScript) on the server before being sent to the end user's web browser. In a system with only microservices and clients, the client connects directly to one or more services. It is then the client's task to combine data in a meaningful way and display it to the user.
 
-TODO: Figure ^?
-
-With the rise of front-end JavaScript frameworks such as Google's AngularJS^[https://angularjs.org/] and Facebook's React^[https://facebook.github.io/react/], it has become a common industry practise to build an _API Gateway_ in addition to the web client. An API Gateway is reminiscent of the classic _façade pattern_ [@gof] from object-oriented programming: the single responsibility of the API Gateway is to combine data from the various microservices within the Bounded Context, and expose the data to the client through a tailored web API. In this pattern, each API Gateway represents a single Bounded Context.
-
-TODO: Check out
-
-- https://www.nginx.com/blog/building-microservices-using-an-api-gateway/ kan være en bra bloggpost å referere til—finner ingenting nyttig i IEEE…
-- Sjekk ut http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=6885428&url=http%3A%2F%2Fieeexplore.ieee.org%2Fiel7%2F6880679%2F6885035%2F06885428.pdf%3Farnumber%3D6885428
-- kanskje http://www.isa.us.es/sites/default/files/Towards_SLA_API_Gateways.pdf også?
-- This is a classic GoF pattern (obligatory honorary mention?)
+With the rise of front-end JavaScript frameworks such as Google's AngularJS^[https://angularjs.org/] and Facebook's React^[https://facebook.github.io/react/], it has become a common industry practise to build an _API Gateway_^[https://www.nginx.com/blog/building-microservices-using-an-api-gateway] in addition to the web client. An API Gateway is reminiscent of the classic _façade pattern_ [@gof] from object-oriented programming: the single responsibility of the API Gateway is to combine data from the various microservices within the Bounded Context, and expose the data to the client through a tailored web API. In this pattern, each API Gateway represents a single Bounded Context.
 
 The API Gateway pattern allows executing potentially slow actions like making multiple requests and merging the data on a developer-controlled server, instead of in the user's web browser. This can be a great advantage, as the client is subject to multiple factors outside the developers' control, such as network latency and hardware specifications. The pattern also enables some security measures, such as running microservices behind a firewall. Finally, the same API Gateway can be used by multiple clients on other platforms than the web, such as mobile and desktop applications.
 
@@ -51,7 +42,7 @@ When each service communicates via a standardised interface, it becomes possible
 
 Somewhat related to the microservice pattern, the system's user interface application (for example a web application) may consist of multiple web applications abstracted to look like a single application by a load balancer or proxy. These can be navigated without making the user aware that they are switching between applications, given a uniform look and feel.
 
-The microservice pattern is an increasingly popular alternative to the traditional _monolithic_ architecture. In this context, a monolithic application (or a _monolith_) refers to a large application where the entire system consists of a single code base executed within a single runtime (e.g., Java's Java Virtual Machine (JVM) or .NET's Common Language Runtime (CLR)).
+The microservice pattern is an increasingly popular alternative to the traditional _monolithic_ architecture. In this context, a monolithic application (or a _monolith_) refers to a large application where the entire system consists of a single code base executed within a single runtime (e.g., the Java Virtual Machine (JVM) or .NET's Common Language Runtime (CLR)).
 
 @castro:evaluating:2015 [p. 590] conclude that there are several benefits to being able to publish a system as a set of smaller services that can be managed independently. Specifically, they point to independent development, deployment, scaling, operation, and monitoring as a key enabler for companies to manage large applications with a more practical methodology, and scale individual development teams more easily.
 
@@ -66,9 +57,9 @@ They also point to the cost of this gained agility and granular scalability: mic
 > 7. Transport cost is zero; and
 > 8. The network is homogeneous.
 
-These assertions will definitely need to be taken into consideration in the comparison of various approaches. Despite their age, the fallacies are highly relevant to three popular quality attributes: _Consistency_, the guarantee that a request to read data always returns the most recently written data; _Availability_, the guarantee that the system consistently returns an expected response within timeout limits; and _Partition tolerance_ the guarantee that the system responds as expected even if network nodes are unable to communicate (CAP). The _CAP Theorem_ states that it is impossible for a system to meet all attributes at the same time [@brewer:cap:2012], as shown in figure (TODO REFERENCE TO FIGURE).
+These assertions will definitely need to be taken into consideration in the comparison of various approaches. Despite their age, the fallacies are highly relevant to three popular quality attributes: _Consistency_, the guarantee that a request to read data always returns the most recently written data; _Availability_, the guarantee that the system consistently returns an expected response within timeout limits; and _Partition tolerance_ the guarantee that the system responds as expected even if network nodes are unable to communicate (CAP). The _CAP Theorem_ states that it is impossible for a system to meet all attributes at the same time [@brewer:cap:2012], as shown in @erb:2012's Figure @fig:cap-venn-diagram.
 
-![CAP theorem as a Venn diagram (TODO reference to https://github.com/berb/diploma-thesis/blob/gh-pages/original/resources/cap.svg)](http://img.ctrlv.in/img/16/05/20/573e4fbf0a685.png)
+![CAP theorem as a Venn diagram [@erb:2012]](http://img.ctrlv.in/img/16/05/20/573e4fbf0a685.png){#fig:cap-venn-diagram width=50%}
 
 There are multiple potential areas of research related to the problems of availability and consistency. One that becomes particularly prominent in the context of microservices is flexible _service discovery_, i.e. dynamically finding the IP address of web services able to answer a request [e.g., @paliwal:semantics-based-discovery:2012; @bethea:automated-discovery:2008]. Another interesting area is fault tolerance using cloud services with tools for automatic failover to data centres in other geographical locations (or even other cloud platform providers) [e.g., @hole:building-trust:2016; @addo:automatic-failover:2014].
 
@@ -83,13 +74,7 @@ There are multiple potential areas of research related to the problems of availa
 
 Logically, the quickest way of deploying new features to the end users is to directly modify the code running in the production environment. However, this is a risky approach. There is no guarantee, beyond the developer's own confidence, that that the code behaves as intended, do not interfere with existing functionality, and scale well under heavy load. On the other hand, a deployment process as extensive as the one portrayed above brings with it a large amount of overhead that may not be necessary. Thus, the goal must be to find the golden mean that fits the organisation's technical requirements, size, and team structure.
 
-TODO: ditch the quotes and fix the sentence after them.
-
-> As [service-oriented computing (SOC)] becomes more prevalent, the question of which deployment approach is best gains importance. --- @talwar:approaches-for-service-deployment:2005 [p. 70]
-
-> Recent studies show that management of software deployments dominates system administration costs, and that configuration is a major source of errors in system development. --- @talwar:comparison-of-approaches-to-service-deployment:2005 [p. 1]
-
-Whether it is possible to determine a "best" approach, as Talwar et al. allude to, remains to be seen. However, they establish a need for a tool for comparison of strategies and tools.
+Software deployment is a dominating system administration cost, and configuration is a major error source [@talwar:comparison-of-approaches-to-service-deployment:2005]. As the popularity of service-based computing rises, so does the importance of answering which deployment approach is the best fit for the context [@talwar:approaches-for-service-deployment:2005].
 
 @talwar:comparison-of-approaches-to-service-deployment:2005 define and compare four different approaches to deployment of services: manual, script-based, language-based, and model-based as a function of scale, complexity, and susceptibility to change. They also define a few evaluation metrics which they call Quality of Manageability (QoM) for the deployment configuration:
 
@@ -130,31 +115,27 @@ Continuous Delivery (CD) can be said to be a combination of two different ideas 
 
 Putting these together renders a development workflow where developers frequently merge their changes into the production-ready version of the code base, and those changes are immediately deployed to the end users. This way of developing may introduce a need for feature management such as blue/green deployment[^blue-green-deployment] and/or canary release[^canary-release].
 
-Continuous Delivery is only a part of a deployment strategy, but deserves its own discussion because of its potential organisational impact. With a monolithic architecture it may be possible to have a dedicated operations (Ops) team and still deploy new features and fixes to the end users somewhat continuously as the team will only have to deal with a single artefact. Even if they need to deploy it multiple times per day, tools can be developed to quickly verify and deploy the artefact. In a microservice context, however, with multiple services and teams each selecting their own technology stacks and deployment habits, it will likely be unfeasible for a dedicated operations team to manually verify and deploy each service as it receives changes. Furthermore, having to provide the Ops team with a production-ready package for them to verify and deploy whenever a change is made to the code base introduces unnecessary overhead for the development teams.
+Continuous Delivery is only a part of a deployment strategy, but deserves its own discussion because of its potential organisational impact. With a monolithic architecture it may be possible to have a dedicated operations (Ops) team and still deploy new features and fixes to the end users somewhat continuously as the team will only have to deal with a single artefact. Even if they need to deploy it multiple times per day, tools can be developed to quickly verify and deploy the artefact. In a microservice context, however, with multiple services and teams each selecting their own technology stacks and deployment habits, it will likely be unfeasible for a dedicated operations team to manually verify and deploy each service as it receives changes. Furthermore, having to provide the Ops team with a production-ready package for them to verify and deploy whenever a change is made to the code base introduces unnecessary overhead for the development teams. This requires an organisational shift of deployment responsibility known as DevOps [e.g., @cois:modern-devops:2014].
 
-Teams working in a microservice context can benefit from automating the process of deployment, and automation is _required_ to maintain a frequent and continuous release cycle [@bruneo:cloudwave:2014; @wettinger:devops-for-cloud:2015], stripping an Ops team of this repetitive role. A recurring suggestion for future research is practises for cross-functional teams and actual continuous integration [e.g., @lwakatare:devops-embedded:2016].
+Teams working in a microservice context can benefit from automating the process of deployment, and automation is suggested as a _requirement_ to maintain a frequent and continuous release cycle [@bruneo:cloudwave:2014; @wettinger:devops-for-cloud:2015]. The combination of automation and developers' responsibility for deployment---DevOps---should remove the need for a dedicated Ops team.
 
-TODO: ^ what does that even mean? and why isn't devops mentioned at all in this section?
+## Deployment pipeline quality metrics
 
-## Quality metrics for deployment pipelines
+There have been several studies specifically measuring the quality of a deployment pipeline (e.g., @talwar:comparison-of-approaches-to-service-deployment:2005; @castro:evaluating:2015; @feitelson:at-facebook:2013), some concerned with only a specific part of the pipeline (e.g., @spinellis:by-hand:2012; @chen:continuous-delivery:2015). Given that deployment configuration is indeed code, it becomes relevant to look to metrics designed to measure code quality in general (e.g., @bass-clements-kazman:software-architecture-in-practice:2013 with regard to architecture).
 
-TODO: this sentence is way too long
-
-There have been several studies specifically measuring the quality of a deployment pipeline (e.g., @talwar:comparison-of-approaches-to-service-deployment:2005; @castro:evaluating:2015; @feitelson:at-facebook:2013), some concerned with only a specific part of the pipeline (such as @spinellis:by-hand:2012; @chen:continuous-delivery:2015), and---given that deployment configuration is indeed code---it becomes relevant to look to metrics designed to measure code quality in general (for instance @bass-clements-kazman:software-architecture-in-practice:2013 with regard to architecture).
-
-### The 12 factor app
-
-@chen:architecting-for-cd:2015 introduces the concept of Architecturally Significant Requirements, referring to the architectural requirements imposed upon the service itself by the deployment strategy. Supporting this, the popular Platform as a Service (PaaS) provider Heroku^[https://heroku.com] has defined a document it calls _The Twelve-Factor App_^[http://12factor.net]. This is a set of twelve requirements that should be met by each service to enable simple deployment in a cloud environment. These requirements concern every layer of the application, including, but not limited to, code base structure, dependency declaration, testing environments, and logging.
-
-```include
-src/components/12factor.md
-```
-
-TODO: hva sier denne setninga? vvv
+@chen:architecting-for-cd:2015 introduces the concept of Architecturally Significant Requirements, referring to the architectural requirements imposed upon the service itself by the deployment strategy. 
 
 One important factor described by @chen:architecting-for-cd:2015 is which Architecturally Significant Requirements (ASRs) the deployment strategy imposes on the project. While Chen considers architecting for Continuous Delivery in a broad sense, different strategies will impose fewer or more ASRs of differing types on the code base of the actual service. More ASRs can make the transition to a Continuous Delivery set-up more difficult, more time consuming, and thus more expensive.
 
 One particular ASR is considered by @addo:automatic-failover:2014, who describe an architecture for automatically routing traffic to other cloud providers if one fails. This points back to the CAP theorem, and raises the question of how to replicate data and ensure consistency across multiple providers.
+
+## The Twelve-Factor App
+
+Supporting the notion of ASRs, the popular Platform as a Service (PaaS) provider Heroku^[https://heroku.com] has defined a document it calls _The Twelve-Factor App_^[http://12factor.net]. This set of guidelines is highly relevant to deployment of microservices, and so the twelve factors are outlined in the following.
+
+```include
+src/components/12factor.md
+```
 
 ## Summary
 
