@@ -144,6 +144,6 @@ Fourth, the expressiveness and readability of the code that specifies the deploy
 
 Fifth, selecting a deployment strategy may have a significant organisational impact. For example, introducing DevOps to enable Continuous Delivery in an organisation that previously had a centralised team responsible for deployments requires the organisation to distribute these responsibilities to the developers, and possibly introduce new roles. In a sizable organisation, this distribution of responsibility can be challenging: it affects the workflow of everyone responsible for the development, ranging from developers to managers. DevOps also affects processes for identifying and resolving problems with the software.
 
-Last, there are multiple ways of measuring quality of deployment approaches. In particular, Architecturally Significant Requirements of the Deployment Strategy may require so many changes to the existing code base that the strategy is unfeasible for the organisation.
+Last, there are multiple ways of measuring quality of deployment approaches. In particular, Architecturally Significant Requirements of the deployment strategy may require so many changes to the existing code base that the strategy is unfeasible for the organisation.
 
 With this context established, the next chapter, Method, presents how data was gathered to evaluate and compare various strategies for deployment.

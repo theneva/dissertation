@@ -1,6 +1,6 @@
 As mentioned in the Method chapter, FINN.no is Norway's leading actor in the online classified ads market. This puts them in a position where they have requirements that come with large scale, making them a highly relevant company to study: their requirements can possibly be generalised to other large-scale companies, something that cannot be accomplished by carrying out a small implementation project alone. FINN.no is also an early adopter of the microservice pattern in their software architecture.
 
-The goal of the interviews was to shed light on their requirements for a Deployment Strategy, in particular to see how, if at all, these requirements differ from those discussed in the literature review. In particular, the following two teams were of interest: Team Cloud IO develops and maintains the infrastructure at FINN.no, and is behind the company-wide initiative to migrate to an infrastructure with exclusively container-based automated deployment; Team Reise is a team that has maintained a focus on automating all processes related to building, testing, and deploying their software. The leader of each team was interviewed.
+The goal of the interviews was to shed light on their requirements for a deployment strategy, in particular to see how, if at all, these requirements differ from those discussed in the literature review. In particular, the following two teams were of interest: Team Cloud IO develops and maintains the infrastructure at FINN.no, and is behind the company-wide initiative to migrate to an infrastructure with exclusively container-based automated deployment; Team Reise is a team that has maintained a focus on automating all processes related to building, testing, and deploying their software. The leader of each team was interviewed.
 
 As there are only two sources, the data is presented by themes that emerged from the interviews. The sources are only distinguished when this matters to the context.
 
@@ -12,7 +12,7 @@ However, FINN.no has encountered some performance issues related to multiple con
 
 First, all of the services currently run without any isolation, so they always compete for the same computing resources. Isolation would allow restricting the processing power available to any given service on demand. Many of the performance problems the FINN.no platform is currently encountering can be traced back to a lack of service isolation. This is a key factor in the selection of a new deployment strategy. Lack of service isolation also requires dynamic allocation of computing resources, as some services scale vertically (using threads, and thus requiring more resources on a single machine), while other services scale horizontally (allowing load balancing through multiple deployments).
 
-Second, the non-uniform load distribution means that the physical servers are sometimes providing much more computing power than they need, especially during the night, but other times are able to provide too little. This is a somewhat important concern in the production environment, but much more so in the testing environment. As a result, FINN.no's test environments are being moved to an Infrastructure as a Service (IaaS) platform. Thus, a need for automatic scaling to reduce unnecessary expenses becomes apparent. This is another factor the team had to consider when selecting a Deployment Strategy.
+Second, the non-uniform load distribution means that the physical servers are sometimes providing much more computing power than they need, especially during the night, but other times are able to provide too little. This is a somewhat important concern in the production environment, but much more so in the testing environment. As a result, FINN.no's test environments are being moved to an Infrastructure as a Service (IaaS) platform. Thus, a need for automatic scaling to reduce unnecessary expenses becomes apparent. This is another factor the team had to consider when selecting a deployment strategy.
 
 ### Experiences with Automated Continuous Delivery
 
@@ -40,8 +40,6 @@ Especially in a culture with no formal code review before code is deployed, Team
 
 ### Testing environments and the transition to containers
 
-TODO: Explain the environments and be consistent.
-
 FINN.no has three main Environments: _dev_, used for frequently deploying microservices; _ci_, used for frequently deploying web interfaces; and _prod_, exposed to the end users. The current set-up requires each build and deployment for _dev_ and _ci_ to pass in order for new changes to reach the _prod_ environments, even though Team Reise does not use test environments at all. Thus, other unstable services in the _dev_ or _ci_ environments may cause delayed release of enhancements to the Team Reise platform, even if the new code itself is without mistakes.
 
 Team Reise uses URL-based _feature toggles_ to deploy all new features to the production Environment, an approach they are happy with.
@@ -50,7 +48,7 @@ FINN.no's Team Reise team has a different take on deployment from the other team
 
 ### Strategy choice
 
-The Cloud IO team has been exploring options for deployment since the summer of 2015, testing various deployment solutions including in-house and cloud-based _Platform as a Service_ infrastructures such as Cisco Mantl^[https://mantl.io] and Apache Mesos^[http://mesos.apache.org]. They eventually committed to Docker with Kubernetes. The team has no strict deadline for implementing the new strategy---the existing set-up works---so the key objective is that the new strategy adds as much value as possible to the platform. They hope to finish the implementation of the new Deployment Strategy during summer 2017, but maintain focus on added value.
+The Cloud IO team has been exploring options for deployment since the summer of 2015, testing various deployment solutions including in-house and cloud-based _Platform as a Service_ infrastructures such as Cisco Mantl^[https://mantl.io] and Apache Mesos^[http://mesos.apache.org]. They eventually committed to Docker with Kubernetes. The team has no strict deadline for implementing the new strategy---the existing set-up works---so the key objective is that the new strategy adds as much value as possible to the platform. They hope to finish the implementation of the new deployment strategy during summer 2017, but maintain focus on added value.
 
 One relevant hard requirement is that there can be no system downtime during the migration to the new strategy; they will run the old set-up and the new Kubernetes platform in parallel, and redirect their beta users to the Kubernetes cluster. This means that the "old" and "new" clusters must be able to communicate, which was _not_ seen mentioned as a requirement in the literature review.
 
@@ -64,14 +62,12 @@ The dependency on a live environment could perhaps be a small concern. However, 
 
 TODO: This is confusing, sort it out. When is who saying what?
 
-Team Reise has embraced their model for Continuous Delivery, and requires that any new Deployment Strategy _must_ support complete automation of the deployment process. They also consider testability to be a _requirement_ for automation, meaning that any Deployment Strategy must facilitate easy testing: it must be possible to provision and instrument a full end-to-end test by pulling in and starting dependencies in an isolated environment. The team strongly wishes to avoid the current problem of the testing environments breaking their build due to failing dependencies.
+Team Reise has embraced their model for Continuous Delivery, and requires that any new deployment strategy _must_ support complete automation of the deployment process. They also consider testability to be a _requirement_ for automation, meaning that any deployment strategy must facilitate easy testing: it must be possible to provision and instrument a full end-to-end test by pulling in and starting dependencies in an isolated environment. The team strongly wishes to avoid the current problem of the testing environments breaking their build due to failing dependencies.
 
-Finally, the team points to a need for automatic scaling, although they do not consider it a _requirement_ for the new Deployment Strategy.
+Finally, the team points to a need for automatic scaling, although they do not consider it a _requirement_ for the new deployment strategy.
 
-The number one factor for selecting a Deployment Strategy is that it must increase developer productivity. FINN.no exclusively develops their own in-house solution, and this may not be a requirement seen in another context, such as consulting. However, developer productivity is proportional to FINN.no's value to the end users, and thus revenue.
+The number one factor for selecting a deployment strategy is that it must increase developer productivity. FINN.no exclusively develops their own in-house solution, and this may not be a requirement seen in another context, such as consulting. However, developer productivity is proportional to FINN.no's value to the end users, and thus revenue.
 
-The team recognises that automation requires automated testing, and enforces a strict requirement that the Deployment Strategy facilitates various types of automated testing, including unit tests and integration tests. It would be relevant to see how Docker is utilised in this regard in a later study, as Docker can allow configuring a "private" test environment, which was also mentioned in the interview with Reise.
+The team recognises that automation requires automated testing, and enforces a strict requirement that the deployment strategy facilitates various types of automated testing, including unit tests and integration tests. It would be relevant to see how Docker is utilised in this regard in a later study, as Docker can allow configuring a "private" test environment, which was also mentioned in the interview with Reise.
 
-Finally, the new Deployment Strategy _must_ allow for monitoring with tools such as Prometheus (https://prometheus.io), Agent Bob (JVM data, unsure about the actual name of this thing), and hopefully standardisable dashboards using tools such as Grafana and Graphite. There is also a requirement that the new system can be integrated with Pipeline, although this tool can be tweaked to meet the requirements of the Deployment Strategy.
-
-TODO: ditch this list of names (no point to it), and add in the Adobe Analytics thing.
+Finally, the new deployment strategy _must_ allow for monitoring with both external and internal tools. There also exists a wish for the possibility to generate standardised dashboards whenever a new service is created. Lastly, the system must support FINN.no's internal build tool, although this tool _can_ be tweaked to meet the requirements of the deployment strategy if required.
