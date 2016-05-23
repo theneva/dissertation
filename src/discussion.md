@@ -1,8 +1,8 @@
 # Discussion
 
-The background chapter concluded with an important set of criteria identified in the current literature. Similarly, the results chapter presented a set of important criteria identified through the case study. These criteria were combined and used to evaluate the reference application _BeerFave_, which both demonstrated how the framework can be used, and brought up some important observations.
+The background chapter concluded with an important set of criteria identified in the current literature. Similarly, the results chapter presented a set of important criteria identified through the case study. These criteria were combined and used to evaluate the reference application _BeerFave_, which both demonstrated how the framework can be used, and brought up some important observations. This chapter maps the results from the literature review to those from the case study to establish an initial framework. Using this initial framework, each strategy implementation with BeerFave used to iteratively evaluate the framework.
 
-This chapter maps the results from the literature review to those from the case study to establish an initial framework. Using this initial framework, each strategy implementation with BeerFave used to iteratively evaluate the framework. Two key findings are presented in this chapter. First, the application of the framework to some deployment strategies provides an analysis. Second, the application results in a final revision of the framework.
+Two key findings are presented in this chapter. First, the application of the framework to some deployment strategies provides an analysis of two deployment strategies using the framework. Second, the evaluation process results in a final revision of the framework.
 
 ## Scope
 
@@ -214,21 +214,19 @@ A home-grown script for activating a new version of a service inherently require
 src/tables/evaluation-scripted-automated-deployment.md
 ```
 
-Applying the framework to the 
+Applying the framework to this scripted automated deployment strategy… TODO
 
 ## The final framework
 
-This section has discussed several important aspects to consider when building and deploying applications in a microservice context. In conclusion of this section, (TODO table 1) presents the first part of the main artefact: a set of important criteria to consider when selecting a deployment strategy for a specific scenario, along with brief descriptions. The rest of this chapter evaluates the framework using the reference application, and uses the framework to evaluate some popular deployment strategies. The entire thesis concludes with a final set of requirements uncovered from both this discussion and the implementation work.
+This section has discussed several important aspects to consider when building and deploying applications in a microservice context. In conclusion of this section, (TODO table 1) presents the first part of the artefact: an iteratively developed set of important characteristics of a deployment strategy.
 
-TODO: Make the framework…
-
-| Criterion | Description | Unit
-| --------- | ----------- | ----
-| TODO | Make | This
+```include
+src/tables/final-framework.md
+```
 
 ## Limitations
 
-This subchapter discusses some limitations of the research design.
+The study presented in this thesis has provided one insight into how system architects can evaluate and compare strategies for Continuous Delivery. As with any other research design, however, there are some limitations to the narrow scope of this study. The key limitations of the selected research design are discussed in this subchapter.
 
 ### Interview limitations
 
@@ -258,10 +256,11 @@ Despite the Framework aiming to be applicable for both small and large businesse
 
 ### Triangulation limitations
 
-- Only looks at the technical aspect of deployment strategies, not software _management_.
-- Deployment strategy imposes requirements on the organisation as a whole, as described in the background chapter.
-- Could have used Engaged Scholarship or Action Design Research to get a much more intimate look into how an organisation implements a deployment strategy, especially with DevOps.
-- A case study at an organisation that has already implemented container-based deployment would be relevant. However, there are few of these at a relatively large scale available for evaluation, especially in Norway.
+On a more general level, triangulating a case study and a design and creation project brings its own set of limitations.
+
+First of all, strategies for continuous delivery have been shown to impact the organisation as well as the technical infrastructure. This study has only considered the technical side in any considerable depth, leaving out aspects from the Information Systems branch such as IT governance.
+
+A case study of an organisation utilising container technology would be highly relevant to provide a further indication of whether the framework is applicable in a real-world context. However, such organisations are few and far between, particularly in Norway. If such a case study were to be conducted, however, it would be relevant to look to the paradigms of Engaged Scholarship [@ven:engaged-scholarship:2007] or Action Design Research [@sein:adr:2011] to further ensure industry relevance.
 
 ## Summary
 
