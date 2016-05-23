@@ -208,7 +208,9 @@ A home-grown script for activating a new version of a service inherently require
 src/tables/evaluation-scripted-automated-deployment.md
 ```
 
-Applying the framework to this scripted automated deployment strategy… TODO
+Applying the framework to this scripted automated deployment strategy shows that the second revision of the framework is directly applicable to evaluating the scripted automated deployment configuration. Thus, the framework is not modified further in this chapter.
+
+Importantly, this applicability may be a result of similar execution environments. A container-based deployment system such as Docker^[https://www.docker.com] powered by a platform such as Deis^[http://deis.io] could yield very different results. The same applies to strategies involving deployment to cloud-based _Platform as a Service_ provider such as Heroku. These are potential areas of further research.
 
 ## The final framework
 
@@ -218,7 +220,13 @@ This section has discussed several important aspects to consider when building a
 src/tables/final-framework.md
 ```
 
-The two implemented strategies can be compared using
+The two implemented strategies can be simply compared using the framework. This is illustrated in Table @tbl:framework-comparison, where the characteristic descriptions are omitted to allow more room.
+
+```include
+src/tables/framework-comparison.md
+```
+
+This comparison concludes the discussion of the BeerFave deployment project and framework maturing process. The rest of this chapter discusses some limitations from the scope of this study.
 
 ## Study limitations
 
