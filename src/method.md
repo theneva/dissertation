@@ -55,4 +55,4 @@ src/components/beer-fave.md
 
 ## Summary
 
-This chapter has presented the research design to investigate the research questions. First, an understanding of the industry's requirements for a Continuous Delivery strategy for microservices is established through a case study based around interviews at FINN.no. Second, two deployment strategies will be tested and evaluated using BeerFave, the reference system, as a controlled case. The next chapter shows the results from these methods of data generation.
+This chapter has presented the research design to investigate the research questions. First, an understanding of the industry's requirements for a Continuous Delivery strategy for microservices is established through a case study based around interviews at FINN.no. Second, two deployment strategies were tested and evaluated using BeerFave, the reference system, as a controlled case. The next chapter shows the results from these methods of data generation.
