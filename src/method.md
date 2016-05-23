@@ -25,9 +25,9 @@ Design-Science attempts to "create things that serve human purposes", and is tec
 
 Answers to the research questions for this thesis has two main audiences: the aim is to provide practitioners with a tool for evaluating and comparing strategies to deployment, as well as to bridge the academic gap between microservices and continuous deployment. Establishing an initial framework based on the literature and interviews with practitioners, and incrementally improving the framework by applying it to realistic deployment strategies is a safe way to ensure industry relevance. Thus, Design Science is a good fit for this study.
 
-@hevner:dsr:2004 defined _IT artefacts_ to include constructs, models, and methods used in development and use of Information Systems, but exclude matters of people and organisational elements. The artefact generated from the project presented in this thesis is the framework for evaluating and comparing strategies for Automated Continuous Delivery (ACD).
+@hevner:dsr:2004 defined _IT artefacts_ to include constructs, models, and methods used in development and use of Information Systems, but exclude matters of people and organisational elements. The artefact generated from the project presented in this thesis is the framework for evaluating and comparing strategies for Continuous Microservice Delivery (CMD).
 
-The artefact is iteratively evaluated by implementing multiple strategies for ACD, and testing the framework by using it to evaluate each strategy. The artefact provides guidance on how to search the solution space for a problem, and is thus a _method_ [@hevner:dsr:2004, p. 79].
+The artefact is iteratively evaluated by implementing multiple strategies for CMD, and testing the framework by using it to evaluate each strategy. The artefact provides guidance on how to search the solution space for a problem, and is thus a _method_ [@hevner:dsr:2004, p. 79].
 
 @hevner:dsr:2004 [p. 83] presented seven Design-Science Research Guidelines for conducting Design Science Research. Their table is reproduced in Table @tbl:design-science-research-guidelines-mapped, and additionally mapped to the expected outcomes of this study.
 
@@ -51,7 +51,7 @@ src/components/interview-presentation.md
 
 ## Design and Creation: BeerFave
 
-Once an initial set of criteria for evaluating strategies for Automated Continuous Delivery has been established, the framework should be tested in order to be valid. To accomplish this, a reference microservice-based system was developed. This system was incrementally configured to be deployed using two different strategies. After each strategy, the strategy was evaluated using the framework, and the framework was evaluated. This subchapter presents this system.
+Once an initial set of criteria for evaluating strategies for Continuous Microservice Delivery has been established, the framework should be tested in order to be valid. To accomplish this, a reference microservice-based system was developed. This system was incrementally configured to be deployed using two different strategies. After each strategy, the strategy was evaluated using the framework, and the framework was evaluated. This subchapter presents this system.
 
 ```include
 src/components/beer-fave.md

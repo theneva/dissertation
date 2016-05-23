@@ -16,7 +16,7 @@ Second, the non-uniform load distribution means that the physical servers are so
 
 ### Experiences with Automated Continuous Delivery
 
-Team Reise sees ACD as a highly favourable factor in their everyday development. In particular, they have experienced that Continuous Delivery leads to fewer mistakes that are time-consuming to correct. Directly related to the very frequent release cycle, they have found it much easier to isolate and roll back whenever a mistake does make it into the code base.
+Team Reise sees Automated Continuous Delivery as a highly favourable factor in their everyday development. In particular, they have experienced that Continuous Delivery leads to fewer mistakes that are time-consuming to correct. Directly related to the very frequent release cycle, they have found it much easier to isolate and roll back whenever a mistake does make it into the code base.
 
 In addition to the travel marketplace, Team Reise is also responsible for the services related to cabins and summerhouses that they inherited from another team. The deployment processes related to this project are not automated, so this service resembles most other services in the entire system that is FINN.no. Although productivity is difficult to quantify, the Reise marketplace can be directly compared to the cabin and summerhouse project. The team is certain that they produce more and better features with the Reise marketplace's automated approach to deployment.
 

@@ -218,6 +218,8 @@ This section has discussed several important aspects to consider when building a
 src/tables/final-framework.md
 ```
 
+The two implemented strategies can be compared using
+
 ## Study limitations
 
 The study presented in this thesis has provided one insight into how system architects can evaluate and compare strategies for Continuous Delivery. As with any other research design, however, there are some limitations to the narrow scope of this study. The key limitations of the selected research design are discussed in this subchapter.

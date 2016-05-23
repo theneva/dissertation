@@ -44,7 +44,7 @@ src/components/research-questions.md
 
 The remainder of the thesis is organised into five chapters.
 
-First, the Background chapter presents a literature review that explores and discusses the research areas relevant to Automated Continuous Deployment (ACD) in a microservice context.
+First, the Background chapter presents a literature review that explores and discusses the research areas relevant to Continuous Microservice Delivery (CMD) in a microservice context.
 
 Next, the Method chapter presents the means used to answer the research questions. It argues for using Design Science Research [@hevner:dsr:2004] as a methodology for the project, and presents the design of the data generation methods and the software system built to evaluate the findings. It concludes by discussing some advantages and disadvantages of the selected research design.
 

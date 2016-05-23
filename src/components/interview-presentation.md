@@ -2,7 +2,7 @@
 
 @yin:2014 suggests three classes of case study: _exploratory_, used to seek questions that require researching; _descriptive_, helpful in analysing a phenomenon in its natural context; and _explanatory_, seeking to both identify events and explain _why_ they occurred.
 
-The work of establishing a set of characteristics that are important in a Automated Continuous Delivery (ACD) strategy is largely a _descriptive_ study, although it bears some _exploratory_ characteristics: the study might reveal connections to other, relevant areas, but the phenomenon under study is already largely defined. It is not of any particular interest to the research questions _why_ the organisation is in its current position.
+The work of establishing a set of characteristics that are important in a strategy for Continuous Microservice Delivery (CMD) strategy is largely a _descriptive_ study, although it bears some _exploratory_ characteristics: the study might reveal connections to other, relevant areas, but the phenomenon under study is already largely defined. It is not of any particular interest to the research questions _why_ the organisation is in its current position.
 
 ### Selecting a case: FINN.no
 
