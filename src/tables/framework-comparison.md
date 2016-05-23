@@ -9,7 +9,7 @@
 | Multi-target deployment support | True? | True | True
 | Dev/prod parity | (Divergent, Similar, Equal) | Similar at best | Similar at best, but potentially equal on the build server
 | Configuration code LOC | (None, Low, Moderate, High) | None | High
-| Steps to deploy | Step count (integer) | 7 (compiled service) | None
+| Steps to deploy | Step count (integer) | 7 (compiled service) | 0
 | Modifiability | (None, Low, Moderate, High) | None | High (linearly proportional to service count)
 | Cluster scale | (Linear growth; Constant increase) | Linear growth | Constant increase
 | Time to deploy | (Seconds; Few minutes; Several minutes; Hours) | Few minutes to a single host

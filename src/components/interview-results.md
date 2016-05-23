@@ -60,13 +60,9 @@ The dependency on a live environment could perhaps be a small concern. However, 
 
 ### Summary
 
-TODO: This is confusing, sort it out. When is who saying what?
+Team Reise has embraced their model for Continuous Delivery, and requires that any new deployment strategy _must_ support complete automation of the deployment process. They also consider testability to be a _requirement_ for automation, meaning that any deployment strategy must facilitate easy testing: it must be possible to provision and instrument a full end-to-end test by pulling in and starting dependencies in an isolated environment. The team strongly wishes to avoid the current problem of the testing environments breaking their build due to failing dependencies. Finally, the team points to a need for automatic scaling, although they do not consider it a _requirement_ for the new deployment strategy.
 
-Team Reise has embraced their model for Continuous Delivery, and requires that any new deployment strategy _must_ support complete automation of the deployment process. They also consider testability to be a _requirement_ for automation, meaning that any deployment strategy must facilitate easy testing: it must be possible to provision and instrument a full end-to-end test by pulling in and starting dependencies in an isolated environment. The team strongly wishes to avoid the current problem of the testing environments breaking their build due to failing dependencies.
-
-Finally, the team points to a need for automatic scaling, although they do not consider it a _requirement_ for the new deployment strategy.
-
-The number one factor for selecting a deployment strategy is that it must increase developer productivity. FINN.no exclusively develops their own in-house solution, and this may not be a requirement seen in another context, such as consulting. However, developer productivity is proportional to FINN.no's value to the end users, and thus revenue.
+For Team Cloud IO, The number one factor for selecting a deployment strategy is that it must increase developer productivity. FINN.no exclusively develops their own in-house solution, and this may not be a requirement seen in another context, such as consulting. However, developer productivity is proportional to FINN.no's value to the end users, and thus revenue.
 
 The team recognises that automation requires automated testing, and enforces a strict requirement that the deployment strategy facilitates various types of automated testing, including unit tests and integration tests. It would be relevant to see how Docker is utilised in this regard in a later study, as Docker can allow configuring a "private" test environment, which was also mentioned in the interview with Reise.
 
