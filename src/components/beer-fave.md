@@ -1,4 +1,4 @@
-Measuring quality of microservice deployment requires a reference system comprising multiple services. The app _BeerFave_ was built to accommodate this. Keeping the system as close to realistic as possible is important for the findings' validity [TODO REFERENCE TO OATES maybe?]. Many popular applications can be generalised (although greatly simplified in the process) to:
+Measuring quality of microservice deployment requires a reference system comprising multiple services. The app _BeerFave_ was built to accommodate this. Keeping the system as close to realistic as possible is important for the findings' validity. Many popular applications can be generalised (although greatly simplified in the process) to:
 
 - storage and authentication of __users__;
 - a collection of __items__ (e.g., posts on a social medium); and
@@ -8,8 +8,7 @@ TODO: fix tense about BeerFave (future tense later)
 
 BeerFave is a relatively simple system consisting of these three services; a public-facing API to tie the services together and expose their functionality; and a web application to consume and manipulate the data contained in the services.
 
-One key concern for any microservice system is _standardisation_ on languages and platforms. It is certainly an organisational problem: teams consist of people who are typically fluent in a small set of programming languages. However, the configuration required to automate deployment of the services is another considerable factor.
-TODO Where is this sentence going?
+One key concern for any microservice system is _standardisation_ on languages and platforms. It is certainly an organisational problem: teams consist of people who are typically fluent in a small set of programming languages. However, the configuration required to automate deployment of the services is another considerable factor. Services are implemented in multiple languages that run on distinct platforms to allow testing this characteristic.
 
 Technical requirements for the application were modelled in part to allow efficient testing of as many elements of the framework as possible.
 
