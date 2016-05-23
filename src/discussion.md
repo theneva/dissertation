@@ -104,7 +104,7 @@ Team Cloud IO expressed a dependency on being able to monitor various metrics in
 
 Monitoring is important for both testing environments and the production environment, as new changes are deployed to the testing environment for review before advancement to production. This ties into the challenges of running multiple instances of the same service on the same host.
 
-Another interesting challenge is reservation of computing resources to ensure monitorability even while the servers are overloaded. This is, however, a very specific metric, and is thus not considered in the framework.
+Another challenge is reservation of computing resources to ensure monitorability even while the servers are overloaded. This is, however, a very specific metric, and is thus not considered in the framework.
 
 In the initial framework, monitorability is considered as a complete package, although it may be valuable to separate various types of monitoring in a comparison of strategies. The value is expressed as one of (Simple, Feasible, Unfeasible).
 
@@ -124,7 +124,7 @@ Automatic scaling takes resource scaling one step further, by automatically moni
 
 ### Monetary costs
 
-One key aspect of selecting a deployment strategy is monetary costs: the financial impact of configuring, transitioning to, and maintaining the infrastructure. This aspect was, interestingly, not discussed in the reviewed literature whatsoever.
+One key aspect of selecting a deployment strategy is monetary costs: the financial impact of configuring, transitioning to, and maintaining the infrastructure. This aspect was, not discussed in the reviewed literature whatsoever, revealing a small research gap.
 
 Many technology stacks are open source and free to use, at the cost of building internal competence. On the other hand, some platforms such as OpenShift^[https://www.openshift.com] have commercial options where little internal competence is required at the cost of support fees. This cost was estimated to be too high for FINN.no, effectively dismissing it as an option.
 
@@ -196,15 +196,13 @@ src/tables/second-framework-revision.md
 
 ### Scripted automated deployment
 
-The continuous integration server moved the packaging and testing process away from the developers' local machines. For example, developers may work in Mac OSX, whereas the production environment runs on a Linux distribution. Running the build server in the same Linux distribution as the production environment adds some confidence that the service will behave as expected in the production environment.
+The continuous integration server moved the packaging and testing process away from the developers' local machines. For example, developers may work in Mac OSX, whereas the production environment runs on a Linux distribution. Running the build server in the same Linux distribution as the production environment adds some confidence that the service will behave as expected in the production environment. However, this introduces a  new problem of synchronising runtime versions between the build server and the production environment.
 
 The script for building, testing, archiving, and uploading a service, as well as the script for activating the new artefact can be generalised and duplicated among services and on production hosts. Thus, the number of hosts does not linearly affect to the number of steps or time to deploy the service as with manual deployment.
 
-A new problem of keeping runtime versions synchronised between the build server and the production environment.
-
 There are no required manual steps to complete a deployment beyond pushing the latest changes to the revision control system, given that the build completes successfully.
 
-A home-grown script for activating a new version of a service inherently requires more lines of code than using an external tool. This enables the author of the script to customise the steps to the system's needs. Furthermore, all configuration-related code is openly available in the organisation. Thus, only a moderate amount of effort should be required to learn the deployment strategy. On the other hand, the configuration differs with programming language and runtime. This lowers the retention factor of the strategy.
+A home-grown script for activating a new version of a service inherently requires more lines of custom code than using an external tool. This enables the author of the script to customise the steps to the system's needs. Furthermore, all configuration-related code is openly available in the organisation. Thus, only a moderate amount of effort should be required to learn the deployment strategy. On the other hand, the configuration differs with programming language and runtime. This lowers the retention factor of the strategy.
 
 ```include
 src/tables/evaluation-scripted-automated-deployment.md
@@ -220,7 +218,7 @@ This section has discussed several important aspects to consider when building a
 src/tables/final-framework.md
 ```
 
-## Limitations
+## Study limitations
 
 The study presented in this thesis has provided one insight into how system architects can evaluate and compare strategies for Continuous Delivery. As with any other research design, however, there are some limitations to the narrow scope of this study. The key limitations of the selected research design are discussed in this subchapter.
 

@@ -11,7 +11,7 @@
 | Configuration code LOC | How much code must be written to enable deployment for a new service? | (None, Low, Moderate, High) | High
 | Steps to deploy | How many manual steps are required to singly deploy a compiled service to a host? | Step count (integer) | 0
 | Modifiability | How much code must be written to modify the configuration? | (None, Low, Moderate, High) | High (linearly proportional to service count)
-| Cluster scale | How are manual steps and time to deploy proportional to the number of target hosts? | (Linear growth; Constant increase) | Constant
+| Cluster scale | How are manual steps and time to deploy proportional to the number of target hosts? | (Linear growth; Constant increase) | Constant increase
 | Time to deploy | How long does it take to singly deploy a change to a host? | (Seconds; Few minutes; Several minutes; Hours) | Seconds (given no queue)
 | Learning curve | How much effort is required to use the deployment configuration? | (Difficult, Moderate, Simple) | Moderate
 | Retention | To which extent is the deployment configuration simple enough to recall, rather than re-learn? | (Low, Moderate, High) | Moderate

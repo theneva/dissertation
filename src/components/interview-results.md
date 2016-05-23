@@ -1,4 +1,4 @@
-As mentioned in the Method chapter, FINN.no is Norway's leading actor in the online classified ads market. This puts them in a position where they have requirements that come with large scale, making them an interesting company to study: their requirements can possibly be generalised to other large-scale companies, something that cannot be accomplished by carrying out a small implementation project alone. FINN.no is also an early adopter of the microservice pattern in their software architecture.
+As mentioned in the Method chapter, FINN.no is Norway's leading actor in the online classified ads market. This puts them in a position where they have requirements that come with large scale, making them a highly relevant company to study: their requirements can possibly be generalised to other large-scale companies, something that cannot be accomplished by carrying out a small implementation project alone. FINN.no is also an early adopter of the microservice pattern in their software architecture.
 
 The goal of the interviews was to shed light on their requirements for a Deployment Strategy, in particular to see how, if at all, these requirements differ from those discussed in the literature review. In particular, the following two teams were of interest: Team Cloud IO develops and maintains the infrastructure at FINN.no, and is behind the company-wide initiative to migrate to an infrastructure with exclusively container-based automated deployment; Team Reise is a team that has maintained a focus on automating all processes related to building, testing, and deploying their software. The leader of each team was interviewed.
 
@@ -46,13 +46,13 @@ FINN.no has three main Environments: _dev_, used for frequently deploying micros
 
 Team Reise uses URL-based _feature toggles_ to deploy all new features to the production Environment, an approach they are happy with.
 
-FINN.no's Team Reise team has an interesting take on deployment: unlike all other teams, they have _no_ manual verification step in the deployment process, and they do not use the test environments.
+FINN.no's Team Reise team has a different take on deployment from the other teams in the company: unlike all other teams, they have _no_ manual verification step in the deployment process, and they do not use the test environments.
 
 ### Strategy choice
 
 The Cloud IO team has been exploring options for deployment since the summer of 2015, testing various deployment solutions including in-house and cloud-based _Platform as a Service_ infrastructures such as Cisco Mantl^[https://mantl.io] and Apache Mesos^[http://mesos.apache.org]. They eventually committed to Docker with Kubernetes. The team has no strict deadline for implementing the new strategy---the existing set-up works---so the key objective is that the new strategy adds as much value as possible to the platform. They hope to finish the implementation of the new Deployment Strategy during summer 2017, but maintain focus on added value.
 
-One interesting hard requirement is that there can be no system downtime during the migration to the new strategy; they will run the old set-up and the new Kubernetes platform in parallel, and redirect their beta users to the Kubernetes cluster. This means that the "old" and "new" clusters must be able to communicate, which was _not_ seen mentioned as a requirement in the literature review.
+One relevant hard requirement is that there can be no system downtime during the migration to the new strategy; they will run the old set-up and the new Kubernetes platform in parallel, and redirect their beta users to the Kubernetes cluster. This means that the "old" and "new" clusters must be able to communicate, which was _not_ seen mentioned as a requirement in the literature review.
 
 ### Thoughts on the transition to containers
 
@@ -70,7 +70,7 @@ Finally, the team points to a need for automatic scaling, although they do not c
 
 The number one factor for selecting a Deployment Strategy is that it must increase developer productivity. FINN.no exclusively develops their own in-house solution, and this may not be a requirement seen in another context, such as consulting. However, developer productivity is proportional to FINN.no's value to the end users, and thus revenue.
 
-The team recognises that automation requires automated testing, and enforces a strict requirement that the Deployment Strategy facilitates various types of automated testing, including unit tests and integration tests. It would be interesting to see how Docker is utilised in this regard, as Docker seems to allow setting up a "private" test environment, which was also mentioned in the interview with Reise.
+The team recognises that automation requires automated testing, and enforces a strict requirement that the Deployment Strategy facilitates various types of automated testing, including unit tests and integration tests. It would be relevant to see how Docker is utilised in this regard in a later study, as Docker can allow configuring a "private" test environment, which was also mentioned in the interview with Reise.
 
 Finally, the new Deployment Strategy _must_ allow for monitoring with tools such as Prometheus (https://prometheus.io), Agent Bob (JVM data, unsure about the actual name of this thing), and hopefully standardisable dashboards using tools such as Grafana and Graphite. There is also a requirement that the new system can be integrated with Pipeline, although this tool can be tweaked to meet the requirements of the Deployment Strategy.
 

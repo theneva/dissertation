@@ -61,7 +61,7 @@ These assertions will definitely need to be taken into consideration in the comp
 
 ![CAP theorem as a Venn diagram [@erb:2012]](http://img.ctrlv.in/img/16/05/20/573e4fbf0a685.png){#fig:cap-venn-diagram width=50%}
 
-There are multiple potential areas of research related to the problems of availability and consistency. One that becomes particularly prominent in the context of microservices is flexible _service discovery_, i.e. dynamically finding the IP address of web services able to answer a request [e.g., @paliwal:semantics-based-discovery:2012; @bethea:automated-discovery:2008]. Another interesting area is fault tolerance using cloud services with tools for automatic failover to data centres in other geographical locations (or even other cloud platform providers) [e.g., @hole:building-trust:2016; @addo:automatic-failover:2014].
+There are multiple potential areas of research related to the problems of availability and consistency. One that becomes particularly prominent in the context of microservices is flexible _service discovery_, i.e. dynamically finding the IP address of web services able to answer a request [e.g., @paliwal:semantics-based-discovery:2012; @bethea:automated-discovery:2008]. Another area of relevance is fault tolerance using cloud services with tools for automatic failover to data centres in other geographical locations (or even other cloud platform providers) [e.g., @hole:building-trust:2016; @addo:automatic-failover:2014].
 
 @castro:evaluating:2015 [p. 590] suggested evaluating different strategies, tools, and cloud services as future work on automated deployment. This indicates a need for a survey and comparison of the various tools that exist---but first, various strategies must be considered.
 
@@ -96,7 +96,7 @@ They conclude that for systems with few deployed services and configuration chan
 
 @spinellis:by-hand:2012 [p. 86] agrees that IT systems are now expected to be a composition of multiple services, and that automation is a key enabler for ensuring that delivered IT systems are "not inscrutable monoliths that just happen to work but documented modular engines that work by design" [@spinellis:by-hand:2012, p. 87].  He also mentions two additional key themes. First, DevOps (composed of Developer and Operations) is a setting where developers no longer "toss software deliverables over a wall" for deployment, but instead coordinate through development processes like Continuous Deployment and automated testing [@spinellis:by-hand:2012, p. 86]. Second, he considers the idea of documentation of the system expressed as code, which is an added bonus that comes for free if the individual services are simple enough.
 
-In summary, there are multiple areas to look at in future research related to cloud computing and microservices. Perhaps most prevalent is the need for an evaluation of various strategies and tools for Deployment Automation. An interesting way to approach this can be development of tools for _quantitative_ comparison of Deployment Automation strategies. Looking at deployment configuration as source code allows using techniques from software engineering for this evaluation.
+In summary, there are multiple areas to look at in future research related to cloud computing and microservices. Perhaps most prevalent is the need for an evaluation of various strategies and tools for Deployment Automation. One way to approach this can be development of tools for _quantitative_ comparison of Deployment Automation strategies. Looking at deployment configuration as source code allows using techniques from software engineering for this evaluation.
 
 ## Code as documentation
 
@@ -104,7 +104,7 @@ In summary, there are multiple areas to look at in future research related to cl
 
 Another of @talwar:comparison-of-approaches-to-service-deployment:2005 [p. 9]'s key findings is that maintainability and documentability are proportional to the number of LOC, and that the number of steps and LOC are both reduced with the introduction of more sophisticated deployment tools.
 
-It follows that documentation of a system's functions and configuration can (and should, where feasible) be expressed as software rather than in a separate set of files such as a wiki. The external documentation format is, however, useful for documenting overall purposes, decision logs, and other organisational concerns regarding both the individual services and the larger system. This can be an interesting foundation for research into highly expressive configuration. One theme in particular is specifying configuration as _code_ to be _run_ by a tool, rather than _markup_ such as XML to be _parsed_ by the tool.
+It follows that documentation of a system's functions and configuration can (and should, where feasible) be expressed as software rather than in a separate set of files such as a wiki. The external documentation format is, however, useful for documenting overall purposes, decision logs, and other organisational concerns regarding both the individual services and the larger system. This can be relevant foundation for research into highly expressive configuration. One theme in particular is specifying configuration as _code_ to be _run_ by a tool, rather than _markup_ such as XML to be _parsed_ by the tool.
 
 ## Continuous Delivery and DevOps
 

@@ -1,5 +1,4 @@
-# Method
-
+# Method 
 The previous chapters have introduced and contextualised the research area, and discussed some of the relevant literature. This chapter presents the research design for this thesis, and argues for triangulating two research strategies: case study, and design and creation [@oates:2006]. The two overarching research questions for this thesis are as follows:
 
 ```include
