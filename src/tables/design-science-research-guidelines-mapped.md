@@ -8,6 +8,4 @@
 | 6: Design as a Search Process | The search for an effective artifact requires utilizing available means to reach desired ends while satisfying laws in the problem environment. | The search uses interviews and the existing literature to gather an initial set of criteria, and multiple strategies are implemented to further explore the framework's applicability.
 | 7: Communication of Research | Design-science research must be presented effectively both to technology-oriented as well as management-oriented audiences. | The research outcome is presented in this thesis.
 
-Table: Design-Science Research Guidelines [@hevner:dsr:2004, p. 83] mapped to this study.
-
-TODO: fix this reference
+Table: Design-Science Research Guidelines [@hevner:dsr:2004, p. 83] mapped to this study {#tbl:design-science-research-guidelines-mapped}

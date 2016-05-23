@@ -78,7 +78,7 @@ In this context, there is value in being able to run multiple instances of the s
 
 ### Condensing literature characteristics
 
-This subchapter has discussed some characteristics identified in the current literature that can be useful when evaluating and comparing strategies for deployment in a microservice context. These characteristics can be condensed to the representation in table (TODO: reference to table).
+This subchapter has discussed some characteristics identified in the current literature that can be useful when evaluating and comparing strategies for deployment in a microservice context. These characteristics can be condensed to the representation in Table @tbl:criteria-from-literature.
 
 ```include
 src/tables/criteria-from-literature.md
@@ -146,7 +146,7 @@ The interviews revealed a few characteristics that are crucial to the industry, 
 
 The interviews also revealed a strong focus on developer productivity, which is difficult to measure. However, it is relevant to note that FINN.no focused less on quickly migrating to a new strategy, and more on building a solution that will be truly beneficial to their product value.
 
-The capabilities deemed important have been condensed to a table in (TODO reference to table).
+The capabilities deemed important have been condensed to a table in Table @tbl:criteria-from-interviews.
 
 ```include
 src/tables/criteria-from-interviews.md
@@ -154,7 +154,7 @@ src/tables/criteria-from-interviews.md
 
 ## Initial framework revision
 
-So far, this chapter has established one set of requirements for a deployment strategy based on the existing literature, and one set of requirements based on interviews with the industry. This discussion revealed several factors that are of interest to the industry, but hardly covered in the literature. This subchapter combines these sets of criteria into a single framework meant to assist in evaluating deployment strategies. The initial revision of the framework is displayed in Table (TODO: reference to table).
+So far, this chapter has established one set of requirements for a deployment strategy based on the existing literature, and one set of requirements based on interviews with the industry. This discussion revealed several factors that are of interest to the industry, but hardly covered in the literature. This subchapter combines these sets of criteria into a single framework meant to assist in evaluating deployment strategies. The initial revision of the framework is displayed in Table @tbl:initial-framework.
 
 ```include
 src/tables/initial-framework.md
@@ -182,21 +182,17 @@ In addition to competing for resources, each application in the execution enviro
 
 The deployment strategy does not affect unit level tests, but starting the service to run module and feature-level tests requires a server-like environment on the development machine. Furthermore, automated feature-level testing can only be performed by manually running each Backing Service in the local environment, and the Backing Services should be reset between each test run. This introduces a large overhead into the development process, and makes feature-level testing possible with mocked Backing Services.
 
-An application of the framework to evaluate manual continuous deployment of microservices is presented in (TODO: reference to table)
+An application of the framework to evaluate manual continuous deployment of microservices is presented in Table @tbl:evaluation-manual-deployment.
 
 ```include
 src/tables/evaluation-manual-deployment.md
 ```
 
-Applying the framework to manual deployment reveals some imperfections in the framework. In particular, computing clusters and Environments beyond the production environment are not considered. These factors are also significantly impacted by factors about the service itself, such as whether it is compiled. This can be alleviated by modifying _Steps to deploy_, and _Time to deploy_ to account for multiple hosts and environments, and add a characteristic concerning scaling to multiple hosts. These criteria are presented in Table (TODO reference to table):
+Applying the framework to manual deployment reveals some imperfections in the framework. In particular, computing clusters and Environments beyond the production environment are not considered. These factors are also significantly impacted by factors about the service itself, such as whether it is compiled. This can be alleviated by modifying _Steps to deploy_, and _Time to deploy_ to account for multiple hosts and environments, and add a characteristic concerning scaling to multiple hosts. These criteria are presented in Table {@tbl:second-framework-revision}.
 
-| Criterion | Description | Unit | Manual deploy 
-| -------------- | ------------------------------------ | ----------------- | ---------- |
-| Steps to deploy | How many manual steps are required to singly deploy a compiled service to a host? | Step count (integer) | 7
-| Time to deploy | How long does it take to singly deploy a change to a host? | (Seconds; Few minutes; Several minutes; Hours) | Few minutes
-| Cluster scale | How are manual steps and time to deploy proportional to the number of target hosts? | (Linear growth; Constant increase) | Linear growth
-
-Table: Second framework revision (cluster support)
+```include
+src/tables/second-framework-revision.md
+```
 
 ### Scripted automated deployment
 
@@ -218,7 +214,7 @@ Applying the framework to this scripted automated deployment strategy… TODO
 
 ## The final framework
 
-This section has discussed several important aspects to consider when building and deploying applications in a microservice context. In conclusion of this section, (TODO table 1) presents the first part of the artefact: an iteratively developed set of important characteristics of a deployment strategy.
+This section has discussed several important aspects to consider when building and deploying applications in a microservice context. In conclusion of this section, Table @tbl:final-framework presents the first part of the artefact: an iteratively developed set of important characteristics of a deployment strategy.
 
 ```include
 src/tables/final-framework.md

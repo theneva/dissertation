@@ -1,5 +1,3 @@
-### The reference system: BeerFave
-
 Measuring quality of microservice deployment requires a reference system comprising multiple services. The app _BeerFave_ was built to accommodate this. Keeping the system as close to realistic as possible is important for the findings' validity [TODO REFERENCE TO OATES maybe?]. Many popular applications can be generalised (although greatly simplified in the process) to:
 
 - storage and authentication of __users__;
@@ -19,28 +17,17 @@ Technical requirements for the application were modelled in part to allow effici
 src/components/beerfave-technical-requirements.md
 ```
 
-These technical requirements will allow testing each deployment strategy's flexibility and independence in terms of two important factors: first, the execution environment, such as a Platform as a Service with unknown underlying technology, or a self-hosted Linux or Windows server; second, programming language and frameworks.
+These technical requirements will allow testing each deployment strategy's flexibility and independence in terms of two important factors: the runtime, and the programming language and frameworks.
 
-TODO: ^ this is a dumb way to say it
+### Communication
 
-#### Communication
+All services are committed to the popular REpresentational State Transfer (REST) architectural style. The services aim to meet the requirements for level 2 compliance (3 being the highest) with the Richardson Maturity Model^[The Richardson Maturity model is a pyramid of technical requirements for REST split into three levels, each denoting a higher level of compliance with the REST paradigm. The specific style for communication---SOAP and HTTP being common alternatives---is not important for the actual deployment process, but instead a question of how the teams wish to expose their data.
 
-All services are committed to the popular REpresentational State Transfer (REST) architectural style. The services aim to meet the requirements for level 2 compliance (3 being the highest) with the Richardson Maturity Model^[The Richardson Maturity model is a pyramid of technical requirements for REST split into three levels, each denoting a higher level of compliance with the REST paradigm. TODO: briefly explain the levels? The well-known Martin Fowler has written an article available on http://martinfowler.com/articles/richardsonMaturityModel.html for more details.]. The specific style for communication (for example Remote Procedure Calls (SOAP over HTTP and RPC over TCP) being common alternatives) is not important for the actual deployment process, but instead a question of how the teams wish to expose their data.
+![The Richardson Maturity Model, reproduced entirely from http://martinfowler.com/articles/richardsonMaturityModel.html](http://martinfowler.com/articles/images/richardsonMaturityModel/overview.png){width=100%}
 
-TODO:
+REST does not impose any requirements on the data representation. The two main candidates for serialisation are usually JavaScript Object Notation (JSON) and eXtensible Markup Language (XML). JSON was selected for two reasons: first, its brevity compared to XML, reducing load times; second, its ease of translation to and from JavaScript objects. This becomes important when transferring large amounts of data between a server and a web client: developers have little control over the web browser, which is required to both serialise and deserialise data when communicating with the server. Both factors are likely insignificant in an application with small amounts of data, but the native JSON support in JavaScript still makes JSON more attractive than XML in the BeerFave system.
 
-- RPC is a "concept", don't say that "RPC" is over TCP
-- AC liker ikke "data transfer format", skriv "data representation used for transfer"
-
-![The Richardson Maturity Model](http://martinfowler.com/articles/images/richardsonMaturityModel/overview.png)
-
-The Richardson Maturity Model (from http://martinfowler.com/articles/richardsonMaturityModel.html).
-
-REST does not impose any requirements on the data transfer format. The two main candidates are usually JavaScript Object Notation (JSON) and eXtensible Markup Language (XML). JSON was selected for two reasons: first, its brevity compared to XML, reducing load times; second, its ease of translation to and from JavaScript objects, which becomes important when transferring great amounts of data between a server and a web client: developers have little control over the web browser, which both encodes and decodes data for transfer. Both factors are likely insignificant in an application with small amounts of data, but the native JSON support in JavaScript still makes JSON more attractive than XML. Notably, the author of Building Microservices, prefers XML; there are certainly arguments to be made for both sides.
-
-TODO: really long sentence
-
-With JSON, a response to an HTTP GET request to a resource `/beers/1` may be:
+With JSON, a response to an HTTP GET request to a single beer resource `/beers/1` may be:
 
 ```json
 {
@@ -80,25 +67,12 @@ The system is largely based around two runtimes: the Java Virtual Machine (JVM),
 
 The implementation is presented in Figure @fig:beerfave-endpoints.
 
-TODO: citation is fucked up
-
-![BeerFave endpoints](http://img.ctrlv.in/img/16/05/09/572fd4f854fb2.png){#fig:beerfave-endpoints}
+![BeerFave endpoints](http://img.ctrlv.in/img/16/05/09/572fd4f854fb2.png){#fig:beerfave-endpoints width=100%}
 
 In this small example application, each microservice only exposes a single database relation: the model in @fig:beerfave-endpoints can be mapped directly to an Entity Attibute Relationship diagram, like in Figure @fig:beerfave-ear-diagram. However, this is no rule: each microservice may contain an arbitrarily complex data model. For example, a microservice can be implemented for recommending new beers to the user. The recommendation microservice may track the user's habits, and use machine learning algorithms to compute which beers will best fit the user's tastes. Giving the user an option to decline a recommendation adds another relation to the recommendation engine.
 
-TODO: References ^ are fucked up.
+![BeerFave EAR diagram](http://img.ctrlv.in/img/16/05/09/572fcdd81caca.png){#fig:beerfave-ear-diagram width=100%}
 
-![BeerFave EAR diagram](http://img.ctrlv.in/img/16/05/09/572fcdd81caca.png){#fig:beerfave-ear-diagram}
+A sample screenshot of the web interface is displayed in Figure @fig:the-web-interface.
 
-![Beer list (as JSON) from the beer microservice](http://img.ctrlv.in/img/16/04/16/5712757db9f02.png){#fig:beer-list-json}
-
-TODO: FIX THIS, IT'S NOT JSON AND GET RID OF "THE WIFEBEATER"
-
-![The Web interface](http://img.ctrlv.in/img/16/04/16/5712755b3f165.png){#fig:the-web-interface}
-
-![A comparison of database types from https://github.com/cochroachdb/cockroach](https://raw.githubusercontent.com/cockroachdb/cockroach/master/resource/doc/sql-nosql-newsql.png?raw=true){#fig:database-discussion}
-
-TODO:
-
-- Summarise this chapter
-- Introduce the next chapter
+![The Web interface](http://img.ctrlv.in/img/16/04/16/5712755b3f165.png){#fig:the-web-interface width=100%}

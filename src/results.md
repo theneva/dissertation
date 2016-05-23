@@ -68,8 +68,6 @@ The BeerFave system was automated using the open source Continuous Integration s
 
 If the test suite passed, Jenkins triggered a shell script that uploaded the artefact to a predefined location on the production server using SCP. It then sent an HTTP request to the production server, notifying it that a new build was available for activation. Finally, this HTTP request was received by an HTTP server on the production server, which triggered yet another shell script that activated the new changes.
 
-TODO: Does this deserve a figure?
-
 This automation only handles _upgrading_ services, however: the environmental dependencies such as the JRE must still be installed on the hosts prior to the deployment. These results assume that the environment has already been configured, as these factors were considered with manual deployment. However, installation of runtimes and build tools on the build server is a new factor.
 
 #### Independent service
@@ -92,26 +90,10 @@ The static web application was configured as a job that built, tested, and uploa
 
 These were configured in the same way as for manual deployment.
 
-TODO: Remove the following section?
-
-### Automated container-based deployment
-
-Container-based manual deployment can, like manual deployment, be accomplished in many ways. Since the BeerFave deployment is based on Docker, each image was built and pushed to the Docker Hub^[https://hub.docker.com] from the developer machine with a new version tag.
-
-#### Same-language services
-
-#### Same platform, different language
-
-#### Different runtime
-
-#### Static web application
-
-#### Different database systems
-
 ### Limitations
-
-TODO: Move this somewhere else
 
 Did not look into performance: that is largely in the domain of microservices. It is worth noting that running multiple self-contained services in their separate runtimes naturally expends more computing resources than executing them in a shared runtime. However, that approach limits many of the benefits that come from running autonomous services (as described by The Twelve-Factor App). Furthermore, the context this study is heavy server laod and hundreds of microservices. Thus, a powerful execution environment is required to run the system. For this reason, performance is outside the scope of this study. It is up to the user of the framework to consider this characteristic.
 
-that another deployment strategy, building images for virtual machines, 
+## Summary
+
+This chapter has presented the results from the interviews with employees at FINN.no, and described two different strategies for deployment applied to the BeerFave system. The next chapter discusses these results, as well as the current literature, to produce a framework for evaluation and comparison of microservice deployment.

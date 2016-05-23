@@ -22,22 +22,15 @@ A research project such as this one can be conducted in a multitude of ways. The
 
 @hevner:dsr:2004 proposed _Design-Science_ as a paradigm for research in the Information Systems domain. Design-Science research seeks to "extend the boundaries of human and organizational capabilities by creating new and innovative artifacts" [@hevner:dsr:2004, p. 75]. This contrasts _Behavioural-Science Research_, which seeks to understand human or organisational behaviour [@hevner:dsr:2004, p. 75].
 
-Design-Science attempts to "create things that serve human purposes", and is technology-oriented [@march:research-on-it:1995, p. 253]. The methodology's basic activities are _building_ and _evaluation_ [@march:research-on-it:1995, p. 254], which are performed iteratively, before the final design artefact is generated [@hevner:dsr:2004, p. 78]. This is a good fit for this project.
+Design-Science attempts to "create things that serve human purposes", and is technology-oriented [@march:research-on-it:1995, p. 253]. The methodology's basic activities are _building_ and _evaluation_ [@march:research-on-it:1995, p. 254], which are performed iteratively, before the final design artefact is generated [@hevner:dsr:2004, p. 78].
 
-TODO: good fit for this project because...?
-
-TODO: Do I need to present a model for DSR (e.g., Peffers http://dl.acm.org/citation.cfm?id=1481768), or is this enough about DSR?
-
-- Kanskje, ja. Men enda mer viktig. Du bør argumentere litt sterkere for hvorfor design science er det riktige valget for din studie- det er ikke innlysende.
-- Bør jeg forklare hvorfor jeg trenger en modell i det hele tatt mer enn jeg allerede har? hva tenker du som konkurrenter til DSR—action research?
-- SysDev sier Action Design Research og Engaged Scholarship (som tbh er en type AR/ADR)
-- http://dl.acm.org/citation.cfm?id=2017229 for AR i IS-kontekst
+Answers to the research questions for this thesis has two main audiences: the aim is to provide practitioners with a tool for evaluating and comparing strategies to deployment, as well as to bridge the academic gap between microservices and continuous deployment. Establishing an initial framework based on the literature and interviews with practitioners, and incrementally improving the framework by applying it to realistic deployment strategies is a safe way to ensure industry relevance. Thus, Design Science is a good fit for this study.
 
 @hevner:dsr:2004 defined _IT artefacts_ to include constructs, models, and methods used in development and use of Information Systems, but exclude matters of people and organisational elements. The artefact generated from the project presented in this thesis is the framework for evaluating and comparing strategies for Automated Continuous Delivery (ACD).
 
 The artefact is iteratively evaluated by implementing multiple strategies for ACD, and testing the framework by using it to evaluate each strategy. The artefact provides guidance on how to search the solution space for a problem, and is thus a _method_ [@hevner:dsr:2004, p. 79].
 
-@hevner:dsr:2004 [p. 83] presented seven Design-Science Research Guidelines, which are reproduced and mapped to the project presented in this thesis in (TODO table ???).
+@hevner:dsr:2004 [p. 83] presented seven Design-Science Research Guidelines for conducting Design Science Research. Their table is reproduced in Table @tbl:design-science-research-guidelines-mapped, and additionally mapped to the expected outcomes of this study.
 
 ```include
 src/tables/design-science-research-guidelines-mapped.md
@@ -47,13 +40,9 @@ src/tables/design-science-research-guidelines-mapped.md
 
 TODO: Add criteria for evaluating (use @hevner:dsr:2004)
 
-## Learning from the industry: Interviews
+## Learning from practitioners
 
-TODO: "The industry" could be "Practise field"?
-
-TODO: Why do we want/need to learn from the industry? Refer back to design science. Is there literature on this? Probably something in Oates/Yin on case studies
-
-Learning from the industry and establishing industry relevance can be done in a multitude of ways. @oates:2006 presented multiple research strategies for the information systems and computer science. Relevant research strategies include performing a survey using a questionnaire or short interviews, or a case study.
+Learning from the industry and establishing industry relevance is critical to ensure that the artefact will be useful to the practitioners. Relevance can be established in a multitude of ways: @oates:2006 presented multiple research strategies for the information systems and computer science. Relevant research strategies include performing a survey using a questionnaire or short interviews, or a case study.
 
 Surveys are useful for obtaining a large set of standardised data, which allows patterns to emerge [@oates:2006, p. 93]. However, the initial step of this research project seeks to learn _how_ the industry practises deployment today, and _which_ properties are important in such a strategy. This requires an in-depth look into the processes, which can be accomplished using a case study.
 
@@ -61,12 +50,14 @@ Surveys are useful for obtaining a large set of standardised data, which allows 
 src/components/interview-presentation.md
 ```
 
-## Evaluating and refining the framework: Design and Creation
+## Design and Creation: BeerFave
 
-Once an initial set of criteria for evaluating strategies for Automated Continuous Delivery has been established, the framework should be tested in order to be valid.
-
-TODO: elaborate on this
+Once an initial set of criteria for evaluating strategies for Automated Continuous Delivery has been established, the framework should be tested in order to be valid. To accomplish this, a reference microservice-based system was developed. This system was incrementally configured to be deployed using two different strategies. After each strategy, the strategy was evaluated using the framework, and the framework was evaluated. This subchapter presents this system.
 
 ```include
 src/components/beer-fave.md
 ```
+
+## Summary
+
+This chapter has presented the research design to investigate the research questions. First, an understanding of the industry's requirements for a Continuous Delivery strategy for microservices is established through a case study based around interviews at FINN.no. Second, two deployment strategies will be tested and evaluated using BeerFave, the reference system, as a controlled case. The next chapter shows the results from these methods of data generation.

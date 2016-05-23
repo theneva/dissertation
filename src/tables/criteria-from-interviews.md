@@ -9,4 +9,4 @@
 | Multi-target deployment support | Can the system be deployed to both self-hosted machines and cloud providers? | True?
 | Dev/prod parity | Can the development and production environments be equal? | (Divergent, Similar, Equal)
 
-Table: Criteria identified via interviews
+Table: Criteria identified via interviews {#tbl:criteria-from-interviews}

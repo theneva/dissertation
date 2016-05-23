@@ -12,7 +12,7 @@ The rest of this subchapter summarises the twelve factors based on their descrip
 
 The first factor, _Codebase_^[http://12factor.net/codebase], states that any one service should be contained in exactly one codebase, tracked with revision control such as Git. This one code base should be built once, and deployed to all required environments. Deploying the very same build is important, in order to be certain that it will behave in the same way across all environments [@newman:building-microservices:2015].
 
-![Codebase model from http://12factor.net/codebase](http://12factor.net/images/codebase-deploys.png)
+![Codebase model reproduced from http://12factor.net/codebase](http://12factor.net/images/codebase-deploys.png){width=50%}
 
 The second factor, _Dependencies_, states that dependencies (i.e., third party libraries) should be explicitly declared and isolated. A twelve-factor app cannot depend on a system-wide package being available on the underlying operating system. If the service requires an external service, it must be bundled into the artefact. This increases flexibility towards deployment target, especially in a _Platform as a Service_ context, where the developer has little control over the underlying infrastructure.
 
@@ -20,7 +20,7 @@ Factor number three, _Config_, states that configuration must be stored in the e
 
 Factor four, _Backing services_, states that the service makes no distinction between third party services and internally managed services such as data stores. Configuration for access to and authentication with these services is stored in the Config. This process is visualised in Figure (TODO: reference to figure).
 
-![Communication with backing services, from http://12factor.net/backing-services](http://12factor.net/images/attached-resources.png)
+![Communication with backing services, reproduced from http://12factor.net/backing-services](http://12factor.net/images/attached-resources.png){width=50%}
 
 Factor five, _Build, release, run_, recommends a strict separation of the _build_ and _run_ stages for the service. This separation is a vital enabler of building a single artefact and advancing it through the environments, eventually reaching production.
 

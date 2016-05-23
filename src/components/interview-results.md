@@ -1,4 +1,4 @@
-As mentioned in the __Method__ chapter, FINN.no is Norway's leading actor in the online classified ads market. This puts them in a position where they have requirements that come with large scale, making them an interesting company to study: their requirements can possibly be generalised to other large-scale companies, something that cannot be accomplished by carrying out a small implementation project alone. FINN.no is also an early adopter of the microservice pattern in their software architecture.
+As mentioned in the Method chapter, FINN.no is Norway's leading actor in the online classified ads market. This puts them in a position where they have requirements that come with large scale, making them an interesting company to study: their requirements can possibly be generalised to other large-scale companies, something that cannot be accomplished by carrying out a small implementation project alone. FINN.no is also an early adopter of the microservice pattern in their software architecture.
 
 The goal of the interviews was to shed light on their requirements for a Deployment Strategy, in particular to see how, if at all, these requirements differ from those discussed in the literature review. In particular, the following two teams were of interest: Team Cloud IO develops and maintains the infrastructure at FINN.no, and is behind the company-wide initiative to migrate to an infrastructure with exclusively container-based automated deployment; Team Reise is a team that has maintained a focus on automating all processes related to building, testing, and deploying their software. The leader of each team was interviewed.
 
@@ -42,26 +42,15 @@ Especially in a culture with no formal code review before code is deployed, Team
 
 TODO: Explain the environments and be consistent.
 
-FINN.no has three main Environments: __dev__, __ci__, and __prod__. The current set-up requires each build and deployment for __dev__ and __ci__ to pass in order for new changes to reach the __prod__ environments, even though Team Reise does not use test environments at all. Thus, other unstable services in the __dev__ or __ci__ environments may cause delayed release of enhancements to the Team Reise platform, even if the new code itself is without mistakes.
+FINN.no has three main Environments: _dev_, used for frequently deploying microservices; _ci_, used for frequently deploying web interfaces; and _prod_, exposed to the end users. The current set-up requires each build and deployment for _dev_ and _ci_ to pass in order for new changes to reach the _prod_ environments, even though Team Reise does not use test environments at all. Thus, other unstable services in the _dev_ or _ci_ environments may cause delayed release of enhancements to the Team Reise platform, even if the new code itself is without mistakes.
 
 Team Reise uses URL-based _feature toggles_ to deploy all new features to the production Environment, an approach they are happy with.
 
-FINN.no's Team Reise team has an interesting take on deployment: unlike all other teams, they have _no_ manual verification step in the deployment process, and they do not use the test environments (dev/CI).
-
-1. Check-in (with git, triggers Bamboo build)
-2. Pipeline is notified by Git server (or polls), and triggers the build process
-3. Bamboo builds, tests, and uploads the artefact(s) to a central repository, typically Nexus
-4. Bamboo notifies (in-house) Pipeline that the artefact is complete and ready for deployment
-5. Pipeline deploys the artefact(s) directly to production environment
-6. Pipeline also deploys to test environments, but only for other services' sake---they are never used by the team.
-
-TODO: WTF? generalise this process and illustrate it (as it is to some extent used by all teams in FINN.no).
+FINN.no's Team Reise team has an interesting take on deployment: unlike all other teams, they have _no_ manual verification step in the deployment process, and they do not use the test environments.
 
 ### Strategy choice
 
-The Cloud IO team has been exploring options for deployment since the summer of 2015, testing various deployment solutions such as Mesos and Marathon, Kubernetes with OpenShift, and Cisco Mantl. They eventually committed to Docker with Kubernetes. They have no strict deadline for implementing the new strategy---the existing set-up works---so the key objective is that the new strategy adds as much value as possible to the platform. They hope to finish the implementation of the new Deployment Strategy during summer 2016, but maintain focus on added value.
-
-TODO: dashes don't work from here
+The Cloud IO team has been exploring options for deployment since the summer of 2015, testing various deployment solutions including in-house and cloud-based _Platform as a Service_ infrastructures such as Cisco Mantl^[https://mantl.io] and Apache Mesos^[http://mesos.apache.org]. They eventually committed to Docker with Kubernetes. The team has no strict deadline for implementing the new strategy---the existing set-up works---so the key objective is that the new strategy adds as much value as possible to the platform. They hope to finish the implementation of the new Deployment Strategy during summer 2017, but maintain focus on added value.
 
 One interesting hard requirement is that there can be no system downtime during the migration to the new strategy; they will run the old set-up and the new Kubernetes platform in parallel, and redirect their beta users to the Kubernetes cluster. This means that the "old" and "new" clusters must be able to communicate, which was _not_ seen mentioned as a requirement in the literature review.
 
@@ -71,9 +60,7 @@ Team Reise is looking forward to using containers, as they have an unmet require
 
 The dependency on a live environment could perhaps be a small concern. However, the testing environments, especially the one intended for frequent test deployment of the microservices themselves, are erratic and inconsistent, making them unreliable for the developers. This problem has been apparent for the last several months, and is a barrier to overcome when implementing Automated Continuous Delivery.
 
-### Summary: Important factors
-
-TODO: What does "important" mean in this heading?
+### Summary
 
 TODO: This is confusing, sort it out. When is who saying what?
 

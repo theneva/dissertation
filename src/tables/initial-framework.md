@@ -19,4 +19,4 @@
 | Only twelve factors | How many ASRs are imposed on the service beyond following the guidelines known as The Twelve-Factor App? | (Many, Few, None)
 | Same-host duplicates | Can multiple instances and versions of the same service run on a single host? | (Simple, With custom configuration, Unfeasible)
 
-Table: Initial framework based on current literature and interviews
+Table: Initial framework based on current literature and interviews {#tbl:initial-framework}

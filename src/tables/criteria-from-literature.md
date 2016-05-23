@@ -9,6 +9,6 @@
 | DevOps efficacy | @spinellis:by-hand:2012 | Can developers safely deploy their own changes to production? | True?
 | Self-documenting configuration | @armour:laws:2007; @talwar:comparison-of-approaches-to-service-deployment:2005 | To which extent does the configuration code itself double as documentation of the non-functional requirements that led to the configuration, eliminating the need to document these elsewhere? | True?
 | Only twelve factors | @chen:architecting-for-cd:2015, The Twelve-Factor App^[http://12factor.net] | How many ASRs are imposed on the service beyond following the guidelines known as The Twelve-Factor App? | (Many, Few, None)
-| Same-host duplicates | TODO: Reference? | Can multiple instances and versions of the same service run on a single host? | (Simple, With custom configuration, Unfeasible)
+| Same-host duplicates | -- | Can multiple instances and versions of the same service run on a single host? | (Simple, With custom configuration, Unfeasible)
 
-Table: Criteria identified in the literature review
+Table: Criteria identified in the literature review {#tbl:criteria-from-literature}
