@@ -35,10 +35,6 @@ The artefact is iteratively evaluated by implementing multiple strategies for CM
 src/tables/design-science-research-guidelines-mapped.md
 ```
 
-### Evaluation
-
-TODO: Add criteria for evaluating (use @hevner:dsr:2004)
-
 ## Learning from practitioners
 
 Learning from the industry and establishing industry relevance is critical to ensure that the artefact will be useful to the practitioners. Relevance can be established in a multitude of ways: @oates:2006 presented multiple research strategies for the information systems and computer science. Relevant research strategies include performing a survey using a questionnaire or short interviews, or a case study.
@@ -51,7 +47,7 @@ src/components/interview-presentation.md
 
 ## Design and Creation: BeerFave
 
-Once an initial set of criteria for evaluating strategies for Continuous Microservice Delivery has been established, the framework should be tested in order to be valid. To accomplish this, a reference microservice-based system was developed. This system was incrementally configured to be deployed using two different strategies. After each strategy, the strategy was evaluated using the framework, and the framework was evaluated. This subchapter presents this system.
+Once an initial set of criteria for evaluating strategies for Continuous Microservice Delivery has been established, the framework should be tested in order to be valid. To accomplish this, a reference microservice-based system was developed. This system was incrementally configured to be deployed using two different strategies. After each strategy, the strategy was evaluated using the framework, and the framework was refined after each iteration. This subchapter presents this system.
 
 ```include
 src/components/beer-fave.md
