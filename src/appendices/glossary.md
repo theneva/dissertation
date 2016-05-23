@@ -8,4 +8,5 @@
 - __Continuous Delivery__ (CD): The combination of __Continuous Integration__ and __Continuous Deployment__ into a process where changes are delivered to the end users as soon as they are ready.
 - __Continuous Deployment__: The process of deploying new changes to the production environment as soon as they are integrated into the mainline.
 - __Continuous Integration__ (CI): The process of frequently merging code changes into the production-ready code base, or "mainline" (for example the _master_ branch in Git).
+- __Continuous Microservice Delivery__ (CMD): Continuous Delivery in a microservice context.
 - __Microservice__: A small, autonomous server application that contains a specialised set of data.
