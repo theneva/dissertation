@@ -11,7 +11,7 @@ In conclusion, a subset of the identified areas of research is presented. This p
 
 @talwar:comparison-of-approaches-to-service-deployment:2005 [p. 1] broadly define a _service_ as a piece of software that encapsulates and presents some useful functionality, and can be part of an overall _system_. In other words, a _service_ is a specialised, autonomous, stand-alone server. The idea of splitting a large application's code base into multiple services is often referred to as the Service-Oriented Architecture (SOA) [e.g., @castro:evaluating:2015; @arnold:pattern-based-soa:2007]. For instance, an e-commerce site, such as the extremely popular Amazon^[https://amazon.com], may implement part of their system using the service pattern in the following way (see Figure @fig:example-e-commerce-services):
 
-![Example e-commerce service stack](http://img.ctrlv.in/img/16/03/16/56e9409e7ad65.png){#fig:example-e-commerce-services}
+![Example e-commerce service stack](http://img.ctrlv.in/img/16/03/16/56e9409e7ad65.png){#fig:example-e-commerce-services width=100%}
 
 - One service managing registered users (behind the firewall);
 - One service keeping track of inventory (behind the firewall);

@@ -90,10 +90,6 @@ The static web application was configured as a job that built, tested, and uploa
 
 These were configured in the same way as for manual deployment.
 
-### Limitations
-
-Did not look into performance: that is largely in the domain of microservices. It is worth noting that running multiple self-contained services in their separate runtimes naturally expends more computing resources than executing them in a shared runtime. However, that approach limits many of the benefits that come from running autonomous services (as described by The Twelve-Factor App). Furthermore, the context this study is heavy server laod and hundreds of microservices. Thus, a powerful execution environment is required to run the system. For this reason, performance is outside the scope of this study. It is up to the user of the framework to consider this characteristic.
-
 ## Summary
 
 This chapter has presented the results from the interviews with employees at FINN.no, and described two different strategies for deployment applied to the BeerFave system. The next chapter discusses these results, as well as the current literature, to produce a framework for evaluation and comparison of microservice deployment.
