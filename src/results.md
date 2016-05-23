@@ -78,13 +78,21 @@ Configuring an independent service for deployment required two actions. First, N
 
 #### Same-language services
 
+Configuration services written in the same language, and thus running on the same platform, required installing the platform once on the build server. A job was configured, and a notification trigger was set up for each service. The script running on the production server was expanded to accept this new job.
+
 #### Same platform, different language
+
+The build process in its entirety was completed by the build server. While no new platforms were required on the production host, the Java Development Kit had to be installed on the build server. Beyond that installation, a job configuration and a notification trigger were all that was required, as the service activation script was capable of accepting and starting Java Archives.
 
 #### Static web application
 
+The static web application was configured as a job that built, tested, and uploaded the archive to the production server directly using SCP. The static nature of the web application avoided a dependency on the service activation script.
+
 #### Different database systems
 
-TODO
+These were configured in the same way as for manual deployment.
+
+TODO: Remove the following section?
 
 ### Automated container-based deployment
 

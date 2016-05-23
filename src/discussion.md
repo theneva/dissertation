@@ -2,7 +2,7 @@
 
 The background chapter concluded with an important set of criteria identified in the current literature. Similarly, the results chapter presented a set of important criteria identified through the case study. These criteria were combined and used to evaluate the reference application _BeerFave_, which both demonstrated how the framework can be used, and brought up some important observations.
 
-This chapter maps the results from the literature review to those from the case study to establish an initial framework. Using this initial framework, each strategy implementation with BeerFave used to iteratively evaluate the framework. This chapter concludes with a final revision of the framework.
+This chapter maps the results from the literature review to those from the case study to establish an initial framework. Using this initial framework, each strategy implementation with BeerFave used to iteratively evaluate the framework. Two key findings are presented in this chapter. First, the application of the framework to some deployment strategies provides an analysis. Second, the application results in a final revision of the framework.
 
 ## Scope
 
@@ -30,7 +30,7 @@ As the number of steps directly influences the overhead for deploying a service,
 
 ### Modifiability
 
-Modifiability is a well-established quality attribute in software engineering [bass-clements-kazman:software-architecture-in-practice:2013], and applies to configuration code as well. @talwar:comparison-of-approaches-to-service-deployment:2005 [p. 74] defines the number of LOC required to express a configuration change---modify the configuration---as a quantifiable metric for modifiability.
+Modifiability is a well-established quality attribute in software engineering [@bass-clements-kazman:software-architecture-in-practice:2013], and applies to configuration code as well. @talwar:comparison-of-approaches-to-service-deployment:2005 [p. 74] defines the number of LOC required to express a configuration change---modify the configuration---as a quantifiable metric for modifiability.
 
 As discussed previously, using LOC as a metric is imprecise because markup and programming language vary greatly in conciseness. However, it is still a useful metric in combination with others, and is expressed as both the actual number of LOC and a relative grouping, which is one of (None, Low, Moderate, High).
 
@@ -194,7 +194,7 @@ Applying the framework to manual deployment reveals some imperfections in the fr
 | -------------- | ------------------------------------ | ----------------- | ---------- |
 | Steps to deploy | How many manual steps are required to singly deploy a compiled service to a host? | Step count (integer) | 7
 | Time to deploy | How long does it take to singly deploy a change to a host? | (Seconds; Few minutes; Several minutes; Hours) | Few minutes
-| Cluster scale | How are manual steps and time to deploy proportional to the number of target hosts? | (Linearly; Negatably) | Linearly
+| Cluster scale | How are manual steps and time to deploy proportional to the number of target hosts? | (Linear growth; Constant increase) | Linear growth
 
 Table: Second framework revision (cluster support)
 
@@ -206,6 +206,16 @@ The script for building, testing, archiving, and uploading a service, as well as
 
 A new problem of keeping runtime versions synchronised between the build server and the production environment.
 
+There are no required manual steps to complete a deployment beyond pushing the latest changes to the revision control system, given that the build completes successfully.
+
+A home-grown script for activating a new version of a service inherently requires more lines of code than using an external tool. This enables the author of the script to customise the steps to the system's needs. Furthermore, all configuration-related code is openly available in the organisation. Thus, only a moderate amount of effort should be required to learn the deployment strategy. On the other hand, the configuration differs with programming language and runtime. This lowers the retention factor of the strategy.
+
+```include
+src/tables/evaluation-scripted-automated-deployment.md
+```
+
+Applying the framework to the 
+
 ## The final framework
 
 This section has discussed several important aspects to consider when building and deploying applications in a microservice context. In conclusion of this section, (TODO table 1) presents the first part of the main artefact: a set of important criteria to consider when selecting a deployment strategy for a specific scenario, along with brief descriptions. The rest of this chapter evaluates the framework using the reference application, and uses the framework to evaluate some popular deployment strategies. The entire thesis concludes with a final set of requirements uncovered from both this discussion and the implementation work.
@@ -215,10 +225,6 @@ TODO: Make the framework…
 | Criterion | Description | Unit
 | --------- | ----------- | ----
 | TODO | Make | This
-
-## Method evaluation
-
-TODO: Use @hevner:dsr:2004 as described in __Method#Methodology__ to evaluate the process and result. Each…
 
 ## Limitations
 
