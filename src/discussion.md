@@ -196,11 +196,15 @@ Applying the framework to manual deployment reveals some imperfections in the fr
 | Time to deploy | How long does it take to singly deploy a change to a host? | (Seconds; Few minutes; Several minutes; Hours) | Few minutes
 | Cluster scale | How are manual steps and time to deploy proportional to the number of target hosts? | (Linearly; Negatably) | Linearly
 
-Table: Modified criteria in second framework revision
+Table: Second framework revision (cluster support)
 
-### Script-based deployment
+### Scripted automated deployment
 
+The continuous integration server moved the packaging and testing process away from the developers' local machines. For example, developers may work in Mac OSX, whereas the production environment runs on a Linux distribution. Running the build server in the same Linux distribution as the production environment adds some confidence that the service will behave as expected in the production environment.
 
+The script for building, testing, archiving, and uploading a service, as well as the script for activating the new artefact can be generalised and duplicated among services and on production hosts. Thus, the number of hosts does not linearly affect to the number of steps or time to deploy the service as with manual deployment.
+
+A new problem of keeping runtime versions synchronised between the build server and the production environment.
 
 ## The final framework
 

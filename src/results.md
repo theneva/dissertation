@@ -10,7 +10,7 @@ src/components/interview-results.md
 
 ## Refining the framework: Design and Creation
 
-This subchapter presents the results of deploying the services that are being developed locally on each developer's computer, and uploaded to a production server. Each service is assumed to comply with the Twelve-Factor App guidelines. Experiences are presented for each of the following deployment strategies: manual, scripted automation, manual container-based, and automated container-based deployment. The services were developed on a MacBook Pro running Mac OSX 10.10, and the execution environment used for testing was a Linux server running Ubuntu 15.10.
+This subchapter presents the results of deploying the services that are being developed locally on each developer's computer, and uploaded to a production server. Each service is assumed to comply with the Twelve-Factor App guidelines. Experiences are presented for each of the following deployment strategies: manual, scripted automation, and automated container-based deployment. The services were developed on a MacBook Pro running Mac OSX 10.10, and the execution environment used for testing was a Linux server running Ubuntu 15.10.
 
 The Linux server had the proper load balancer and HTTP server _nginx_ installed and configured to simply proxy to the internal IP addresses of each service. This configuration is required in each production environment regardless of strategy, and is not part of the scope in this study.
 
@@ -62,32 +62,33 @@ BeerFave required two database systems: CockroachDB and PostgreSQL. This require
 
 ### Scripted automated deployment
 
+Scripted automated deployment implies programming scripts to automate repetitive manual processes. The benefit of automating the deployment process is twofold: first, it allows developers to focus on features; second, it reduces the risk of human errors. There is a vast number of tools existing tools to help automate service deployment, and range from simply uploading a service to the production environment to parsing and installing third party dependencies [@spinellis:by-hand:2012].
+
+The BeerFave system was automated using the open source Continuous Integration server Jenkins^[https://jenkins.io/]. Whenever a new commit was uploaded to the revision control system, an HTTP request was sent to notify Jenkins about changes. Jenkins would download the changes from the revision control system, install dependencies, build the system, and run the automated tests.
+
+If the test suite passed, Jenkins triggered a shell script that uploaded the artefact to a predefined location on the production server using SCP. It then sent an HTTP request to the production server, notifying it that a new build was available for activation. Finally, this HTTP request was received by an HTTP server on the production server, which triggered yet another shell script that activated the new changes.
+
+TODO: Does this deserve a figure?
+
+This automation only handles _upgrading_ services, however: the environmental dependencies such as the JRE must still be installed on the hosts prior to the deployment. These results assume that the environment has already been configured, as these factors were considered with manual deployment. However, installation of runtimes and build tools on the build server is a new factor.
+
+#### Independent service
+
+Configuring an independent service for deployment required two actions. First, Node.js was installed on the build server, a Jenkins job was configured, and a notification trigger set up. The job configuration instructed Jenkins on how to install the service's dependencies, build and test the service, and finally archive and upload the service to the production service and trigger installation. Second, a shell script was written on the production server to listen for HTTP requests from Jenkins and activating the new service.
+
 #### Same-language services
 
 #### Same platform, different language
 
-#### Different runtime
-
 #### Static web application
 
 #### Different database systems
+
 TODO
 
-### Manual container-based deployment
+### Automated container-based deployment
 
 Container-based manual deployment can, like manual deployment, be accomplished in many ways. Since the BeerFave deployment is based on Docker, each image was built and pushed to the Docker Hub^[https://hub.docker.com] from the developer machine with a new version tag.
-
-#### Same-language services
-
-#### Same platform, different language
-
-#### Different runtime
-
-#### Static web application
-
-#### Different database systems
-
-### Automated container-based deployment
 
 #### Same-language services
 
